@@ -1,16 +1,5 @@
 import { luawave } from "../models/luawaveDB.mjs";
 
-export function findIt(table, comparator, value, callback) {
-  luawave.get(
-    `
-        SELECT id
-        FROM ${table}
-        WHERE ${comparator} = "${value}"
-        `,
-    callback
-  );
-}
-
 export function findOne(select, table, comparator, value, callback) {
   luawave.get(
     `
@@ -21,6 +10,7 @@ export function findOne(select, table, comparator, value, callback) {
     callback
   );
 }
+
 export function findAll(select, table, comparator, value, callback) {
   luawave.all(
     `
@@ -71,6 +61,7 @@ export const updateArticle = updateFactory("Articles", luawave, [
   "Stock",
   "Photo",
   "Price",
+  "Categoria"
 ]);
 export const updateRentalArticle = updateFactory("Rental_articles", luawave, [
   "Rental_article_id",
@@ -87,11 +78,11 @@ function updateFactory(table, db, item) {
     updatedate[idx] = item[idx] + " = " + "?";
   }
   const columns = updatedate.join(",");
-  return function (id, item) {
+  return function (comparator, id, item) {
     const newValues = Object.values(item);
     const sql = `UPDATE ${table}
         SET ${columns}
-        WHERE id = ${id};`;
+        WHERE ${comparator} = ${id};`;
     db.run(sql, newValues);
   };
 }
