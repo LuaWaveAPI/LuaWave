@@ -1,4 +1,4 @@
-import express from "express";
+import express, { json } from "express";
 import {
   deleteArticleController,
   getAllArticlesController,
@@ -7,10 +7,10 @@ import {
   putArticleController,
 } from "./controllers/articlesControllers.mjs";
 import {
-  getAllCategoriasHandler,
-  getCategoriaHandler,
-  postCategoriaController,
-} from "./controllers/categoriasControllers.mjs";
+  getAllCategoriesHandler,
+  getCategoryHandler,
+  postCategoryController,
+} from "./controllers/categoriesControllers.mjs";
 
 const PATH_PREFIX = "/api/v0.0";
 const app = express();
@@ -24,9 +24,11 @@ try {
   app.post(PATH_PREFIX + "/article/", jsonParser, postArticleController);
   app.put(PATH_PREFIX + "/article/", jsonParser, putArticleController);
   app.delete(PATH_PREFIX + "/article", jsonParser, deleteArticleController);
-  app.get(PATH_PREFIX + "/categorias/", getAllCategoriasHandler);
-  app.get(PATH_PREFIX + "/categoria/:id", getCategoriaHandler);
-  app.post(PATH_PREFIX + "/categoria/", jsonParser, postCategoriaController);
+
+  //Categories
+  app.get(PATH_PREFIX + "/categories/", getAllCategoriesHandler);
+  app.get(PATH_PREFIX + "/category/:id", jsonParser, getCategoryHandler);
+  app.post(PATH_PREFIX + "/category/", jsonParser, postCategoryController);
 
   app.listen(port, () => {
     console.log("Express running...");

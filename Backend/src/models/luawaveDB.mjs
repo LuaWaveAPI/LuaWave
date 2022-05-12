@@ -1,10 +1,10 @@
-import sqlite3 from 'sqlite3';
+import sqlite3 from "sqlite3";
 
-export const luawave = new sqlite3.Database('./Backend/luawave.db', (err) => {
-    if (err) {
-        console.error(err.message);
-    }
-    console.log('Connected to the chat database.');
+export const luawave = new sqlite3.Database("./Backend/luawave.db", (err) => {
+  if (err) {
+    console.error(err.message);
+  }
+  console.log("Connected to the chat database.");
 });
 
 luawave.run(`CREATE TABLE IF NOT EXISTS Articles (
@@ -14,16 +14,16 @@ luawave.run(`CREATE TABLE IF NOT EXISTS Articles (
         Stock INTEGER NOT NULL,
         Photo TEXT NOT NULL,
         Price NUMERIC NOT NULL,
-        Categoria INTEGER NOT NULL,
-        CONSTRAINT Categoria
-            FOREIGN KEY (Categoria)
-            REFERENCES Categorias (ID_categoria)
+        Category INTEGER NOT NULL,
+        CONSTRAINT Category
+            FOREIGN KEY (Category)
+            REFERENCES Categories (ID_category)
             ON DELETE NO ACTION
             ON UPDATE NO ACTION
     )
 `);
 
-luawave.run (`CREATE TABLE IF NOT EXISTS Rental( 
+luawave.run(`CREATE TABLE IF NOT EXISTS Rental( 
         Rental_id INTEGER PRIMARY KEY,
         Name VARCHAR(45) NOT NULL,
         DNI VARCHAR(10) NOT NULL,
@@ -34,12 +34,12 @@ luawave.run (`CREATE TABLE IF NOT EXISTS Rental(
 `);
 
 luawave.run(
-    `CREATE TABLE IF NOT EXISTS Categorias(
-        ID_categoria INTEGER PRIMARY KEY,
+  `CREATE TABLE IF NOT EXISTS Categories(
+        ID_category INTEGER PRIMARY KEY,
         Name VARCHAR(45) NOT NULL,
         Description VARCHAR(100) NOT NULL
     )`
-)
+);
 
 luawave.run(`CREATE TABLE IF NOT EXISTS Rental_articles (
         Rental_articles_id INT AUTO_INCREMENT,
@@ -64,7 +64,7 @@ luawave.run(`CREATE TABLE IF NOT EXISTS Rental_articles (
 `);
 
 luawave.run(
-    `CREATE TABLE IF NOT EXISTS Staff (
+  `CREATE TABLE IF NOT EXISTS Staff (
         Staff_id INT AUTO_INCREMENT,
         Name VARCHAR(45) NOT NULL,
         DNI VARCHAR(10) NOT NULL,
@@ -74,5 +74,5 @@ luawave.run(
         Address VARCHAR(100) NULL DEFAULT 'Sin info',
         Active BOOLEAN NOT NULL DEFAULT TRUE
     )
-`);
-
+`
+);

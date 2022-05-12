@@ -7,10 +7,10 @@ import {
   sqlCallback,
 } from "./dbcontrollers.mjs";
 
-export function getAllCategoriasHandler(request, response) {
+export function getAllCategoriesHandler(request, response) {
   try {
-    const keys = "ID_categoria, Name, Description";
-    getIt(keys, "Catergorias", (error, data) => {
+    const keys = "ID_category, Name, Description";
+    getIt(keys, "Categories", (error, data) => {
       if (error) {
         console.error(error);
         response.status(500);
@@ -31,12 +31,12 @@ export function getAllCategoriasHandler(request, response) {
   }
 }
 
-export function getCategoriaHandler(request, response) {
+export function getCategoryHandler(request, response) {
   try {
     findOne(
       "Name,Description",
-      "Categorias",
-      "ID_categoria",
+      "Categories",
+      "ID_category",
       request.params.id,
       (error, data) => {
         if (error) {
@@ -49,6 +49,9 @@ export function getCategoriaHandler(request, response) {
           const json = JSON.stringify(data);
           response.send(json);
           return;
+        } else {
+          response.status(404);
+          response.send("Categoría no encontrada");
         }
       }
     );
@@ -61,26 +64,26 @@ export function getCategoriaHandler(request, response) {
   }
 }
 
-export function postCategoriaController(request, response) {
+export function postCategoryController(request, response) {
   try {
-    const { Name, Description, Photo, Price } = request.body;
-    if (!Name || !Description || !Photo || !Price) {
+    const { Name, Description } = request.body;
+    if (!Name || !Description) {
       response.status(400);
       response.send("Algún campo esta vacío");
       return;
     }
-    findOne("Name", "Articles", "Name", Name, (error, data) => {
+    findOne("Name", "Categories", "Name", Name, (error, data) => {
       if (error) {
         console.error(error);
         throw error;
       }
       if (data) {
         response.status(401);
-        response.send("La categoria ya existe");
+        response.send("La categoría ya existe");
         return;
       } else {
-        insertIt(request.body, "Categoria", sqlCallback);
-        response.send("Categoria registrada correctamente");
+        insertIt(request.body, "Categories", sqlCallback);
+        response.send("Categoría registrada correctamente");
         return;
       }
     });
