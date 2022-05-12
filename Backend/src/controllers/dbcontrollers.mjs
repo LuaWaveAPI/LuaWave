@@ -61,7 +61,7 @@ export const updateArticle = updateFactory("Articles", luawave, [
   "Stock",
   "Photo",
   "Price",
-  "Categoria"
+  "Categoria",
 ]);
 export const updateRentalArticle = updateFactory("Rental_articles", luawave, [
   "Rental_article_id",
@@ -72,6 +72,13 @@ export const updateRentalArticle = updateFactory("Rental_articles", luawave, [
   "Quantity",
   "Price",
 ]);
+
+export const updateCategoria = updateFactory("Categoria", luawave, [
+  "ID_categoria",
+  "Name",
+  "Description",
+]);
+
 function updateFactory(table, db, item) {
   const updatedate = [];
   for (let idx = 0; idx < item.length; idx++) {
