@@ -51,7 +51,7 @@ export function getCategoryHandler(request, response) {
           return;
         } else {
           response.status(404);
-          response.send("Articulo no encontrado");
+          response.send("Categoría no encontrada");
         }
       }
     );

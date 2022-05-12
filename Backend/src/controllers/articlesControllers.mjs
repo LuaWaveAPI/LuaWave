@@ -64,7 +64,7 @@ export function getArticlesController(request, response) {
           return;
         } else {
           response.status(404);
-          response.send("Articulo no encontrado");
+          response.send("Artículo no encontrado");
         }
       }
     );
@@ -81,7 +81,7 @@ export function postArticleController(request, response) {
     const { Name, Description, Photo, Stock, Price, Category } = request.body;
     if (!Name || !Description || !Photo || !Stock || !Price || !Category) {
       response.status(400);
-      response.send("Algun campo esta vacio");
+      response.send("Algún campo esta vacío");
       return;
     }
     findOne("Name", "Articles", "Name", Name, (error, data) => {
@@ -91,12 +91,12 @@ export function postArticleController(request, response) {
       }
       if (data) {
         response.status(401);
-        response.send("El articulo ya existe");
+        response.send("El artículo ya existe");
         return;
       } else {
         insertIt(request.body, "Articles", sqlCallback);
         response.status(201);
-        response.send("Articulo registrado correctamente");
+        response.send("Artículo registrado correctamente");
         return;
       }
     });
@@ -123,7 +123,7 @@ export function putArticleController(request, response) {
       !Category
     ) {
       response.status(400);
-      response.send("Algun campo esta vacio");
+      response.send("Algún campo esta vacio");
       return;
     }
     findOne("Name", "Articles", "Articles_id", Articles_id, (error, data) => {
@@ -133,9 +133,9 @@ export function putArticleController(request, response) {
       }
       if (data) {
         updateArticle("Articles_id", Articles_id, request.body);
-        response.send(`Datos del articulo ${data.Name} modificado`);
+        response.send(`Datos del artículo ${data.Name} modificado`);
       } else {
-        response.send("Articulo no encontrado");
+        response.send("Artículo no encontrado");
       }
     });
   } catch (err) {
@@ -152,7 +152,7 @@ export function deleteArticleController(request, response) {
     const { Articles_id } = request.body;
     if (!Articles_id) {
       response.status(400);
-      response.send("Algun campo esta vacio");
+      response.send("Algún campo esta vacío");
       return;
     }
     findOne("Name", "Articles", "Articles_id", Articles_id, (error, data) => {
@@ -164,10 +164,10 @@ export function deleteArticleController(request, response) {
       if (data) {
         response.status(200);
         deleteIt("Articles", "Articles_id", Articles_id);
-        response.send(`Articulo ${data.Name} borrado correctamente`);
+        response.send(`Artículo ${data.Name} borrado correctamente`);
       } else {
         response.status(404);
-        response.send("Articulo no encontrado");
+        response.send("Artículo no encontrado");
       }
     });
   } catch (err) {
