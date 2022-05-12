@@ -1,5 +1,5 @@
 import express from "express";
-import { deleteArticleController, getAllArticlesHandler, getArticlesHandler, postArticleController, putArticleController } from "./controllers/articlesControllers.mjs";
+import { deleteArticleController, getAllArticlesController, getArticlesController, postArticleController, putArticleController } from "./controllers/articlesControllers.mjs";
 import { getAllCategoriasHandler, getCategoriasHandler, postCategoriaController } from "./controllers/categoriasControllers.mjs";
 
 const PATH_PREFIX = "/api/v0.0"
@@ -9,8 +9,8 @@ const port = 3000;
 try{
     const jsonParser = express.json();
 //Articles
-    app.get(PATH_PREFIX+"/articles/", getAllArticlesHandler);
-    app.get(PATH_PREFIX+"/article/:id", getArticlesHandler);
+    app.get(PATH_PREFIX+"/articles/", getAllArticlesController);
+    app.get(PATH_PREFIX+"/article/:id", getArticlesController);
     app.post(PATH_PREFIX+"/article/",jsonParser, postArticleController);
     app.put(PATH_PREFIX+"/article/", jsonParser, putArticleController);
     app.delete(PATH_PREFIX+"/article", jsonParser, deleteArticleController);
