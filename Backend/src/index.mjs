@@ -11,6 +11,13 @@ import {
   getCategoryHandler,
   postCategoryController,
 } from "./controllers/categoriesControllers.mjs";
+import {
+  getAllStaffController,
+  getStaffController,
+  postStaffController,
+  putStaffController,
+  deleteStaffController,
+} from "./controllers/staffControllers.mjs";
 
 const PATH_PREFIX = "/api/v0.0";
 const app = express();
@@ -30,8 +37,15 @@ try {
   app.get(PATH_PREFIX + "/category/:id", jsonParser, getCategoryHandler);
   app.post(PATH_PREFIX + "/category/", jsonParser, postCategoryController);
 
+  //Staff
+  app.get(PATH_PREFIX + "/staff/", getAllStaffController);
+  app.get(PATH_PREFIX + "/staff/:id", getStaffController);
+  app.post(PATH_PREFIX + "/staff/", jsonParser, postStaffController);
+  app.put(PATH_PREFIX + "/staff/", jsonParser, putStaffController);
+  app.delete(PATH_PREFIX + "/staff/", jsonParser, deleteStaffController);
+
   app.listen(port, () => {
-    console.log("Express running...");
+    console.log(`Express running... Example app listening on port ${port}`);
   });
 } catch (err) {
   console.log("Algo va mal");

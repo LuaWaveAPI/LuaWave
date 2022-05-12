@@ -115,6 +115,17 @@ export const updateCategory = updateFactory("Category", luawave, [
   "Description",
 ]);
 
+export const updateStaff = updateFactory("Staff", luawave, [
+  "Staff_id",
+  "Name",
+  "DNI",
+  "Password",
+  "Email",
+  "Phone",
+  "Address",
+  "Active",
+]);
+
 /** Realiza un itinirario para construir el cuerpo del UPDATE
  * y devuelve la sentencia a usar
  *

@@ -60,6 +60,7 @@ export function getArticlesController(request, response) {
         }
         if (data) {
           const json = JSON.stringify(data);
+          response.status(200);
           response.send(json);
           return;
         } else {
