@@ -7,6 +7,7 @@ import {
   updateCategory,
 } from "./dbcontrollers.mjs";
 
+/**Controlador para obtener los datos de todas las categorías*/
 export function getAllCategoriesHandler(request, response) {
   try {
     const keys = "ID_category, Name, Description";
@@ -31,6 +32,7 @@ export function getAllCategoriesHandler(request, response) {
   }
 }
 
+/**Controlador para obtener los datos de una sola categoría, en función su ID*/
 export function getCategoryHandler(request, response) {
   try {
     findOne(
@@ -64,6 +66,8 @@ export function getCategoryHandler(request, response) {
   }
 }
 
+/**Controlador para añadir los datos de una sola categoría [Name, Description] ya que
+ * la ID_category se genera y asigna automáticamente en la base de datos*/
 export function postCategoryController(request, response) {
   try {
     const { Name, Description } = request.body;
@@ -95,6 +99,9 @@ export function postCategoryController(request, response) {
   }
 }
 
+/**Controlador para modificar los datos de una sola categoría con el mismo cuerpo del POST
+ * añadiendo la ID_Category
+ */
 export function putCategoryController(request, response) {
   try {
     const { ID_category, Name, Description } = request.body;
@@ -123,6 +130,7 @@ export function putCategoryController(request, response) {
   }
 }
 
+/**Controlador para borrar una categoría, en función de su ID_category*/
 export function deleteCategoryController(request, response) {
   try {
     const { ID_category } = request.body;

@@ -48,6 +48,7 @@ try {
   app.put(PATH_PREFIX + "/staff/", jsonParser, putStaffController);
   app.delete(PATH_PREFIX + "/staff/", jsonParser, deleteStaffController);
 
+  //Express running
   app.listen(port, () => {
     console.log(`Express running... Example app listening on port ${port}`);
   });
