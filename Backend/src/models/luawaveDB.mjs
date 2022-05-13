@@ -65,7 +65,7 @@ luawave.run(`CREATE TABLE IF NOT EXISTS Rental_articles (
 
 luawave.run(
   `CREATE TABLE IF NOT EXISTS Staff (
-        Staff_id INT AUTO_INCREMENT,
+        Staff_id INTEGER PRIMARY KEY,
         Name VARCHAR(45) NOT NULL,
         DNI VARCHAR(10) NOT NULL,
         Password VARCHAR(45) NOT NULL,

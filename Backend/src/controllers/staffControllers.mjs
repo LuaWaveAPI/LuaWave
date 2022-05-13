@@ -17,31 +17,20 @@ import {
 */
 export function getAllStaffController(request, response) {
     try {
-        const keys = "Staff_id, Name, DNI, Email, Phone, Address, Active";
+        const keys = "Staff_id, Name, DNI, Password, Email, Phone, Address, Active";
         getIt(keys, "Staff", (error, data) => {
             if (error) {
                 console.error(error);
                 response.status(500);
                 response.send("Database error.");
                 return;
-            }
+            }   
             if (data) {
                 const json = JSON.stringify(data);
                 response.status(200);
                 response.send(json);
                 return;
-            } if (error) {
-                console.error(error);
-                response.status(500);
-                response.send("Database error.");
-                return;
-            }
-            if (data) {
-                const json = JSON.stringify(data);
-                response.status(200);
-                response.send(json);
-                return;
-            }
+            } 
         });
     } catch (err) {
         response.status(500);
@@ -100,7 +89,7 @@ export function postStaffController(request, response) {
         findOne("Name", "Staff", "Name", Name, (error, data) => {
             if (error) {
                 console.error(error);
-                throw error;
+                throw error;    
             }
             if (data) {
                 response.status(401);
@@ -126,8 +115,8 @@ export function postStaffController(request, response) {
 */
 export function putStaffController(request, response) {
     try {
-        const { Name, DNI, Password, Email, Phone, Address, Active } = request.body;
-        if (!Name || !DNI || !Password || !Email || !Phone || !Address || !Active) {
+        const {Staff_id, Name, DNI, Password, Email, Phone, Address, Active } = request.body;
+        if (!Staff_id || !Name || !DNI || !Password || !Email || !Phone || !Address || !Active) {
             response.status(400);
             response.send("Algún campo esta vacío");
             return;

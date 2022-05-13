@@ -38,7 +38,7 @@ try {
   app.post(PATH_PREFIX + "/category/", jsonParser, postCategoryController);
 
   //Staff
-  app.get(PATH_PREFIX + "/staff/", getAllStaffController);
+  app.get(PATH_PREFIX + "/staffs/", getAllStaffController);
   app.get(PATH_PREFIX + "/staff/:id", getStaffController);
   app.post(PATH_PREFIX + "/staff/", jsonParser, postStaffController);
   app.put(PATH_PREFIX + "/staff/", jsonParser, putStaffController);
