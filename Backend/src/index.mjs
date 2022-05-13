@@ -10,6 +10,8 @@ import {
   getAllCategoriesHandler,
   getCategoryHandler,
   postCategoryController,
+  putCategoryController,
+  deleteCategoryController,
 } from "./controllers/categoriesControllers.mjs";
 import { getAllOrdersController } from "./controllers/OrdersControllers.mjs";
 import {
@@ -37,6 +39,8 @@ try {
   app.get(PATH_PREFIX + "/categories/", getAllCategoriesHandler);
   app.get(PATH_PREFIX + "/category/:id", jsonParser, getCategoryHandler);
   app.post(PATH_PREFIX + "/category/", jsonParser, postCategoryController);
+  app.put(PATH_PREFIX + "/category/", jsonParser, putCategoryController);
+  app.delete(PATH_PREFIX + "/category", jsonParser, deleteCategoryController);
 
   //Orders
   app.get(PATH_PREFIX+ "/orders/", getAllOrdersController)
@@ -47,6 +51,7 @@ try {
   app.put(PATH_PREFIX + "/staff/", jsonParser, putStaffController);
   app.delete(PATH_PREFIX + "/staff/", jsonParser, deleteStaffController);
 
+  //Express running
   app.listen(port, () => {
     console.log(`Express running... Example app listening on port ${port}`);
   });

@@ -1,4 +1,3 @@
-// getAllStaffController getStaffController postStaffController putStaffController deleteStaffController
 import {
     getIt,
     findOne,
@@ -17,7 +16,7 @@ import {
 */
 export function getAllStaffController(request, response) {
     try {
-        const keys = "Staff_id, Name, DNI, Password, Email, Phone, Address, Active";
+        const keys = "Staff_id, Name, DNI, Email, Phone, Address, Active";
         getIt(keys, "Staff", (error, data) => {
             if (error) {
                 console.error(error);
