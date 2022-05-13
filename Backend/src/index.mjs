@@ -10,6 +10,8 @@ import {
   getAllCategoriesHandler,
   getCategoryHandler,
   postCategoryController,
+  putCategoryController,
+  deleteCategoryController,
 } from "./controllers/categoriesControllers.mjs";
 import {
   getAllStaffController,
@@ -36,6 +38,8 @@ try {
   app.get(PATH_PREFIX + "/categories/", getAllCategoriesHandler);
   app.get(PATH_PREFIX + "/category/:id", jsonParser, getCategoryHandler);
   app.post(PATH_PREFIX + "/category/", jsonParser, postCategoryController);
+  app.put(PATH_PREFIX + "/category/", jsonParser, putCategoryController);
+  app.delete(PATH_PREFIX + "/category", jsonParser, deleteCategoryController);
 
   //Staff
   app.get(PATH_PREFIX + "/staffs/", getAllStaffController);

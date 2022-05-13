@@ -1,10 +1,10 @@
 import {
   findOne,
-  findAll,
   getIt,
   insertIt,
   deleteIt,
   sqlCallback,
+  updateCategory,
 } from "./dbcontrollers.mjs";
 
 export function getAllCategoriesHandler(request, response) {
@@ -85,6 +85,65 @@ export function postCategoryController(request, response) {
         insertIt(request.body, "Categories", sqlCallback);
         response.send("Categoría registrada correctamente");
         return;
+      }
+    });
+  } catch (err) {
+    response.status(500);
+    console.log(err);
+    response.send(err);
+    return;
+  }
+}
+
+export function putCategoryController(request, response) {
+  try {
+    const { ID_category, Name, Description } = request.body;
+    if (!ID_category || !Name || !Description) {
+      response.status(400);
+      response.send("Algún campo esta vacio");
+      return;
+    }
+    findOne("Name", "Categories", "ID_category", ID_category, (error, data) => {
+      if (error) {
+        console.error(error);
+        throw error;
+      }
+      if (data) {
+        updateCategory("ID_category", ID_category, request.body);
+        response.send(`Datos de la categoría modificados`);
+      } else {
+        response.send("Categoría no encontrada");
+      }
+    });
+  } catch (err) {
+    response.status(500);
+    console.log(err);
+    response.send(err);
+    return;
+  }
+}
+
+export function deleteCategoryController(request, response) {
+  try {
+    const { ID_category } = request.body;
+    if (!ID_category) {
+      response.status(400);
+      response.send("Algún campo esta vacío");
+      return;
+    }
+    findOne("Name", "Categories", "ID_category", ID_category, (error, data) => {
+      if (error) {
+        response.status(500);
+        console.error(error);
+        throw error;
+      }
+      if (data) {
+        response.status(200);
+        deleteIt("Categories", "ID_category", ID_category);
+        response.send(`Categoría borrada correctamente`);
+      } else {
+        response.status(404);
+        response.send("Categoría no encontrada");
       }
     });
   } catch (err) {

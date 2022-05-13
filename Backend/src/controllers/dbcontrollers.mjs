@@ -109,7 +109,7 @@ export const updateRentalArticle = updateFactory("Rental_articles", luawave, [
   "Price",
 ]);
 
-export const updateCategory = updateFactory("Category", luawave, [
+export const updateCategory = updateFactory("Categories", luawave, [
   "ID_category",
   "Name",
   "Description",
