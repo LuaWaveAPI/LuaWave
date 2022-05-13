@@ -11,6 +11,7 @@ import {
   getCategoryHandler,
   postCategoryController,
 } from "./controllers/categoriesControllers.mjs";
+import { getAllOrdersController } from "./controllers/OrdersControllers.mjs";
 import {
   getAllStaffController,
   getStaffController,
@@ -37,6 +38,8 @@ try {
   app.get(PATH_PREFIX + "/category/:id", jsonParser, getCategoryHandler);
   app.post(PATH_PREFIX + "/category/", jsonParser, postCategoryController);
 
+  //Orders
+  app.get(PATH_PREFIX+ "/orders/", getAllOrdersController)
   //Staff
   app.get(PATH_PREFIX + "/staffs/", getAllStaffController);
   app.get(PATH_PREFIX + "/staff/:id", getStaffController);
