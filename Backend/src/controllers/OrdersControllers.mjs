@@ -14,7 +14,8 @@ import {
  * @param {*} response
  * @returns
  */
-/*export function getAllOrdersController(request, response) {
+
+export function getAllOrdersController(request, response) {
 try {
     const keys = "Rental_Articles_id, Rental_id, Articles_id, Quantity";
     getIt(keys, "Rental_Articles", (error, data) => {
@@ -69,7 +70,7 @@ try {
     response.send(err);
     return;
     }
-}*/
+}
 
 export function postOrderController(request, response) {
     try {
