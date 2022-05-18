@@ -13,7 +13,7 @@ import {
   putCategoryController,
   deleteCategoryController,
 } from "./controllers/categoriesControllers.mjs";
-import { getAllOrdersController } from "./controllers/OrdersControllers.mjs";
+import { getAllOrdersController, getOrderController, postOrderController } from "./controllers/OrdersControllers.mjs";
 import {
   getAllStaffController,
   getStaffController,
@@ -43,7 +43,9 @@ try {
   app.delete(PATH_PREFIX + "/category", jsonParser, deleteCategoryController);
 
   //Orders
-  app.get(PATH_PREFIX+ "/orders/", getAllOrdersController)
+  app.get(PATH_PREFIX+ "/orders/", getAllOrdersController);
+  app.get(PATH_PREFIX+ "/order/:id", getOrderController);
+  app.post(PATH_PREFIX + "/order/", jsonParser, postOrderController);
   //Staff
   app.get(PATH_PREFIX + "/staffs/", getAllStaffController);
   app.get(PATH_PREFIX + "/staff/:id", getStaffController);

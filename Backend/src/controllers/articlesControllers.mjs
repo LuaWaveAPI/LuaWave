@@ -15,7 +15,7 @@ import {
  */
 export function getAllArticlesController(request, response) {
   try {
-    const keys = "Articles_id, Name, Description,Category";
+    const keys = "Articles_id, Name, Description,Category, Price";
     getIt(keys, "Articles", (error, data) => {
       if (error) {
         console.error(error);
