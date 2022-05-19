@@ -8,7 +8,7 @@ import {
     sqlCallback,
     findAll,
     updateRental,
-  } from "./dbcontrollers.mjs";
+  } from "./dbControllers.mjs";
 
 /**Controlador que obtinen todos los datos que quieres de la tabla ordenes
  *

@@ -13,7 +13,7 @@ import {
   putCategoryController,
   deleteCategoryController,
 } from "./controllers/categoriesControllers.mjs";
-import { deleteOrderController, getAllOrdersController, getOrderController, postOrderController, putOrderController } from "./controllers/OrdersControllers.mjs";
+import { deleteOrderController, getAllOrdersController, getOrderController, postOrderController, putOrderController } from "./controllers/ordersControllers.mjs";
 import {
   getAllStaffController,
   getStaffController,

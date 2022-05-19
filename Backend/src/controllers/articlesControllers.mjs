@@ -5,7 +5,7 @@ import {
   getIt,
   insertIt,
   sqlCallback,
-} from "./dbcontrollers.mjs";
+} from "./dbControllers.mjs";
 
 /**Controlador que obtinen todos los datos que quieres de la tabla articulos
  *

@@ -6,7 +6,7 @@ import {
     deleteIt,
     findAll,
     sqlCallback,
-} from "./dbcontrollers.mjs";
+} from "./dbControllers.mjs";
 
 /**Controlador para obtener los datos de todo el Staff 
 *

@@ -5,7 +5,7 @@ import {
   deleteIt,
   sqlCallback,
   updateCategory,
-} from "./dbcontrollers.mjs";
+} from "./dbControllers.mjs";
 
 /**Controlador para obtener los datos de todas las categorías*/
 export function getAllCategoriesHandler(request, response) {
