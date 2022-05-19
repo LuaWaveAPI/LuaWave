@@ -42,14 +42,11 @@ luawave.run(
 );
 
 luawave.run(`CREATE TABLE IF NOT EXISTS Rental_articles (
-        Rental_articles_id INT AUTO_INCREMENT,
+        Rental_articles_id INTEGER PRIMARY KEY,
         Articles_id INT NOT NULL,
         Rental_id INT NOT NULL,
-        Rental_date DATETIME NOT NULL,
-        Return_date DATETIME NOT NULL,
         Quantity INT NOT NULL,
         Price DECIMAL NOT NULL,
-        PRIMARY KEY (Rental_articles_id, Articles_id, Rental_id),
         CONSTRAINT Articles_id
             FOREIGN KEY (Articles_id)
             REFERENCES Articles (Articles_id)
