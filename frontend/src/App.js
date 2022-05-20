@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import Test from './views/test/test';
+import Test from './views/test/Test.jsx';
 
 function App() {
   const [testView, setTest] = useState(true)
