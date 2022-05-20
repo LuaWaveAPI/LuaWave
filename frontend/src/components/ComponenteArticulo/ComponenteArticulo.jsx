@@ -6,7 +6,11 @@ function ComponenteArticulo({articulo}) {
 
     return (
     <>
-        <h1 className={styles.test}>saludo: {articulo.Name}</h1>
+        <div>
+
+        </div>
+        <h2 className={styles.test}>
+            <span className={styles.derecha}>con accesorios</span><br /><span className={styles.derecha}>5 días</span>{articulo.Name}</h2>
         <p>{articulo.Description}</p>
     </>
     );
