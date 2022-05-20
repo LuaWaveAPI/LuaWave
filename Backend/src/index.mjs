@@ -24,7 +24,7 @@ import {
 
 const PATH_PREFIX = "/api/v0.0";
 const app = express();
-const port = 3000;
+const port = 4000;
 
 try {
   const jsonParser = express.json();
