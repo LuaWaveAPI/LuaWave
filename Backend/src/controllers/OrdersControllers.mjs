@@ -89,26 +89,24 @@ export function postOrderController(request, response) {
                 if (err) throw err;
             })
             luawave.get(`SELECT last_insert_rowid() as id`,
-            (error,datas)=>{
+            (error,lastID)=>{
                 if (error) throw err;
-                if (datas) {
+                if (lastID) {
                     for(let item of Articles){
                         findOne(
-                        "Price","Articles",
+                        "Price",
+                        "Articles",
                         "Articles_id", 
                         item.Articles_id,
                         (err,data)=>{
                             if (err) throw err;
                             if (data) {
-                                let price = data.Price
-                                const order = 
                                 insertIt(
                                     {
-                                    Rental_id: datas.id,
-                                    Articles_id: 
-                                    item.Articles_id, 
+                                    Rental_id: lastID.id,
+                                    Articles_id: item.Articles_id, 
                                     Quantity: item.Quantity,
-                                    Price: price
+                                    Price: data.Price
                                     }, 
                                     "Rental_articles", 
                                     (err)=>{
