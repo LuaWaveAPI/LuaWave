@@ -10,8 +10,8 @@ import {
     updateRental,
   } from "./dbControllers.mjs";
 
-/**Controlador que obtinen todos los datos que quieres de la tabla ordenes
- *
+/**Controlador que obtienen todos los pedidos de forma mas simplificada,
+ * este controlador no muestra los articulos relacionados con cada pedido
  * @param {*} request
  * @param {*} response
  * @returns
@@ -37,6 +37,13 @@ export function getAllOrdersController(request, response) {
     }
 }
 
+
+/**Controlador un un pedido mas detalladamente con sus articulos
+ * 
+ * @param {*} request 
+ * @param {*} response 
+ * @returns 
+ */
 export function getOrderController(request, response) {
     try {
         findOne(
@@ -74,6 +81,16 @@ export function getOrderController(request, response) {
     }
 }
 
+/** Controlador para añadir pedido
+ * 
+ * PRIMERO: Insertamos en la tabla Rental los datos proporcionados,
+ * SEGUNDO: Obtenemos el identificador de ese nuevo pedido,
+ * TERCERO: insertamos todos los articulos con ese nuevo identificador en la tabla Rental_articles.
+ * 
+ * @param {*} request 
+ * @param {*} response 
+ * @returns 
+ */
 export function postOrderController(request, response) {
     try {
         const {Name, DNI, Email, Phone, Code_postal, Articles} = request.body
@@ -132,6 +149,16 @@ export function postOrderController(request, response) {
     }
   }
 
+/**Controlador para modificar un pedido.
+ * PRIMERO: Busca si existe el pedido,
+ * SEGUNDO: Modifica los datos de dicho pedidos,
+ * TERCERO: borra todos los datos relacionado con dicho pedido en la tabla
+ * Rental_articles y vuelve a inserte los nuevos que le proporcionemos.
+ * 
+ * @param {*} request 
+ * @param {*} response 
+ * @returns 
+ */
 export function putOrderController(request, response) {
     try {
         const {Rental_id, Name, DNI, Email, Phone, Code_postal, Articles} = request.body
@@ -185,6 +212,15 @@ export function putOrderController(request, response) {
     }
 }
 
+/**Controlador que borra un pedido.
+ * PRIMERO: Busca si existe dicho pedido,
+ * SEGUNDO: Borra todos los datos relacionados de la tabla Rental_Articles,
+ * TERCERO: Elimina el pedido de la tabla Rental.
+ * 
+ * @param {*} request 
+ * @param {*} response 
+ * @returns 
+ */
 export function deleteOrderController(request, response) {
     try {
         const { Rental_id } = request.body;
