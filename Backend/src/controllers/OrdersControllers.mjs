@@ -21,7 +21,7 @@ export function getAllOrdersController(request, response) {
         getIt(
             "Rental_id, Name, DNI, Email, Phone, Code_postal",
             "Rental", 
-            (error, data) => {
+            (err, data) => {
                 if (err) throw err;
                 if (data) {
                     response.json(data);
@@ -51,7 +51,7 @@ export function getOrderController(request, response) {
             "Rental",
             "Rental_id",    
             request.params.id,
-            (error, data) => {
+            (err, data) => {
                 if (err) throw err;
                 if (data) {
                     findAll(

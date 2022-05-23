@@ -1,0 +1,14 @@
+.centrado {
+    text-align: center;
+}
+
+.derecha {
+    display: flex;
+    justify-content: right;
+    padding-right: 1 rem;
+}
+
+.test {
+    display: flex;
+    background-color: aqua;
+}
