@@ -1,21 +1,18 @@
-import ListaPacks from "../../components/ListaArticulos/ListaArticulos.jsx"
-import ComponenteArticulo from "../../components/ComponenteArticulo/ComponenteArticulo.jsx"
-
-const articuloMockup = {
-    "Articles_id": 3,
-    "Name": "Skate",
-    "Description": "asef2d",
-    "Category": 1,
-    "Price": 12323
-}
-
-
+import ListaArticulos from "../../components/ListaArticulos/ListaArticulos.jsx"
+import { urls } from "../../defines/defines.jsx"
 
 function Test (){
     return (
         <>
         <h3 className="centrado">Alquiler de tablas de Skate con y sin accesorios</h3>
-        <ComponenteArticulo articulo={articuloMockup}/>
+        <h2>Surf con accesorios</h2>
+        <ListaArticulos host={urls[0]}/>
+        <h2>Surf sin accesorios</h2>
+        <ListaArticulos host={urls[1]}/>
+        <h2>Skate con accesorios</h2>
+        <ListaArticulos host={urls[2]}/>
+        <h2>Skate sin accesorios</h2>
+        <ListaArticulos host={urls[3]}/>
         </>
     )// poner los componentes en el return
 }

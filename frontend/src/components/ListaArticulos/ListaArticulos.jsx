@@ -1,44 +1,35 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import ComponenteArticulo from "../ComponenteArticulo/ComponenteArticulo";
+import { Context } from "../../storage/SharedStorage";
 
 /**
  * Muestra la lista de artículos.
  * Obtiene la lista de artículos en base al valor de props.categoria
  * @param {*} props - props.categoria = "Surf" | "Skate"
  */
-function ListaArticulos(props) {
+function ListaArticulos({host}) {
     
+    const [ store, setStore ] = useContext(Context)
     const [articulos, setArticulos] = useState([])
-
+    async function get(url){
+        const response = await fetch(url);
+        const data = await response.json();
+        setArticulos(data)
+        }
+        
+    
     useEffect(
         ()=>{
-            //TODO: fetch que obtenga la lista de artículos en base a props.categoria
-            //Mocked fetch
-            setArticulos([
-                {
-                    "Articles_id": 1,
-                    "Name": "pepito",
-                    "Description": "as2d",
-                    "Category": 1,
-                    "Price": 2
-                },
-                {
-                    "Articles_id": 2,
-                    "Name": "menganito",
-                    "Description": "as2d",
-                    "Category": 1,
-                    "Price": 123123
-                }
-            ])
-            // End mocked fetch
+            get(host)
         },
-        [props.categoria]
+        []
     )
 
     return (
     <>
-        {articulos.map( articulo => <ComponenteArticulo articulo={articulo}/> )}
+        {articulos.map( articulo => <ComponenteArticulo articulo={articulo}/>)}
     </>
-    );
+    )
   }
+
   export default ListaArticulos;

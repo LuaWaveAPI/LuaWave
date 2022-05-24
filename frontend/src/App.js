@@ -1,12 +1,15 @@
 import './App.css';
 import { useState } from 'react';
 import Test from './views/test/Test.jsx';
+import { ContextProvider } from "./storage/SharedStorage";
 
 function App() {
-  const [testView, setTest] = useState(true)
+  const [ currentView, setCurrentView ] = useState(Test)
   return (
   <>
-  {testView && <Test/>}
+    <ContextProvider>
+      {currentView}
+    </ContextProvider>
   </>
   );
 }
