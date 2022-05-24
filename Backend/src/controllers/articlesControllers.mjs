@@ -48,7 +48,7 @@ export function getAllArticlesController(request, response) {
 export function getSurfConArticlesController(request, response) {
   try {
     const keys = "Articles_id, Name, Description,Category, Price";
-    findAll(keys, "Articles", "Category", "Surf con acessorios", (error, data) => {
+    findAll(keys, "Articles", "Category", "Surf con accesorios", (error, data) => {
       if (error) {
         console.error(error);
         response.status(500);
