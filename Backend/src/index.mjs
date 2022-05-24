@@ -3,8 +3,10 @@ import {
   deleteArticleController,
   getAllArticlesController,
   getArticlesController,
-  getSkateArticlesController,
-  getSurfArticlesController,
+  getSkateConArticlesController,
+  getSkateSinArticlesController,
+  getSurfConArticlesController,
+  getSurfSinArticlesController,
   postArticleController,
   putArticleController,
 } from "./controllers/articlesControllers.mjs";
@@ -32,8 +34,10 @@ try {
   const jsonParser = express.json();
   //Articles
   app.get(PATH_PREFIX + "/articles/", getAllArticlesController);
-  app.get(PATH_PREFIX + "/articles/surf", getSurfArticlesController )
-  app.get(PATH_PREFIX + "/articles/skate", getSkateArticlesController )
+  app.get(PATH_PREFIX + "/articles/surf/con", getSurfConArticlesController )
+  app.get(PATH_PREFIX + "/articles/surf/sin", getSurfSinArticlesController )
+  app.get(PATH_PREFIX + "/articles/skate/con", getSkateConArticlesController)
+  app.get(PATH_PREFIX + "/articles/skate/sin", getSkateSinArticlesController)
   app.get(PATH_PREFIX + "/article/:id", getArticlesController);
   app.post(PATH_PREFIX + "/article/", jsonParser, postArticleController);
   app.put(PATH_PREFIX + "/article/", jsonParser, putArticleController);

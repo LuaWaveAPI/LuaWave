@@ -45,10 +45,35 @@ export function getAllArticlesController(request, response) {
  * @param {*} response
  * @returns
  */
-export function getSurfArticlesController(request, response) {
+export function getSurfConArticlesController(request, response) {
   try {
     const keys = "Articles_id, Name, Description,Category, Price";
-    findAll(keys, "Articles", "Category", "Surf", (error, data) => {
+    findAll(keys, "Articles", "Category", "Surf con acessorios", (error, data) => {
+      if (error) {
+        console.error(error);
+        response.status(500);
+        response.send("Database error.");
+        return;
+      }
+      if (data) {
+        const json = JSON.stringify(data);
+        response.status(200);
+        response.send(json);
+        return;
+      }
+    });
+  } catch (err) {
+    response.status(500);
+    console.log(err);
+    response.send(err);
+    return;
+  }
+}
+
+export function getSurfSinArticlesController(request, response) {
+  try {
+    const keys = "Articles_id, Name, Description,Category, Price";
+    findAll(keys, "Articles", "Category", "Surf sin accesorios", (error, data) => {
       if (error) {
         console.error(error);
         response.status(500);
@@ -76,10 +101,35 @@ export function getSurfArticlesController(request, response) {
  * @param {*} response
  * @returns
  */
-export function getSkateArticlesController(request, response) {
+export function getSkateConArticlesController(request, response) {
   try {
     const keys = "Articles_id, Name, Description,Category, Price";
-    findAll(keys, "Articles", "Category", "Skate", (error, data) => {
+    findAll(keys, "Articles", "Category", "Skate con accesorios", (error, data) => {
+      if (error) {
+        console.error(error);
+        response.status(500);
+        response.send("Database error.");
+        return;
+      }
+      if (data) {
+        const json = JSON.stringify(data);
+        response.status(200);
+        response.send(json);
+        return;
+      }
+    });
+  } catch (err) {
+    response.status(500);
+    console.log(err);
+    response.send(err);
+    return;
+  }
+}
+
+export function getSkateSinArticlesController(request, response) {
+  try {
+    const keys = "Articles_id, Name, Description,Category, Price";
+    findAll(keys, "Articles", "Category", "Skate sin accesorios", (error, data) => {
       if (error) {
         console.error(error);
         response.status(500);
