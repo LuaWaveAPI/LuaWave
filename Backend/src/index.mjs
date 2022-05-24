@@ -3,6 +3,8 @@ import {
   deleteArticleController,
   getAllArticlesController,
   getArticlesController,
+  getSkateArticlesController,
+  getSurfArticlesController,
   postArticleController,
   putArticleController,
 } from "./controllers/articlesControllers.mjs";
@@ -30,6 +32,8 @@ try {
   const jsonParser = express.json();
   //Articles
   app.get(PATH_PREFIX + "/articles/", getAllArticlesController);
+  app.get(PATH_PREFIX + "/articles/surf", getSurfArticlesController )
+  app.get(PATH_PREFIX + "/articles/skate", getSkateArticlesController )
   app.get(PATH_PREFIX + "/article/:id", getArticlesController);
   app.post(PATH_PREFIX + "/article/", jsonParser, postArticleController);
   app.put(PATH_PREFIX + "/article/", jsonParser, putArticleController);

@@ -5,6 +5,7 @@ import {
   getIt,
   insertIt,
   sqlCallback,
+  findAll,
 } from "./dbControllers.mjs";
 
 /**Controlador que obtinen todos los datos que quieres de la tabla articulos
@@ -17,6 +18,68 @@ export function getAllArticlesController(request, response) {
   try {
     const keys = "Articles_id, Name, Description,Category, Price";
     getIt(keys, "Articles", (error, data) => {
+      if (error) {
+        console.error(error);
+        response.status(500);
+        response.send("Database error.");
+        return;
+      }
+      if (data) {
+        const json = JSON.stringify(data);
+        response.status(200);
+        response.send(json);
+        return;
+      }
+    });
+  } catch (err) {
+    response.status(500);
+    console.log(err);
+    response.send(err);
+    return;
+  }
+}
+
+/**Controlador que obtinen todos los datos con categoria Surf
+ *
+ * @param {*} request
+ * @param {*} response
+ * @returns
+ */
+export function getSurfArticlesController(request, response) {
+  try {
+    const keys = "Articles_id, Name, Description,Category, Price";
+    findAll(keys, "Articles", "Category", "Surf", (error, data) => {
+      if (error) {
+        console.error(error);
+        response.status(500);
+        response.send("Database error.");
+        return;
+      }
+      if (data) {
+        const json = JSON.stringify(data);
+        response.status(200);
+        response.send(json);
+        return;
+      }
+    });
+  } catch (err) {
+    response.status(500);
+    console.log(err);
+    response.send(err);
+    return;
+  }
+}
+
+/**Controlador que obtinen todos los datos con categoria skate
+ *
+ * @param {*} request
+ * @param {*} response
+ * @returns
+ */
+export function getSkateArticlesController(request, response) {
+  try {
+    const keys = "Articles_id, Name, Description,Category, Price";
+    findAll(keys, "Articles", "Category", "Skate", (error, data) => {
       if (error) {
         console.error(error);
         response.status(500);
@@ -112,14 +175,13 @@ export function postArticleController(request, response) {
 // TODO: poner autorizacion y respuesta 401
 export function putArticleController(request, response) {
   try {
-    const { Articles_id, Name, Description, Photo, Stock, Price, Category } =
+    const { Articles_id, Name, Description, Photo, Price, Category } =
       request.body;
     if (
       !Articles_id ||
       !Name ||
       !Description ||
       !Photo ||
-      !Stock ||
       !Price ||
       !Category
     ) {

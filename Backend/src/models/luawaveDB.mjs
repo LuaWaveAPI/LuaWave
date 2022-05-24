@@ -14,10 +14,10 @@ luawave.run(`CREATE TABLE IF NOT EXISTS Articles (
         Stock INTEGER NOT NULL,
         Photo TEXT NOT NULL,
         Price NUMERIC NOT NULL,
-        Category INTEGER NOT NULL,
+        Category VARCHAR(10) NOT NULL,
         CONSTRAINT Category
             FOREIGN KEY (Category)
-            REFERENCES Categories (ID_category)
+            REFERENCES Categories (Name)
             ON DELETE NO ACTION
             ON UPDATE NO ACTION
     )
