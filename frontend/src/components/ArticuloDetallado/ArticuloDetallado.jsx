@@ -1,11 +1,19 @@
 import { useState } from "react";
 
-function ArticuloDetallado({articulo}) {
-    const [articulo, setArticulo] = useState();
+function ArticuloDetallado() {
+    const articulo = 
+    {
+        Name: "hola",
+        Description: "mundo",
+        Price: 12,
+        Photo: ""
+    }
+    
 
     
     return (
     <>
+    <h3>Este es el artículo detallado</h3>
     <div>     
         <p>{articulo.Name}</p>
         <p>{articulo.Price}</p>
