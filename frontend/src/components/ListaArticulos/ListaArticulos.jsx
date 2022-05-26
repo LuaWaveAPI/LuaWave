@@ -1,7 +1,5 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import ComponenteArticulo from "../ComponenteArticulo/ComponenteArticulo";
-import { Context } from "../../storage/SharedStorage";
-
 /**
  * Muestra la lista de artículos.
  * Obtiene la lista de artículos en base al valor de props.categoria
@@ -9,7 +7,6 @@ import { Context } from "../../storage/SharedStorage";
  */
 function ListaArticulos({host}) {
     
-    const [ store, setStore ] = useContext(Context)
     const [articulos, setArticulos] = useState([])
     async function get(url){
         const response = await fetch(url);
