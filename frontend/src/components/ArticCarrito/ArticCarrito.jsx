@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ComponenteArticulo from "../ComponenteArticulo/ComponenteArticulo";
-function ArticCarrito({articulo}){
-    const [articuloscantidad, setArticulosCantidad] = useState (articulo.Quantity);
+function ArticCarrito({idx}){
+    const [articulo, setArticulo] = useState (JSON.parse(localStorage.getItem("articulos"))[idx])
+    const [articuloscantidad, setArticulosCantidad] = useState (articulo.Quantity)
     
     function operation(a){
         setArticulosCantidad(a)
-        articulo.Quantity = articuloscantidad
-    }
 
+    }
+    useEffect(()=>{
+        const data = JSON.parse(localStorage.getItem("articulos"))
+        data[idx].Quantity = articuloscantidad
+        localStorage.setItem("articulos", JSON.stringify(data))}
+        ,[articuloscantidad])
 return(
     <>
         <ComponenteArticulo articulo={articulo}/>
