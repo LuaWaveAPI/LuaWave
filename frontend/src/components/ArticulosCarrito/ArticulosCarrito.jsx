@@ -1,8 +1,8 @@
 
 import ArticCarrito from "../ArticCarrito/ArticCarrito"
 function ArticulosCarrito(){
-    const articulos2 = localStorage.getItem("articulos")
-    const articulos = [
+    const articulos = JSON.parse(localStorage.getItem("articulos"))
+    /*localStorage.setItem("articulos", JSON.stringify([
         {
             Name: "hola",
             Description: "mundo",
@@ -15,14 +15,15 @@ function ArticulosCarrito(){
             Price: 122,
             Quantity:2
         }
-    ]
+    ]))*/
+    //Copiar lo de arriba en la consola del navegador para añadir al localstorage
 
     return(
         <>
         <h2>Carrito</h2>
-        {articulos.map( articulo => 
+        {articulos.map( (articulo, idx) => 
             <>
-            <ArticCarrito articulo={articulo}/>
+            <ArticCarrito idx={idx} />
             </>
             )}
             
