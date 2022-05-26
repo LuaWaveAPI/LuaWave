@@ -1,5 +1,4 @@
 import express, { json } from "express";
-
 import {
   deleteArticleController,
   getAllArticlesController,
@@ -11,7 +10,6 @@ import {
   postArticleController,
   putArticleController,
 } from "./controllers/articlesControllers.mjs";
-
 import {
   getAllCategoriesHandler,
   getCategoryHandler,
@@ -19,7 +17,6 @@ import {
   putCategoryController,
   deleteCategoryController,
 } from "./controllers/categoriesControllers.mjs";
-
 import {
   deleteOrderController,
   getAllOrdersController,
@@ -27,7 +24,6 @@ import {
   postOrderController,
   putOrderController,
 } from "./controllers/ordersControllers.mjs";
-
 import {
   getAllStaffController,
   getStaffController,
@@ -35,6 +31,10 @@ import {
   putStaffController,
   deleteStaffController,
 } from "./controllers/staffControllers.mjs";
+
+const PATH_PREFIX = "/api/v0.0";
+const app = express();
+const port = 4000;
 
 try {
   const jsonParser = express.json();
