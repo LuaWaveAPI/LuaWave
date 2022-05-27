@@ -1,7 +1,8 @@
 
+import { useState } from "react"
 import ArticCarrito from "../ArticCarrito/ArticCarrito"
 function ArticulosCarrito(){
-    const articulos = JSON.parse(localStorage.getItem("articulos"))
+    const [articulos, setArticulos] = useState(JSON.parse(localStorage.getItem("articulos")))
     /*localStorage.setItem("articulos", JSON.stringify([
         {
             Name: "hola",
@@ -23,7 +24,7 @@ function ArticulosCarrito(){
         <h2>Carrito</h2>
         {articulos.map( (articulo, idx) => 
             <>
-            <ArticCarrito idx={idx} />
+            <ArticCarrito idx={idx} setArticulos={setArticulos} />
             </>
             )}
             
