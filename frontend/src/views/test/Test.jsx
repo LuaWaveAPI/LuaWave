@@ -3,6 +3,7 @@ import { urls } from "../../defines/defines.jsx"
 import ArticulosCarrito from "../../components/ArticulosCarrito/ArticulosCarrito.jsx"
 import ArticuloDetallado from "../../components/ArticuloDetallado/ArticuloDetallado.jsx"
 import { useState } from "react"
+import FormularioCarrito from "../../components/FormularioCarrito/FormularioCarrito.jsx"
 
 
 function Test (){
@@ -24,7 +25,8 @@ function Test (){
         <h2>Skate sin accesorios</h2>
         <ListaArticulos host={urls[3]}setArticuloFull={setArticuloFull}/>
         <ArticulosCarrito/>
-        {<ArticuloDetallado articuloFull={articuloFull}/>}
+        <ArticuloDetallado articuloFull={articuloFull}/>
+        <FormularioCarrito></FormularioCarrito>
         
     
         </>
