@@ -1,6 +1,9 @@
+import Carrusel from "../../components/Carrusel/Carrusel"
+
+
 function Home () {
     return (
-        <h1>Home</h1>
+        <Carrusel/>
     )
 }
 
