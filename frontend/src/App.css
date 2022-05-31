@@ -7,3 +7,99 @@ body, html {
   overflow: hidden;
   user-select: none;
 }
+
+
+/*
+@font-face {
+  font-family: 'BillionDreams';
+  src: url('../fonts/BillionDreams_PERSONAL.ttf') format('truetype');
+}
+*/
+
+/*
+a:-webkit-any-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: white; 
+  text-shadow: black 0.1em 0.1em 0.2em 
+}
+*/
+
+/* Para el nav */
+
+nav a:focus {
+  color: dodgerblue;
+  cursor: pointer;
+  text-decoration: underline wavy;
+}
+
+nav p:hover  {
+  color:dodgerblue;  
+}
+
+.sizeP {
+  font-size: 1.9em;
+  margin-top: 15px;
+  margin-bottom: px;
+  padding-right: 20px;
+} 
+
+.navFondo {
+  background-color: black;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 7vh;
+
+}
+
+.divLuaWaveNave {
+  color: White;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/*
+.navFondo {
+  font-family: "BillionDreams";
+  font-weight: lighter;
+}
+*/
+
+.logo {
+  width: 50px;
+  height: 50px;
+  padding-top: 6px;
+}
+
+.carrito {
+  width: 65px;
+  height: 65px;
+  padding-top: 3px;
+}
+
+.nombre {
+  width: 140px;
+  height: 40px;
+  padding-top: 15px;
+  margin-right: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+.lista {
+  display: none;
+}
+
+
+
+
