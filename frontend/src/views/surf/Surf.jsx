@@ -21,7 +21,7 @@ function Surf () {
         <>
             <button onClick={()=>changeView(urls[0], "con")}>con</button>
             <button onClick={()=>changeView(urls[1], "sin")}>sin</button>
-            <h2>surf {tittle} accesorios</h2>
+            <h2>Surf {tittle} accesorios</h2>
             <ListaArticulos host={pag} setArticuloFull={setArticuloFull} setShowButton={setShowButton}/>
             <ArticuloDetallado articuloFull={articuloFull} showButton={showButton} />
         </>

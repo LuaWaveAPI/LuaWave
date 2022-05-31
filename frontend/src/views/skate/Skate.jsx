@@ -1,7 +1,30 @@
-function Skate () {
+import { useState } from "react"
+import { urls } from "../../defines/defines"
+import ListaArticulos from "../../components/ListaArticulos/ListaArticulos"
+import ArticuloDetallado from "../../components/ArticuloDetallado/ArticuloDetallado"
 
+function Skate () {
+    const [showButton, setShowButton] = useState(false)
+    const [articuloFull, setArticuloFull] = useState("")
+    const [tittle, setTittle] = useState("con")
+    const [ pag, setPag] = useState(urls[0])
+   
+    function changeView(url, x){
+        setPag(url)
+        setTittle(x)
+        setArticuloFull("")
+        setShowButton(false)
+    }
+    
+   
     return (
-        <h1>Skate</h1>
+        <>
+            <button onClick={()=>changeView(urls[2], "con")}>con</button>
+            <button onClick={()=>changeView(urls[3], "sin")}>sin</button>
+            <h2>Skate {tittle} accesorios</h2>
+            <ListaArticulos host={pag} setArticuloFull={setArticuloFull} setShowButton={setShowButton}/>
+            <ArticuloDetallado articuloFull={articuloFull} showButton={showButton} />
+        </>
     )
 }
 
