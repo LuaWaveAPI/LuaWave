@@ -8,14 +8,15 @@ function ArticuloDetallado({articuloFull, showButton}) {
     }   
     return (
     <>
-    {showButton && <h3>Este es el artículo detallado</h3>}
-    <div>     
+    {showButton && 
+    <div>    
+        <h3>Este es el artículo detallado</h3> 
         <p>{articuloFull.Name}</p>
-        <p>{articuloFull.Price}</p>
+        <p>{articuloFull.Price}€</p>
         <p>{articuloFull.Description}</p>
         <img src={articuloFull.Photo} alt={articuloFull.Name} />
         {showButton && <button onClick={()=>addNewProduct(articuloFull)}>Añadir al carrito</button> }
-    </div>
+    </div>}
     </>
     );
   }

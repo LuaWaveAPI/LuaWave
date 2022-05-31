@@ -1,7 +1,3 @@
-import { useState } from "react";
-import ListaArticulos from "../ListaArticulos/ListaArticulos";
-import styles from "./ComponenteArticulo.module.css";
-
 function ComponenteArticulo({articulo}) {
     
     return (
@@ -10,8 +6,7 @@ function ComponenteArticulo({articulo}) {
 
         </div>
         <p>{articulo.Name}</p>
-        <p>{articulo.Description}</p>
-        <p>{articulo.Price}</p>
+        <img src={articulo.Photo} alt={articulo.Name}/>
     </>
     );
   }
