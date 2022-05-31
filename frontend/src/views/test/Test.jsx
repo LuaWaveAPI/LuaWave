@@ -25,7 +25,9 @@ function Test (){
         <h2>Skate sin accesorios</h2>
         <ListaArticulos host={urls[3]}setArticuloFull={setArticuloFull}/>
         <ArticulosCarrito/>
+        <p>Articulo detallado</p>
         <ArticuloDetallado articuloFull={articuloFull}/>
+        <p>Carrito</p>
         <FormularioCarrito></FormularioCarrito>
         
     

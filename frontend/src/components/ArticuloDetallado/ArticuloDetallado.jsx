@@ -1,4 +1,4 @@
-function ArticuloDetallado({articuloFull}) {
+function ArticuloDetallado({articuloFull, showButton}) {
     function addNewProduct(article){
         const data = JSON.parse(localStorage.getItem("articulos"));
         const newdata = article;
@@ -8,13 +8,13 @@ function ArticuloDetallado({articuloFull}) {
     }   
     return (
     <>
-    <h3>Este es el artículo detallado</h3>
+    {showButton && <h3>Este es el artículo detallado</h3>}
     <div>     
         <p>{articuloFull.Name}</p>
         <p>{articuloFull.Price}</p>
         <p>{articuloFull.Description}</p>
         <img src={articuloFull.Photo} alt={articuloFull.Name} />
-        {<button onClick={()=>addNewProduct(articuloFull)}>Añadir al carrito</button> }
+        {showButton && <button onClick={()=>addNewProduct(articuloFull)}>Añadir al carrito</button> }
     </div>
     </>
     );

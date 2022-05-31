@@ -19,7 +19,7 @@ function FormularioCarrito (){
             DNI: DNI,
             Email: email,
             Phone: phone,
-            Code_postal: codepostal,
+            Ceod_postal: codepostal,
             Articles: data
         };
         fetch(urls[4],

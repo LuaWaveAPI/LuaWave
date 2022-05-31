@@ -6,7 +6,6 @@ function ArticCarrito({idx, setArticulos}){
     
     function operation(a){
         setArticulosCantidad(a)
-
     }
     
     useEffect(()=>{

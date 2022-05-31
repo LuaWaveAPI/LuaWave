@@ -5,7 +5,7 @@ import ComponenteArticulo from "../ComponenteArticulo/ComponenteArticulo";
  * Obtiene la lista de artículos en base al valor de props.categoria
  * @param {*} props - props.categoria = "Surf" | "Skate"
  */
-function ListaArticulos({host,setArticuloFull}) {
+function ListaArticulos({host,setArticuloFull, setShowButton}) {
     
     const [articulos, setArticulos] = useState([])
     async function get(url){
@@ -13,17 +13,22 @@ function ListaArticulos({host,setArticuloFull}) {
         const data = await response.json();
         setArticulos(data)
     }
+    function showArticle(article){
+        setArticuloFull(article)
+        setShowButton(true)
+        //Cambiar css
+    }
     
     useEffect(
         ()=>{
             get(host)
         },
-        []
+        [articulos]
     )
 
     return (
     <>
-        {articulos.map( articulo => <div onClick={()=>setArticuloFull(articulo)}><ComponenteArticulo articulo={articulo}/></div>)}
+        {articulos.map( articulo => <div onClick={()=>showArticle(articulo)}><ComponenteArticulo articulo={articulo}/></div>)}
     </>
     )
   }
