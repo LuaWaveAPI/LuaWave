@@ -5,7 +5,7 @@ import ComponenteArticulo from "../ComponenteArticulo/ComponenteArticulo";
  * Obtiene la lista de artículos en base al valor de props.categoria
  * @param {*} props - props.categoria = "Surf" | "Skate"
  */
-function ListaArticulos({host,setArticuloFull, setShowButton}) {
+function ListaArticulos({host,setArticuloFull, setShowButton, tittle}) {
     
     const [articulos, setArticulos] = useState([])
     async function get(url){
@@ -23,7 +23,7 @@ function ListaArticulos({host,setArticuloFull, setShowButton}) {
         ()=>{
             get(host)
         },
-        [articulos]
+        [tittle]
     )
 
     return (
