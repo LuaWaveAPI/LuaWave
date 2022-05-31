@@ -204,8 +204,9 @@ export function postArticleController(request, response) {
         throw error;
       }
       if (data) {
-        response.status(401);
-        response.send("El artículo ya existe");
+        insertIt(request.body, "Articles", sqlCallback);
+        response.status(201);
+        response.send("CUIDADO! Has creado un articulo con un nombre ya existente");
         return;
       } else {
         insertIt(request.body, "Articles", sqlCallback);
