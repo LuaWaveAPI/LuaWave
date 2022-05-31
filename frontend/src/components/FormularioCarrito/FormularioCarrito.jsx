@@ -1,27 +1,36 @@
 import { useState } from "react";
-import { urls } from "../../defines/defines";
+import { urls } from "../../defines/defines.jsx";
 
-function FormularioCarrito (){
+function FormularioCarrito ({setStatus}){
     const [ name, setName ] = useState("");
     const [ DNI, setDNI ] = useState("");
     const [ email, setEmail ] = useState("");
     const [ phone, setPhone ] = useState("");
     const [ codepostal, setCodepostal ] = useState("");
-    
+    console.log(urls[4])
+
     function changeHandler (event, set) {
         set(event.target.value);
     }
 
     function postOrder(){
+    if(name === "" || DNI === "" || email === "" || phone ==="" || codepostal ==="" ){
+        alert("Algun campo esta vacio")
+    }else{
         const data = JSON.parse(localStorage.getItem("articulos"));
         const bodyOrder = {
             Name: name,
             DNI: DNI,
             Email: email,
             Phone: phone,
-            Ceod_postal: codepostal,
+            Code_postal: codepostal,
             Articles: data
         };
+        if(data.length === 0){
+            alert("No has seleccionado ningun producto")
+
+        }else{
+        console.log("->",urls[4])
         fetch(urls[4],
             {
                 method: 'POST',
@@ -36,7 +45,10 @@ function FormularioCarrito (){
         setDNI("");
         setEmail("");
         setPhone("");
-        setCodepostal("")
+        setCodepostal("");
+        setStatus(false)
+        }
+        }
     }
     
     
