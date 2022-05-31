@@ -5,6 +5,7 @@ import About from "./views/about/About";
 import Contact from "./views/contact/Contact";
 import Skate from "./views/skate/Skate";
 import Surf from "./views/surf/Surf";
+import Carrito from "./views/Carrito/Carrito";
 import { Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 
@@ -32,6 +33,10 @@ function App() {
           <Link to={"/test/"}>
             <button>Test</button>
           </Link>
+
+          <Link to={"/carrito/"}>
+            <button>Carrito</button>
+          </Link>
         </nav>
       </header>
 
@@ -42,6 +47,7 @@ function App() {
         <Route path="/about/" element={<About />} />
         <Route path="/contact/" element={<Contact />} />
         <Route path="/test/" element={<Test />} />
+        <Route path="/carrito/" element={<Carrito />} />
       </Routes>
     </>
   );
