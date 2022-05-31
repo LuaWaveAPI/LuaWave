@@ -8,6 +8,10 @@ function Surf () {
     const [articuloFull, setArticuloFull] = useState("")
     const [tittle, setTittle] = useState("con")
     const [ pag, setPag] = useState(urls[0])
+    const data = JSON.parse(localStorage.getItem("articulos"))
+    if(data === null){
+        localStorage.setItem("articulos", JSON.stringify([]))
+    }
    
     function changeView(url, x){
         setPag(url)
@@ -22,7 +26,7 @@ function Surf () {
             <button onClick={()=>changeView(urls[0], "con")}>con</button>
             <button onClick={()=>changeView(urls[1], "sin")}>sin</button>
             <h2>Surf {tittle} accesorios</h2>
-            <ListaArticulos host={pag} setArticuloFull={setArticuloFull} setShowButton={setShowButton}/>
+            <ListaArticulos host={pag} setArticuloFull={setArticuloFull} setShowButton={setShowButton} tittle={tittle}/>
             <ArticuloDetallado articuloFull={articuloFull} showButton={showButton} />
         </>
     )
