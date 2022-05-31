@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-body, html {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  overflow: hidden;
-  user-select: none;
-}
-
 
 /*
 @font-face {
@@ -17,21 +6,23 @@ body, html {
 }
 */
 
-/*
+
 a:-webkit-any-link {
   cursor: pointer;
   text-decoration: none;
   color: white; 
   text-shadow: black 0.1em 0.1em 0.2em 
 }
-*/
+
 
 /* Para el nav */
 
 nav a:focus {
   color: dodgerblue;
   cursor: pointer;
+  /*
   text-decoration: underline wavy;
+  */
 }
 
 nav p:hover  {
@@ -40,8 +31,7 @@ nav p:hover  {
 
 .sizeP {
   font-size: 1.9em;
-  margin-top: 15px;
-  margin-bottom: px;
+  margin-top: 8px;
   padding-right: 20px;
 } 
 
@@ -104,5 +94,3 @@ nav p:hover  {
 
 
 
-=======
->>>>>>> 5d6cb4db73d4427be69207f164665341579c4d31
