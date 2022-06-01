@@ -1,10 +1,11 @@
 import React from 'react';
 import Carousel from 'nuka-carousel';
+import "./Carrusel.css";
 import style from '../Carrusel/Carrusel.css'
 
 const Carrusel = () => {
   return (
-      <div>
+      <div className='divCarrusel'>
     <Carousel wrapAround={true} >
       <img src="https://i.ibb.co/tBDzFJk/sunset.png" alt='Surf'/>
       <img src="https://raw.githubusercontent.com/Maitlla/ProyectoFinal/main/src/img/skateCarretera.jpg" alt='Skate' />

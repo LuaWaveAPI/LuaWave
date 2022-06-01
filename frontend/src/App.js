@@ -52,7 +52,6 @@ function App() {
               <img class="carrito" src={carrito} alt="carrito"></img>
             </Link>
           </div>
-          <h1>Probando</h1>
         </nav>
       </header>
       {/* contenedor <main> */}
