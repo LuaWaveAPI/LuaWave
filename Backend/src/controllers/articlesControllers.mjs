@@ -16,7 +16,8 @@ import {
  */
 export function getAllArticlesController(request, response) {
   try {
-    const keys = "Articles_id, Name, Description,Category, Price";
+    const keys =
+      "Articles_id, Name, Description, Category, Price , Photo, Stock";
     getIt(keys, "Articles", (error, data) => {
       if (error) {
         console.error(error);
@@ -47,21 +48,27 @@ export function getAllArticlesController(request, response) {
  */
 export function getSurfConArticlesController(request, response) {
   try {
-    const keys = "Articles_id, Name, Description,Category, Price";
-    findAll(keys, "Articles", "Category", "Surf con accesorios", (error, data) => {
-      if (error) {
-        console.error(error);
-        response.status(500);
-        response.send("Database error.");
-        return;
+    const keys = "Articles_id, Name, Description, Category, Price, Photo";
+    findAll(
+      keys,
+      "Articles",
+      "Category",
+      "Surf con accesorios",
+      (error, data) => {
+        if (error) {
+          console.error(error);
+          response.status(500);
+          response.send("Database error.");
+          return;
+        }
+        if (data) {
+          const json = JSON.stringify(data);
+          response.status(200);
+          response.send(json);
+          return;
+        }
       }
-      if (data) {
-        const json = JSON.stringify(data);
-        response.status(200);
-        response.send(json);
-        return;
-      }
-    });
+    );
   } catch (err) {
     response.status(500);
     console.log(err);
@@ -72,21 +79,27 @@ export function getSurfConArticlesController(request, response) {
 
 export function getSurfSinArticlesController(request, response) {
   try {
-    const keys = "Articles_id, Name, Description,Category, Price";
-    findAll(keys, "Articles", "Category", "Surf sin accesorios", (error, data) => {
-      if (error) {
-        console.error(error);
-        response.status(500);
-        response.send("Database error.");
-        return;
+    const keys = "Articles_id, Name, Description,Category, Price, Photo";
+    findAll(
+      keys,
+      "Articles",
+      "Category",
+      "Surf sin accesorios",
+      (error, data) => {
+        if (error) {
+          console.error(error);
+          response.status(500);
+          response.send("Database error.");
+          return;
+        }
+        if (data) {
+          const json = JSON.stringify(data);
+          response.status(200);
+          response.send(json);
+          return;
+        }
       }
-      if (data) {
-        const json = JSON.stringify(data);
-        response.status(200);
-        response.send(json);
-        return;
-      }
-    });
+    );
   } catch (err) {
     response.status(500);
     console.log(err);
@@ -103,21 +116,27 @@ export function getSurfSinArticlesController(request, response) {
  */
 export function getSkateConArticlesController(request, response) {
   try {
-    const keys = "Articles_id, Name, Description,Category, Price";
-    findAll(keys, "Articles", "Category", "Skate con accesorios", (error, data) => {
-      if (error) {
-        console.error(error);
-        response.status(500);
-        response.send("Database error.");
-        return;
+    const keys = "Articles_id, Name, Description, Category, Price, Photo";
+    findAll(
+      keys,
+      "Articles",
+      "Category",
+      "Skate con accesorios",
+      (error, data) => {
+        if (error) {
+          console.error(error);
+          response.status(500);
+          response.send("Database error.");
+          return;
+        }
+        if (data) {
+          const json = JSON.stringify(data);
+          response.status(200);
+          response.send(json);
+          return;
+        }
       }
-      if (data) {
-        const json = JSON.stringify(data);
-        response.status(200);
-        response.send(json);
-        return;
-      }
-    });
+    );
   } catch (err) {
     response.status(500);
     console.log(err);
@@ -128,21 +147,27 @@ export function getSkateConArticlesController(request, response) {
 
 export function getSkateSinArticlesController(request, response) {
   try {
-    const keys = "Articles_id, Name, Description,Category, Price";
-    findAll(keys, "Articles", "Category", "Skate sin accesorios", (error, data) => {
-      if (error) {
-        console.error(error);
-        response.status(500);
-        response.send("Database error.");
-        return;
+    const keys = "Articles_id, Name, Description, Category, Price, Photo";
+    findAll(
+      keys,
+      "Articles",
+      "Category",
+      "Skate sin accesorios",
+      (error, data) => {
+        if (error) {
+          console.error(error);
+          response.status(500);
+          response.send("Database error.");
+          return;
+        }
+        if (data) {
+          const json = JSON.stringify(data);
+          response.status(200);
+          response.send(json);
+          return;
+        }
       }
-      if (data) {
-        const json = JSON.stringify(data);
-        response.status(200);
-        response.send(json);
-        return;
-      }
-    });
+    );
   } catch (err) {
     response.status(500);
     console.log(err);
@@ -206,7 +231,9 @@ export function postArticleController(request, response) {
       if (data) {
         insertIt(request.body, "Articles", sqlCallback);
         response.status(201);
-        response.send("CUIDADO! Has creado un articulo con un nombre ya existente");
+        response.send(
+          "CUIDADO! Has creado un articulo con un nombre ya existente"
+        );
         return;
       } else {
         insertIt(request.body, "Articles", sqlCallback);

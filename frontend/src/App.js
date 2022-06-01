@@ -23,7 +23,7 @@ import iconoFooter9 from "./img/iconoFooter9.png";
 function App() {
   return (
     <>
-      <header>
+      <header className="headerContainer">
         {/* <nav> */}
         <nav className="navFondo">
           <div className="divLuaWaveNave">
@@ -55,39 +55,37 @@ function App() {
         </nav>
       </header>
       {/* contenedor <main> */}
-      <main>
-
-      </main>
+      <main></main>
       {/* <footer> */}
-      <footer>
+      <footer className="footerContainer">
         <div class="footerFondo">
-        <a class="aEnlace" href="https://www.instagram.com/" target="_blank">
-                <img class="iconos" src={iconoFooter1} alt="iconoI"></img>
-            </a>
-            <a class="aEnlace" href="https://es-es.facebook.com/" target="_blank">
-                <img class="iconos" src={iconoFooter2} alt="iconoF"></img>
-            </a>
-            <a class="aEnlace" href="https://www.youtube.com/" target="_blank">
-                <img class="iconos" src={iconoFooter3} alt="iconoY"></img>
-            </a>
-            <a class="aEnlace" href="https://twitter.com/" target="_blank">
-                <img class="iconos" src={iconoFooter4} alt="iconoT"></img>
-            </a>
-            <a class="aEnlace" href="https://www.pinterest.es/" target="_blank">
-                <img class="iconos" src={iconoFooter5} alt="iconoP"></img>
-            </a>
-            <a class="aEnlace" href="https://outlook.live.com/owa/" target="_blank">
-                <img class="iconos" src={iconoFooter6} alt="iconoE"></img>
-            </a>
-            <a class="aEnlace" href="https://www.whatsapp.com/" target="_blank">
-                <img class="iconos" src={iconoFooter7} alt="iconoW"></img>
-            </a>
-            <a class="aEnlace" href="tel:881917587" target="_blank">
-                <img class="iconos" src={iconoFooter8} alt="iconoT"></img>
-            </a>
-            <a class="aEnlace" href="https://www.google.es/maps/preview" target="_blank">
-                <img class="iconos" src={iconoFooter9} alt="iconoM"></img>
-            </a>
+          <a class="aEnlace" href="https://www.instagram.com/">
+            <img class="iconos" src={iconoFooter1} alt="iconoI"></img>
+          </a>
+          <a class="aEnlace" href="https://es-es.facebook.com/">
+            <img class="iconos" src={iconoFooter2} alt="iconoF"></img>
+          </a>
+          <a class="aEnlace" href="https://www.youtube.com/">
+            <img class="iconos" src={iconoFooter3} alt="iconoY"></img>
+          </a>
+          <a class="aEnlace" href="https://twitter.com/">
+            <img class="iconos" src={iconoFooter4} alt="iconoT"></img>
+          </a>
+          <a class="aEnlace" href="https://www.pinterest.es/">
+            <img class="iconos" src={iconoFooter5} alt="iconoP"></img>
+          </a>
+          <a class="aEnlace" href="https://outlook.live.com/owa/">
+            <img class="iconos" src={iconoFooter6} alt="iconoE"></img>
+          </a>
+          <a class="aEnlace" href="https://www.whatsapp.com/">
+            <img class="iconos" src={iconoFooter7} alt="iconoW"></img>
+          </a>
+          <a class="aEnlace" href="tel:881917587">
+            <img class="iconos" src={iconoFooter8} alt="iconoT"></img>
+          </a>
+          <a class="aEnlace" href="https://www.google.es/maps/preview">
+            <img class="iconos" src={iconoFooter9} alt="iconoM"></img>
+          </a>
         </div>
       </footer>
 

@@ -1,12 +1,13 @@
-.centrado {
-    text-align: center;
+.imagen {
+    width: 100px;
+    height: 50px;
 }
 
-.derecha {
-    display: flex;
-    justify-content: right;
-    padding-right: 1 rem;
+.main{
+ display: flex;
+ background-image: url("https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/rectanguloFondo.png");
 }
+
 
 .test {
     display: flex;

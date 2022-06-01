@@ -1,0 +1,17 @@
+.imgCarrusel {
+  width: 100%;
+  height: 810px;
+  object-fit: cover;
+    
+}
+
+.divCarrusel {
+  height: 100%
+
+}
+/* @media (min-width: 1281px){
+  img{
+    width: 100%;
+    height: auto;
+  }
+} */
