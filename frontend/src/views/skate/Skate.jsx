@@ -7,7 +7,7 @@ function Skate () {
     const [showButton, setShowButton] = useState(false)
     const [articuloFull, setArticuloFull] = useState("")
     const [tittle, setTittle] = useState("con")
-    const [ pag, setPag] = useState(urls[0])
+    const [ pag, setPag] = useState(urls[2])
     const data = JSON.parse(localStorage.getItem("articulos"))
     if(data === null){
         localStorage.setItem("articulos", JSON.stringify([]))
@@ -23,6 +23,9 @@ function Skate () {
    
     return (
         <>
+            <p>s</p>
+            <p>s</p>
+            <p>s</p>
             <button onClick={()=>changeView(urls[2], "con")}>con</button>
             <button onClick={()=>changeView(urls[3], "sin")}>sin</button>
             <h2>Skate {tittle} accesorios</h2>

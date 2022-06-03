@@ -55,7 +55,7 @@ export function getOrderController(request, response) {
                 if (err) throw err;
                 if (data) {
                     findAll(
-                    "Rental_articles_id, Articles_id, Quantity, Price",
+                    "Articles_id, Quantity, Price",
                     "Rental_articles",
                     "Rental_id", 
                     request.params.id,

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { urls } from "../../defines/defines.jsx";
+import { ShortArticle } from "../../models/ShortArticle.mjs";
 
 function FormularioCarrito ({setStatus}){
     const [ name, setName ] = useState("");
@@ -18,13 +19,15 @@ function FormularioCarrito ({setStatus}){
         alert("Algun campo esta vacio")
     }else{
         const data = JSON.parse(localStorage.getItem("articulos"));
+        const newdata = [];
+        data.map(item => newdata.push(new ShortArticle(item)))
         const bodyOrder = {
             Name: name,
             DNI: DNI,
             Email: email,
             Phone: phone,
             Code_postal: codepostal,
-            Articles: data
+            Articles: newdata
         };
         if(data.length === 0){
             alert("No has seleccionado ningun producto")
