@@ -1,17 +1,16 @@
 import React from 'react';
 import Carousel from 'nuka-carousel';
-import style from '../Carrusel/Carrusel.css'
+import style from '../Carrusel/Carrusel.module.css'
 
 const Carrusel = () => {
   return (
-      <div>
+      <div className={style.mainContainer}>
     <Carousel wrapAround={true} >
-      <img src="https://i.ibb.co/tBDzFJk/sunset.png" alt='Surf'/>
-      <img src="https://raw.githubusercontent.com/Maitlla/ProyectoFinal/main/src/img/skateCarretera.jpg" alt='Skate' />
-      <img src="https://raw.githubusercontent.com/Maitlla/ProyectoFinal/main/project/chicoSurf4%20-%20copia.jpg" alt='Surf'/>
-      <img src="https://raw.githubusercontent.com/Maitlla/ProyectoFinal/main/src/img/tablasSkate1.jpg" alt='Skate' />
-      <img src="https://raw.githubusercontent.com/Maitlla/ProyectoFinal/main/src/img/underwater.jpg" alt='Surf'/>
-      <img src="https://raw.githubusercontent.com/Maitlla/ProyectoFinal/main/project/peliculas-de-skate.jpg" alt='Skate'/>
+      <img className={style.imgCarrusel} src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/carrusel/5.png" alt='Skate' />
+      <img className={style.imgCarrusel}  src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/carrusel/2.png" alt='Surf'/>
+      <img className={style.imgCarrusel}  src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/carrusel/3.png" alt='Skate' />
+      <img className={style.imgCarrusel}  src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/carrusel/1.png" alt='Surf'/>
+      <img className={style.imgCarrusel}  src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/carrusel/6.png" alt='Skate'/>
     </Carousel>
     </div>
   );

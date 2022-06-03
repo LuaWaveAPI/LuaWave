@@ -1,26 +1,26 @@
+/* Body Carrusel */
 
-/*
+
+/* Fuente decorativa */
 @font-face {
   font-family: 'BillionDreams';
-  src: url('../fonts/BillionDreams_PERSONAL.ttf') format('truetype');
+  src: url('./fonts/BillionDreams_PERSONAL.ttf') format('truetype');
 }
-*/
 
-/*
+/* Para el nav */
 a:-webkit-any-link {
   cursor: pointer;
   text-decoration: none;
   color: white; 
   text-shadow: black 0.1em 0.1em 0.2em 
 }
-*/
-
-/* Para el nav */
 
 nav a:focus {
   color: dodgerblue;
   cursor: pointer;
+  /*
   text-decoration: underline wavy;
+  */
 }
 
 nav p:hover  {
@@ -28,27 +28,19 @@ nav p:hover  {
 }
 
 .sizeP {
-  font-size: 1.9em;
+  font-size: 2em;
   margin-top: 15px;
-  margin-bottom: px;
   padding-right: 20px;
 } 
 
 .navFondo {
   background-color: black;
-  z-index: 1;
+  z-index: 3;
   position: fixed;
   width: 100%;
-  height: 7vh;
-
-}
-
-.divLuaWaveNave {
-  color: White;
-  padding-left: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  height: auto;
+  font-family: "BillionDreams";
+  font-weight: lighter;
 }
 
 /*
@@ -58,16 +50,24 @@ nav p:hover  {
 }
 */
 
+.divLuaWaveNave {
+  color: White;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .logo {
   width: 50px;
   height: 50px;
-  padding-top: 6px;
+  padding-top: 12px;
 }
 
 .carrito {
   width: 65px;
   height: 65px;
-  padding-top: 3px;
+  padding-top: 6px;
 }
 
 .nombre {
@@ -78,9 +78,39 @@ nav p:hover  {
 }
 
 
+/* Para el main */
 
-.lista {
-  display: none;
+
+
+
+
+/* Para el footer */
+.footerFondo {
+  background-color:#C7D4D9;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  justify-content: center;
+  width: 100%;
+  bottom: 0px;
 }
+
+.iconos {
+  width: 70px;
+  height: 70px; 
+}
+
+
+/*
+@media (min-width: 400px) {
+  .navFondo{
+      background-color: aqua;
+  }
+}
+*/
+
+
+
 
 

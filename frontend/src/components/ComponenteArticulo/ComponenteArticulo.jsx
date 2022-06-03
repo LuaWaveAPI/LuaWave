@@ -1,12 +1,11 @@
+import style from "./ComponenteArticulo.module.css"
 function ComponenteArticulo({articulo}) {
-    
     return (
     <>
-        <div>
-
-        </div>
+        <div className={style.main}>
+        <img className={style.imagen} src={articulo.Photo} alt={articulo.Name}/>
         <p>{articulo.Name}</p>
-        <img src={articulo.Photo} alt={articulo.Name}/>
+        </div>
     </>
     );
   }
