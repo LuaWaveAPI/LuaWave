@@ -6,8 +6,8 @@ import Contact from "./views/contact/Contact";
 import Skate from "./views/skate/Skate";
 import Surf from "./views/surf/Surf";
 import Carrito from "./views/Carrito/Carrito";
+import Panel from "./views/admin/paneladmin";
 import { Link, Route, Routes } from "react-router-dom";
-import "./App.css";
 import logoLuaWave from "./img/logoLuaWave.png";
 import carrito from "./img/carrito.png";
 import iconoFooter1 from "./img/iconoFooter1.png";
@@ -97,6 +97,7 @@ function App() {
         <Route path="/contact/" element={<Contact />} />
         <Route path="/test/" element={<Test />} />
         <Route path="/carrito/" element={<Carrito />} />
+        <Route path="/panel-admin/" element={<Panel />} />
       </Routes>
     </>
   );
