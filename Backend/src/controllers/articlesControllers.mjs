@@ -217,7 +217,13 @@ export function getArticlesController(request, response) {
 
 export function postArticleController(request, response) {
   try {
-    const { Name, Description, Photo, Stock, Price, Category } = request.body;
+    console.log(request.file.filename)
+    const completedObject = {
+			...request.body,
+			Photo: request.file.filename
+		}
+		
+    const { Name, Description, Photo, Stock, Price, Category } = completedObject;
     if (!Name || !Description || !Photo || !Stock || !Price || !Category) {
       response.status(400);
       response.send("Algún campo esta vacío");
@@ -229,14 +235,14 @@ export function postArticleController(request, response) {
         throw error;
       }
       if (data) {
-        insertIt(request.body, "Articles", sqlCallback);
+        insertIt(completedObject, "Articles", sqlCallback);
         response.status(201);
         response.send(
           "CUIDADO! Has creado un articulo con un nombre ya existente"
         );
         return;
       } else {
-        insertIt(request.body, "Articles", sqlCallback);
+        insertIt(completedObject, "Articles", sqlCallback);
         response.status(201);
         response.send("Artículo registrado correctamente");
         return;

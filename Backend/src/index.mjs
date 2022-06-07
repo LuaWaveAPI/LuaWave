@@ -1,4 +1,5 @@
-import express, { json } from "express";
+import express from "Express";
+import multer from "multer";
 import {
 	deleteArticleController,
 	getAllArticlesController,
@@ -33,19 +34,22 @@ import {
 } from "./controllers/staffControllers.mjs";
 
 const PATH_PREFIX = "/api/v0.0";
+const UPLOADS_FOLDER = "./photosArticles/"
 const app = express();
 const port = 4000;
 
 try {
+	const upload = multer({ dest: UPLOADS_FOLDER })
 	const jsonParser = express.json();
 	//Articles
+	app.use("/public/", express.static(UPLOADS_FOLDER))
 	app.get(PATH_PREFIX + "/articles/", getAllArticlesController);
 	app.get(PATH_PREFIX + "/articles/surf/con", getSurfConArticlesController);
 	app.get(PATH_PREFIX + "/articles/surf/sin", getSurfSinArticlesController);
 	app.get(PATH_PREFIX + "/articles/skate/con", getSkateConArticlesController);
 	app.get(PATH_PREFIX + "/articles/skate/sin", getSkateSinArticlesController);
 	app.get(PATH_PREFIX + "/article/:id", getArticlesController);
-	app.post(PATH_PREFIX + "/article/", jsonParser, postArticleController);
+	app.post(PATH_PREFIX + "/articles/", upload.single('Photo'), postArticleController);
 	app.put(PATH_PREFIX + "/article/", jsonParser, putArticleController);
 	app.delete(PATH_PREFIX + "/article", jsonParser, deleteArticleController);
 
@@ -70,10 +74,20 @@ try {
 	app.put(PATH_PREFIX + "/staff/", jsonParser, putStaffController);
 	app.delete(PATH_PREFIX + "/staff/", jsonParser, deleteStaffController);
 
+	app.use(function(err, req, res, next){
+		if(!err){
+			next()
+		}else{
+		res.status(500);
+	res.render('error', { error: err });
+}});
+
 	//Express running
 	app.listen(port, () => {
 		console.log(`Express running... Example app listening on port ${port}`);
 	});
+	
 } catch (err) {
 	console.log("Algo va mal");
+	console.log(err);
 }
