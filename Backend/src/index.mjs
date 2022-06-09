@@ -18,6 +18,7 @@ import {
 	putCategoryController,
 	deleteCategoryController,
 } from "./controllers/categoriesControllers.mjs";
+import { getAllLogController } from "./controllers/logControllers.mjs";
 import {
 	deleteOrderController,
 	getAllOrdersController,
@@ -73,6 +74,9 @@ try {
 	app.post(PATH_PREFIX + "/staff/", jsonParser, postStaffController);
 	app.put(PATH_PREFIX + "/staff/", jsonParser, putStaffController);
 	app.delete(PATH_PREFIX + "/staff/", jsonParser, deleteStaffController);
+
+	//Log
+	app.get(PATH_PREFIX + "/log/", getAllLogController)
 
 	app.use(function(err, req, res, next){
 		if(!err){

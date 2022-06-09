@@ -6,6 +6,7 @@ import {
   insertIt,
   sqlCallback,
   findAll,
+  insertLog,
 } from "./dbControllers.mjs";
 
 /**Controlador que obtinen todos los datos que quieres de la tabla articulos
@@ -19,12 +20,7 @@ export function getAllArticlesController(request, response) {
     const keys =
       "Articles_id, Name, Description, Category, Price , Photo, Stock";
     getIt(keys, "Articles", (error, data) => {
-      if (error) {
-        console.error(error);
-        response.status(500);
-        response.send("Database error.");
-        return;
-      }
+      if (error) throw error;
       if (data) {
         const json = JSON.stringify(data);
         response.status(200);
@@ -33,9 +29,14 @@ export function getAllArticlesController(request, response) {
       }
     });
   } catch (err) {
+    insertLog(
+      Date.now(),
+      "/Articles/", 
+      JSON.stringify(err.message),
+      JSON.stringify(err),
+      (error)=> response.send(error)
+    )
     response.status(500);
-    console.log(err);
-    response.send(err);
     return;
   }
 }
@@ -55,12 +56,7 @@ export function getSurfConArticlesController(request, response) {
       "Category",
       "Surf con accesorios",
       (error, data) => {
-        if (error) {
-          console.error(error);
-          response.status(500);
-          response.send("Database error.");
-          return;
-        }
+        if (error) throw error;
         if (data) {
           const json = JSON.stringify(data);
           response.status(200);
@@ -70,9 +66,14 @@ export function getSurfConArticlesController(request, response) {
       }
     );
   } catch (err) {
+    insertLog(
+      Date.now(),
+      "/Articles/", 
+      JSON.stringify(err.message),
+      JSON.stringify(err),
+      (error)=> response.send(error)
+    )
     response.status(500);
-    console.log(err);
-    response.send(err);
     return;
   }
 }
@@ -86,12 +87,7 @@ export function getSurfSinArticlesController(request, response) {
       "Category",
       "Surf sin accesorios",
       (error, data) => {
-        if (error) {
-          console.error(error);
-          response.status(500);
-          response.send("Database error.");
-          return;
-        }
+        if (error) throw error;
         if (data) {
           const json = JSON.stringify(data);
           response.status(200);
@@ -101,9 +97,14 @@ export function getSurfSinArticlesController(request, response) {
       }
     );
   } catch (err) {
+    insertLog(
+      Date.now(),
+      "/Articles/", 
+      JSON.stringify(err.message),
+      JSON.stringify(err),
+      (error)=> response.send(error)
+    )
     response.status(500);
-    console.log(err);
-    response.send(err);
     return;
   }
 }
@@ -123,12 +124,7 @@ export function getSkateConArticlesController(request, response) {
       "Category",
       "Skate con accesorios",
       (error, data) => {
-        if (error) {
-          console.error(error);
-          response.status(500);
-          response.send("Database error.");
-          return;
-        }
+        if (error) throw error;
         if (data) {
           const json = JSON.stringify(data);
           response.status(200);
@@ -138,9 +134,14 @@ export function getSkateConArticlesController(request, response) {
       }
     );
   } catch (err) {
+    insertLog(
+      Date.now(),
+      "/Articles/", 
+      JSON.stringify(err.message),
+      JSON.stringify(err),
+      (error)=> response.send(error)
+    )
     response.status(500);
-    console.log(err);
-    response.send(err);
     return;
   }
 }
@@ -154,12 +155,7 @@ export function getSkateSinArticlesController(request, response) {
       "Category",
       "Skate sin accesorios",
       (error, data) => {
-        if (error) {
-          console.error(error);
-          response.status(500);
-          response.send("Database error.");
-          return;
-        }
+        if (error) throw error;
         if (data) {
           const json = JSON.stringify(data);
           response.status(200);
@@ -169,9 +165,14 @@ export function getSkateSinArticlesController(request, response) {
       }
     );
   } catch (err) {
+    insertLog(
+      Date.now(),
+      "/Articles/", 
+      JSON.stringify(err.message),
+      JSON.stringify(err),
+      (error)=> response.send(error)
+    )
     response.status(500);
-    console.log(err);
-    response.send(err);
     return;
   }
 }
@@ -190,12 +191,7 @@ export function getArticlesController(request, response) {
       "Articles_id",
       request.params.id,
       (error, data) => {
-        if (error) {
-          console.error(error);
-          response.status(500);
-          response.send("Database error.");
-          return;
-        }
+        if (error) throw error;
         if (data) {
           const json = JSON.stringify(data);
           response.status(200);
@@ -208,9 +204,14 @@ export function getArticlesController(request, response) {
       }
     );
   } catch (err) {
+    insertLog(
+      Date.now(),
+      "/Articles/", 
+      JSON.stringify(err.message),
+      JSON.stringify(err),
+      (error)=> response.send(error)
+    )
     response.status(500);
-    console.log(err);
-    response.send(err);
     return;
   }
 }
@@ -249,9 +250,14 @@ export function postArticleController(request, response) {
       }
     });
   } catch (err) {
+    insertLog(
+      Date.now(),
+      "/Articles/", 
+      JSON.stringify(err.message),
+      JSON.stringify(err),
+      (error)=> response.send(error)
+    )
     response.status(500);
-    console.log(err);
-    response.send(err);
     return;
   }
 }
@@ -286,9 +292,14 @@ export function putArticleController(request, response) {
       }
     });
   } catch (err) {
+    insertLog(
+      Date.now(),
+      "/Articles/", 
+      JSON.stringify(err.message),
+      JSON.stringify(err),
+      (error)=> response.send(error)
+    )
     response.status(500);
-    console.log(err);
-    response.send(err);
     return;
   }
 }
@@ -318,9 +329,14 @@ export function deleteArticleController(request, response) {
       }
     });
   } catch (err) {
+    insertLog(
+      Date.now(),
+      "/Articles/", 
+      JSON.stringify(err.message),
+      JSON.stringify(err),
+      (error)=> response.send(error)
+    )
     response.status(500);
-    console.log(err);
-    response.send(err);
     return;
   }
 }

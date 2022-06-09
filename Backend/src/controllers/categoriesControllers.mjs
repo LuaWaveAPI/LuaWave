@@ -25,9 +25,14 @@ export function getAllCategoriesHandler(request, response) {
       }
     });
   } catch (err) {
+    insertLog(
+      Date.now(),
+      "/Categories/", 
+      JSON.stringify(err.message),
+      JSON.stringify(err),
+      (error)=> response.send(error)
+    )
     response.status(500);
-    console.log(err);
-    response.send(err);
     return;
   }
 }
@@ -58,10 +63,14 @@ export function getCategoryHandler(request, response) {
       }
     );
   } catch (err) {
+    insertLog(
+      Date.now(),
+      "/Categories/", 
+      JSON.stringify(err.message),
+      JSON.stringify(err),
+      (error)=> response.send(error)
+    )
     response.status(500);
-    console.log(request.params.id);
-    console.log(err);
-    response.send(err);
     return;
   }
 }
@@ -92,9 +101,14 @@ export function postCategoryController(request, response) {
       }
     });
   } catch (err) {
+    insertLog(
+      Date.now(),
+      "/Categories/", 
+      JSON.stringify(err.message),
+      JSON.stringify(err),
+      (error)=> response.send(error)
+    )
     response.status(500);
-    console.log(err);
-    response.send(err);
     return;
   }
 }
@@ -123,9 +137,14 @@ export function putCategoryController(request, response) {
       }
     });
   } catch (err) {
+    insertLog(
+      Date.now(),
+      "/Categories/", 
+      JSON.stringify(err.message),
+      JSON.stringify(err),
+      (error)=> response.send(error)
+    )
     response.status(500);
-    console.log(err);
-    response.send(err);
     return;
   }
 }
@@ -155,9 +174,14 @@ export function deleteCategoryController(request, response) {
       }
     });
   } catch (err) {
+    insertLog(
+      Date.now(),
+      "/Categories/", 
+      JSON.stringify(err.message),
+      JSON.stringify(err),
+      (error)=> response.send(error)
+    )
     response.status(500);
-    console.log(err);
-    response.send(err);
     return;
   }
 }

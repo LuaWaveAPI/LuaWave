@@ -2,10 +2,8 @@ import { luawave } from "../models/luawaveDB.mjs";
 import {
     deleteIt,
     findOne,
-    updateArticle,
     getIt,
     insertIt,
-    sqlCallback,
     findAll,
     updateRental,
   } from "./dbControllers.mjs";
@@ -30,11 +28,16 @@ export function getAllOrdersController(request, response) {
             }
         );
     } catch (err) {
+        insertLog(
+          Date.now(),
+          "/Orders/", 
+          JSON.stringify(err.message),
+          JSON.stringify(err),
+          (error)=> response.send(error)
+        )
         response.status(500);
-        console.log(err);
-        response.send(err);
         return;
-    }
+      }
 }
 
 
@@ -74,11 +77,16 @@ export function getOrderController(request, response) {
             }
         );
     } catch (err) {
+        insertLog(
+          Date.now(),
+          "/Orders/", 
+          JSON.stringify(err.message),
+          JSON.stringify(err),
+          (error)=> response.send(error)
+        )
         response.status(500);
-        console.log(err);
-        response.send(err);
         return;
-    }
+      }
 }
 
 /** Controlador para añadir pedido
@@ -142,11 +150,16 @@ export function postOrderController(request, response) {
             
         }
     } catch (err) {
+        insertLog(
+          Date.now(),
+          "/Orders/", 
+          JSON.stringify(err.message),
+          JSON.stringify(err),
+          (error)=> response.send(error)
+        )
         response.status(500);
-        console.log(err);
-        response.send(err);
         return;
-    }
+      }
   }
 
 /**Controlador para modificar un pedido.
@@ -205,11 +218,16 @@ export function putOrderController(request, response) {
             })
         }
     } catch (err) {
+        insertLog(
+          Date.now(),
+          "/Orders/", 
+          JSON.stringify(err.message),
+          JSON.stringify(err),
+          (error)=> response.send(error)
+        )
         response.status(500);
-        console.log(err);
-        response.send(err);
         return;
-    }
+      }
 }
 
 /**Controlador que borra un pedido.
@@ -247,9 +265,14 @@ export function deleteOrderController(request, response) {
             }
         });
     } catch (err) {
-      response.status(500);
-      console.log(err);
-      response.send(err);
-      return;
-    }
+        insertLog(
+          Date.now(),
+          "/Orders/", 
+          JSON.stringify(err.message),
+          JSON.stringify(err),
+          (error)=> response.send(error)
+        )
+        response.status(500);
+        return;
+      }
   }

@@ -32,11 +32,16 @@ export function getAllStaffController(request, response) {
             } 
         });
     } catch (err) {
+        insertLog(
+          Date.now(),
+          "/Staffs/", 
+          JSON.stringify(err.message),
+          JSON.stringify(err),
+          (error)=> response.send(error)
+        )
         response.status(500);
-        console.log(err);
-        response.send(err);
         return;
-    }
+      }
 }
 
 /**Controlador para obtener los datos de un único trabajador del Staff
@@ -67,9 +72,14 @@ export function getStaffController(request, response) {
           }
         );
       } catch (err) {
+        insertLog(
+          Date.now(),
+          "/Staffs/", 
+          JSON.stringify(err.message),
+          JSON.stringify(err),
+          (error)=> response.send(error)
+        )
         response.status(500);
-        console.log(err);
-        response.send(err);
         return;
       }
 }
@@ -102,11 +112,16 @@ export function postStaffController(request, response) {
             }
         });
     } catch (err) {
+        insertLog(
+          Date.now(),
+          "/Staffs/", 
+          JSON.stringify(err.message),
+          JSON.stringify(err),
+          (error)=> response.send(error)
+        )
         response.status(500);
-        console.log(err);
-        response.send(err);
         return;
-    }
+      }
 }
 
 /**Controlador para actualizar el Staff
@@ -133,11 +148,16 @@ export function putStaffController(request, response) {
             }
         });
     } catch (err) {
+        insertLog(
+          Date.now(),
+          "/Staffs/", 
+          JSON.stringify(err.message),
+          JSON.stringify(err),
+          (error)=> response.send(error)
+        )
         response.status(500);
-        console.log(err);
-        response.send(err);
         return;
-    }
+      }
 }
 
 /**Controlador para eliminar un trabajador del Staff
@@ -167,11 +187,16 @@ export function deleteStaffController(request, response) {
             }
         });
     } catch (err) {
+        insertLog(
+          Date.now(),
+          "/Staffs/", 
+          JSON.stringify(err.message),
+          JSON.stringify(err),
+          (error)=> response.send(error)
+        )
         response.status(500);
-        console.log(err);
-        response.send(err);
         return;
-    }
+      }
 }
 
 
