@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 ../../Backend/luawave.db
+../../Backend/log.db
 
 # testing
 /coverage
