@@ -7,7 +7,32 @@
   src: url('./fonts/BillionDreams_PERSONAL.ttf') format('truetype');
 }
 
-/* Para el nav */
+.estructura {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.5fr 1fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  min-height: 100vh;
+
+}
+
+.noLogin {
+  margin-top: 30px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
 a:-webkit-any-link {
   cursor: pointer;
   text-decoration: none;
@@ -18,9 +43,7 @@ a:-webkit-any-link {
 nav a:focus {
   color: dodgerblue;
   cursor: pointer;
-  /*
-  text-decoration: underline wavy;
-  */
+
 }
 
 nav p:hover  {
@@ -43,12 +66,7 @@ nav p:hover  {
   font-weight: lighter;
 }
 
-/*
-.navFondo {
-  font-family: "BillionDreams";
-  font-weight: lighter;
-}
-*/
+
 
 .divLuaWaveNave {
   color: White;
@@ -78,13 +96,8 @@ nav p:hover  {
 }
 
 
-/* Para el main */
 
 
-
-
-
-/* Para el footer */
 .footerFondo {
   background-color:#C7D4D9;
   z-index: 3;
@@ -101,6 +114,7 @@ nav p:hover  {
   height: 70px; 
 }
 
+*/
 
 /*
 @media (min-width: 400px) {

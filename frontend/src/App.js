@@ -1,4 +1,7 @@
 import "./App.css";
+import Navbar from './components/Navbar/Navbar.jsx';
+import Footer from './components/Footer/Footer.jsx';
+import {BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Test from "./views/test/Test";
 import Home from "./views/home/Home";
 import About from "./views/about/About";
@@ -7,24 +10,42 @@ import Skate from "./views/skate/Skate";
 import Surf from "./views/surf/Surf";
 import Carrito from "./views/Carrito/Carrito";
 import Panel from "./views/admin/paneladmin";
-import { Link, Route, Routes } from "react-router-dom";
+
 import logoLuaWave from "./img/logoLuaWave.png";
-import carrito from "./img/carrito.png";
-import iconoFooter1 from "./img/iconoFooter1.png";
-import iconoFooter2 from "./img/iconoFooter2.png";
-import iconoFooter3 from "./img/iconoFooter3.png";
-import iconoFooter4 from "./img/iconoFooter4.png";
-import iconoFooter5 from "./img/iconoFooter5.png";
-import iconoFooter6 from "./img/iconoFooter6.png";
-import iconoFooter7 from "./img/iconoFooter7.png";
-import iconoFooter8 from "./img/iconoFooter8.png";
-import iconoFooter9 from "./img/iconoFooter9.png";
+import carritoimg from "./img/Carrito.png";
+
 
 function App() {
   return (
     <>
+        <div class="estructura">
+          <header>
+            <nav>
+
+              <Navbar />
+
+            </nav>
+          </header>
+        
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/surf/" element={<Surf />} />
+              <Route path="/skate/" element={<Skate />} />
+              <Route path="/about/" element={<About />} />
+              <Route path="/contact/" element={<Contact />} />
+              <Route path="/test/" element={<Test />} />
+              <Route path="/carrito/" element={<Carrito />} />
+              <Route path="/panel-admin/" element={<Panel />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+    
+
+      {/*  
       <header className="headerContainer">
-        {/* <nav> */}
+   
         <nav className="navFondo">
           <div className="divLuaWaveNave">
             <Link to={"/"}>
@@ -49,56 +70,24 @@ function App() {
               <p class="sizeP">Test</p>
             </Link>
             <Link to={"/carrito/"}>
-              <img class="carrito" src={carrito} alt="carrito"></img>
+              <img class="carrito" src={carritoimg} alt="carrito"></img>
             </Link>
           </div>
         </nav>
       </header>
-      {/* contenedor <main> */}
+     
       <main></main>
-      {/* <footer> */}
+  
       <footer className="footerContainer">
-        <div class="footerFondo">
-          <a class="aEnlace" href="https://www.instagram.com/">
-            <img class="iconos" src={iconoFooter1} alt="iconoI"></img>
-          </a>
-          <a class="aEnlace" href="https://es-es.facebook.com/">
-            <img class="iconos" src={iconoFooter2} alt="iconoF"></img>
-          </a>
-          <a class="aEnlace" href="https://www.youtube.com/">
-            <img class="iconos" src={iconoFooter3} alt="iconoY"></img>
-          </a>
-          <a class="aEnlace" href="https://twitter.com/">
-            <img class="iconos" src={iconoFooter4} alt="iconoT"></img>
-          </a>
-          <a class="aEnlace" href="https://www.pinterest.es/">
-            <img class="iconos" src={iconoFooter5} alt="iconoP"></img>
-          </a>
-          <a class="aEnlace" href="https://outlook.live.com/owa/">
-            <img class="iconos" src={iconoFooter6} alt="iconoE"></img>
-          </a>
-          <a class="aEnlace" href="https://www.whatsapp.com/">
-            <img class="iconos" src={iconoFooter7} alt="iconoW"></img>
-          </a>
-          <a class="aEnlace" href="tel:881917587">
-            <img class="iconos" src={iconoFooter8} alt="iconoT"></img>
-          </a>
-          <a class="aEnlace" href="https://www.google.es/maps/preview">
-            <img class="iconos" src={iconoFooter9} alt="iconoM"></img>
-          </a>
-        </div>
-      </footer>
+       
+      </footer> 
+      
+      */}
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/surf/" element={<Surf />} />
-        <Route path="/skate/" element={<Skate />} />
-        <Route path="/about/" element={<About />} />
-        <Route path="/contact/" element={<Contact />} />
-        <Route path="/test/" element={<Test />} />
-        <Route path="/carrito/" element={<Carrito />} />
-        <Route path="/panel-admin/" element={<Panel />} />
-      </Routes>
+
+
+
+
     </>
   );
 }
