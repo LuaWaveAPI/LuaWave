@@ -15,3 +15,11 @@ log.run(`CREATE TABLE IF NOT EXISTS Register (
     DescriptionCompleted VARCHAR(500) NULL DEFAULT 'DEFAULT NULL'
 )
 `);
+
+log.run(`CREATE TABLE IF NOT EXISTS Contact (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(45) NOT NULL,
+  email VARCHAR(45) NOT NULL,
+  coment VARCHAR(500) NOT NULL
+)
+`);
