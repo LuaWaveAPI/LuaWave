@@ -1,13 +1,15 @@
 .elFooter {
     top: 0px;
-    padding-bottom: 5px;
+  
     min-width: 100%;
     max-height: 60px;
+    z-index: 1;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     align-items: center;
     justify-items: center;
+    align-content: space-evenly;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     color: white;
@@ -17,7 +19,7 @@
 
   
   .iconos {
-    width: 70px;
-    height: 70px; 
+    width: 65px;
+    height: 65px; 
   }
 

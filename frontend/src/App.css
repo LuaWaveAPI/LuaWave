@@ -10,10 +10,12 @@
 .estructura {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1.5fr 1fr 1fr;
+  grid-template-rows: 0.9fr 11.5fr 0.9fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  width: 100%;
   min-height: 100vh;
+  position: fixed;
 
 }
 

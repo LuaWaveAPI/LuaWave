@@ -4,7 +4,7 @@ import style from '../Carrusel/Carrusel.module.css'
 
 const Carrusel = () => {
   return (
-      <div className={style.mainContainer}>
+      <div className={style.mainCarrusel}>
     <Carousel wrapAround={true} >
       <img className={style.imgCarrusel} src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/carrusel/5.png" alt='Skate' />
       <img className={style.imgCarrusel}  src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/carrusel/2.png" alt='Surf'/>
