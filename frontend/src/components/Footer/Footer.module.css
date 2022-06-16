@@ -1,9 +1,17 @@
 .elFooter {
-    top: 0px;
-  
     min-width: 100%;
-    max-height: 60px;
-    z-index: 1;
+    position: absolute; 
+    /*z-index: 1; */
+    font-family: "BillionDreams";
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: #C7D4D9;
+
+    /*
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -12,14 +20,19 @@
     align-content: space-evenly;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    color: white;
-    background-color: #C7D4D9;
+    */
 }
 
-
-  
-  .iconos {
+.iconos {
     width: 65px;
     height: 65px; 
-  }
+}
 
+/*
+@media (min-width: 510px) {
+    .elFooter{
+    
+    
+    }
+}
+*/

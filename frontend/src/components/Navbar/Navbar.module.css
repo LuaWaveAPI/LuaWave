@@ -5,14 +5,10 @@
 }
 
 .navegador {
-    top: 0px;
-    margin: 0px;
     position: fixed; 
     min-width: 100%;
-    height: 7%; /* en un media quitarlo a 500 y pico pixeles de ancho */
     font-family: "BillionDreams";
     z-index: 1;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -44,3 +40,9 @@ a:hover {
     color: dodgerblue;
     cursor: pointer;
 }
+
+@media (min-width: 585px) {
+    .navegador{
+        height: 6.6%;
+    }
+  }

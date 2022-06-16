@@ -1,18 +1,3 @@
-/* Main fondo */
-.fondo {
-    margin: 0;
-    display: grid;
-    grid-template-rows: 1fr 11.5fr 1fr;
-    background-image: url("../../img/FondoSurf.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    width: 100%;
-    height: 95vh;
-    position: absolute;
-
-}
 
 /*
   @font-face {
@@ -20,16 +5,28 @@
     src: url('../fonts/BillionDreams_PERSONAL.ttf') format('truetype');
 }*/
 
-/* div button sin neopreno | con neopreno */
-.divbutton {
-    margin-top: 150px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-end;
-    padding-top: 0px;
-    background-color: none;
+/* Main fondo */
+.mainDividido {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 86.8vh; 
+}
+
+/* button sin accesorios | con accesorios */
+.conSin {
+    padding-top: 20px;
+    position: fixed;
+    min-width: 100%;
+    max-height: 50px;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    
 }
 
 .buttonConSin {
@@ -43,22 +40,24 @@
     text-decoration: none;
     text-shadow: black 0.1em 0.1em 0.2em;
     color: white;
+    
 }
 
 button:hover {
     color: dodgerblue;
-    text-shadow: white 0.1em 0.1em 0.2em;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    /*text-shadow: white 0.1em 0.1em 0.2em; */
     cursor: pointer;
 }
 
-/* div dividir main */
-.dividirMain {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: space-between;
+.marginCon {
+    margin-right: 20px;
 }
+
+.marginSin {
+    margin-left: 20px;
+}
+
 
 h1 {
     margin-top: 10px;
@@ -73,6 +72,8 @@ h3 {
     margin-top: 0px;
 }
 
+
+/* clases versión anterior */
 .textoSurf {
     display: flex;
     flex-direction: column;
