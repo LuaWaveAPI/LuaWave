@@ -12,7 +12,7 @@ import Carrito from "./views/Carrito/Carrito";
 import Panel from "./views/admin/paneladmin";
 
 import logoLuaWave from "./img/logoLuaWave.png";
-import carritoimg from "./img/carrito.png";
+import carritoimg from "./img/Carrito.png";
 
 
 function App() {
