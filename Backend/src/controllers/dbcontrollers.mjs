@@ -77,7 +77,17 @@ export function insertLog(
 ) {
   log.run(
     `INSERT INTO Register (Date, Endpoint, Description, DescriptionCompleted)
-  VALUES (${date}, ${endpoint}, ${description}, ${descriptionCompleted});`,
+  VALUES (${date}, "${endpoint}", "${description}", "${descriptionCompleted}");`,
+    callback
+  );
+}
+
+////////////////////////////////
+
+export function insertContact(name, email, coment, callback) {
+  log.run(
+    `INSERT INTO Contact (name, email, coment)
+  VALUES ("${name}", "${email}", "${coment}");`,
     callback
   );
 }

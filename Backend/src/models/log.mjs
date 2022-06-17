@@ -19,7 +19,7 @@ log.run(`CREATE TABLE IF NOT EXISTS Register (
 log.run(`CREATE TABLE IF NOT EXISTS Contact (
   id INTEGER PRIMARY KEY,
   name VARCHAR(45) NOT NULL,
-  email VARCHAR(45) NOT NULL,
+  email TEXT NOT NULL,
   coment VARCHAR(500) NOT NULL
 )
 `);
