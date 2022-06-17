@@ -11,16 +11,18 @@ function ArticuloDetallado({ articuloFull, showButton }) {
     //     localStorage.setItem("articulos", JSON.stringify(new Article(id)));
     return (
         <>
-            {showButton &&
-                <div className={styles.divDerecha}>
+            <div className={styles.divDerecha}>
+
+                <div className={styles.cuadrarNum}>
+                    <p> {articuloFull.Price} €</p>
+                    <p>{articuloFull.Name} -</p>
+                </div>
+                {showButton && <button className={styles.buttonBlack} onClick={() => addNewProduct(articuloFull)}>Añadir al carrito</button>}
+                <p className={styles.pBold}>{articuloFull.Description}</p>
+                <div className={styles.divImagen}>
                     <img className={styles.imagen} src={"http://localhost:4000/public/" + articuloFull.Photo} alt={articuloFull.Name} />
-                    {showButton && <button onClick={() => addNewProduct(articuloFull)}>Añadir al carrito</button>}
-                    <div className={styles.cuadrarTexto}>
-                        <p> {articuloFull.Price} €</p>
-                        <p>{articuloFull.Name} -</p>
-                    </div>
-                    <p className={styles.pBold}>{articuloFull.Description}</p>
-                </div>}
+                </div>
+            </div>
         </>
     );
 }

@@ -1,0 +1,16 @@
+/* Fuente decorativa */
+@font-face {
+    font-family: 'BillionDreams';
+    src: url('../../fonts/BillionDreams_PERSONAL.ttf') format('truetype');
+}
+
+
+.divIzquierda {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 48%;
+    margin-left: 10px;
+    grid-row-gap: 20px;
+}

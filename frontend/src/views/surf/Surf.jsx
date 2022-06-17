@@ -52,8 +52,10 @@ function Surf() {
                     <div>
                         <h2>Alquiler tablas de Surf {tittle} neopreno</h2>
                     </div>
-                    <ListaArticulos host={pag} tittle={tittle} setArticuloFull={setArticuloFull} setShowButton={setShowButton} />
-                    <ArticuloDetallado articuloFull={articuloFull} showButton={showButton} />
+                    <div className={style.contenedortotal}>
+                        <ListaArticulos host={pag} tittle={tittle} setArticuloFull={setArticuloFull} setShowButton={setShowButton} />
+                        <ArticuloDetallado articuloFull={articuloFull} showButton={showButton} />
+                    </div>
                 </div>
             </div>
 

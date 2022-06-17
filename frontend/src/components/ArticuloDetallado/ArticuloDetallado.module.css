@@ -5,30 +5,66 @@
 }
 
 
+h2 {
+    margin-left: 30px;
+}
+
 .imagen {
     transform: rotate(-90deg);
+    margin-right: 20%;
+   
+}
+
+.divImagen {
+    display: block;
 }
 
 .divDerecha {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: flex-end;
-    width: 38%;
+    justify-content: center;
+    justify-content: flex-start;
+    width: 40%;
 }
 
-.divIzquierda {
+.cuadrarNum {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row-reverse;
+    font-size: x-large;
+    font-weight: bold;
+    padding-right: 75px;
+}
+
+.pBold {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 42%;
+    margin-top: 50px;
+}
+
+.buttonBlack {
+    text-align: center;
+    cursor: pointer;
+    font-family: "BillionDreams";
+    font-weight: lighter;
+    font-size: 1.6em;
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    width: 270px;
+    height: 4.5vh;
+    
 }
 
 .cuadrarTexto {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row-reverse;
-}
-
-.pBold {
-    font-size: x-large;
-    font-weight: bold;
+    flex-direction: column-reverse;
+    font-size: medium;
+    text-align: center;
+    padding-top: 20px;
+    width: 75%;
 }
