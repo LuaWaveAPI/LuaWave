@@ -12,7 +12,7 @@ function Contact () {
         <br />
         <textarea name="coment" placeholder="Haznos llegar tu mensaje" id="areacoment" cols="30" rows="10"></textarea>
         <br />
-        <button className="submit" type="submit">Enviar</button>
+        <button className="submit" type="button">Enviar</button>
         </form>
         </div>
         </>
