@@ -22,6 +22,7 @@ import { getAllLogController } from "./controllers/logControllers.mjs";
 import {
   getAllContactController,
   postContactController,
+  deleteContactController,
 } from "./controllers/contactControllers.mjs";
 import {
   deleteOrderController,
@@ -89,6 +90,7 @@ try {
   //Contact
   app.get(PATH_PREFIX + "/contact/", getAllContactController);
   app.post(PATH_PREFIX + "/contact/", jsonParser, postContactController);
+  app.delete(PATH_PREFIX + "/contact/", jsonParser, deleteContactController);
 
   app.use(function (err, req, res, next) {
     if (!err) {

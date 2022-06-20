@@ -21,6 +21,17 @@ export function findOne(select, table, comparator, value, callback) {
   );
 }
 
+export function findContact(select, table, comparator, value, callback) {
+  log.get(
+    `
+        SELECT ${select}
+        FROM ${table}
+        WHERE ${comparator} = "${value}"
+        `,
+    callback
+  );
+}
+
 /** Seleccion todo los datos que indiques en la tabla que indiques, obteniendo todos
  *  los valores que cumplan las condicion indicada.
  *
@@ -82,8 +93,6 @@ export function insertLog(
   );
 }
 
-////////////////////////////////
-
 export function insertContact(name, email, coment, callback) {
   log.run(
     `INSERT INTO Contact (name, email, coment)
@@ -128,6 +137,11 @@ export function getAllContact(callback) {
  */
 export function deleteIt(table, comparator, value) {
   luawave.run(`DELETE FROM ${table} 
+    WHERE ${comparator} = "${value}"`);
+}
+
+export function deleteContact(table, comparator, value) {
+  log.run(`DELETE FROM ${table} 
     WHERE ${comparator} = "${value}"`);
 }
 
