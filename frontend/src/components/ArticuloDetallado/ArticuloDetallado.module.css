@@ -11,27 +11,34 @@ h2 {
 
 .imagen {
     transform: rotate(-90deg);
-    margin-right: 20%;
+    margin-right: 0px;
+    margin-bottom: 0px;
+
    
+    max-width: 500px;
+    min-width: 500px;
+
 }
 
-.divImagen {
-    display: block;
+.divDentro {
+    grid-area: 1 / 1 / 6 / 2;
 }
 
 .divDerecha {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    justify-content: flex-start;
-    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: start;
+    width: 45%;
+
 }
 
 .cuadrarNum {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row-reverse;
+    flex-direction: row;
     font-size: x-large;
     font-weight: bold;
     padding-right: 75px;
@@ -56,7 +63,7 @@ h2 {
     color: white;
     width: 270px;
     height: 4.5vh;
-    
+
 }
 
 .cuadrarTexto {
