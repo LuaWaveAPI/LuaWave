@@ -4,22 +4,10 @@ import ListaArticulos from "../../components/ListaArticulos/ListaArticulos"
 import ArticuloDetallado from "../../components/ArticuloDetallado/ArticuloDetallado"
 import style from './Surf.module.css';
 import Navbar from '../../components/Navbar/Navbar.jsx';
+import { LogoGrande } from "../../components/LogoGrande/LogoGrande";
 
 import FondoSurf from "../../img/FondoSurf.jpg";
-
 import rectanguloFondo from "../../img/rectanguloFondo.png";
-import tablaSurf2 from "../../img/tablaSurf2.png";
-import tablaSurf2H from "../../img/tablaSurf2H.png";
-import tablaSurf9H from "../../img/tablaSurf9H.png";
-import tablaSurf12H from "../../img/tablaSurf12H.png";
-import tablaSurf11H from "../../img/tablaSurf11H.png";
-/*
-import tablaSurf14 from "../../img/tablaSurf14.png";
-import tablaSurf4H from "../../img/tablaSurf4H.png";
-import tablaSurf1H from "../../img/tablaSurf1H.png";
-import tablaSurf14H from "../../img/tablaSurf14H.png";
-import tablaSurf3H from "../../img/tablaSurf3H.png";
-*/
 
 
 function Surf() {
@@ -45,16 +33,17 @@ function Surf() {
 
             <div className={style.mainDividido}>
                 <div className={style.conSin}>
-                    <div>
-                        <button className={style.buttonConSin + " " + style.marginCon} onClick={() => changeView(urls[1], "sin")}>Alquiler tablas de Surf sin neopreno</button>
+                    <div className={style.centrarBotones}>
                         <button className={style.buttonConSin + " " + style.marginSin} onClick={() => changeView(urls[0], "con")}>Alquiler tablas de Surf con neopreno</button>
+                        <button className={style.buttonConSin + " " + style.marginCon} onClick={() => changeView(urls[1], "sin")}>Alquiler tablas de Surf sin neopreno</button>
                     </div>
                     <div>
                         <h2>Alquiler tablas de Surf {tittle} neopreno</h2>
                     </div>
                     <div className={style.contenedortotal}>
                         <ListaArticulos host={pag} tittle={tittle} setArticuloFull={setArticuloFull} setShowButton={setShowButton} />
-                        <ArticuloDetallado articuloFull={articuloFull} showButton={showButton} />
+                        {showButton ? <ArticuloDetallado articuloFull={articuloFull} showButton={showButton}/>
+                         : <LogoGrande />}
                     </div>
                 </div>
             </div>

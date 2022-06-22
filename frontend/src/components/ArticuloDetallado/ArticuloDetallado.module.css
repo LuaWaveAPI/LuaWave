@@ -7,51 +7,53 @@
 
 h2 {
     margin-left: 30px;
+    text-align: center;
 }
 
 .imagen {
     transform: rotate(-90deg);
     margin-right: 0px;
     margin-bottom: 0px;
+    max-width: 450px;
+    min-width: 450px;
 
-   
-    max-width: 500px;
-    min-width: 500px;
-
-}
-
-.divDentro {
-    grid-area: 1 / 1 / 6 / 2;
 }
 
 .divDerecha {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 0.3fr 3fr 6.5fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     align-items: start;
-    width: 45%;
+    justify-content: space-evenly;
+    justify-items: center;
+    width: 48%;
 
 }
 
 .cuadrarNum {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    font-size: x-large;
+    font-size: large;
     font-weight: bold;
-    padding-right: 75px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    grid-column-gap: 20px;
+    color: dodgerblue;
 }
 
 .pBold {
     font-size: large;
     font-weight: bold;
     text-align: center;
-    margin-left: 42%;
-    margin-top: 50px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: dodgerblue;
 }
-
+.displaynone{
+    display: none
+}
 .buttonBlack {
     text-align: center;
     cursor: pointer;
