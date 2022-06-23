@@ -325,13 +325,17 @@ export function deleteArticleController(request, response) {
       response.send("Algún campo esta vacío");
       return;
     }
-    findOne("Name", "Articles", "Articles_id", Articles_id, (error, data) => {
+    findOne("Name, Photo", "Articles", "Articles_id", Articles_id, (error, data) => {
       if (error) {
         response.status(500);
         console.error(error);
         throw error;
       }
       if (data) {
+        fs.rm(`./photosArticles/${data.Photo}`, { recursive:true }, (err) => {
+          if(err) throw err;
+          console.log("File deleted successfully");
+      })
         response.status(200);
         deleteIt("Articles", "Articles_id", Articles_id);
         response.send(`Artículo ${data.Name} borrado correctamente`);
