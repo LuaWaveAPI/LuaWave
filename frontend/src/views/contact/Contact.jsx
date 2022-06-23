@@ -1,6 +1,25 @@
 import style from "../Contact/Contact.module.css"
 import { useState } from "react";
 
+<<<<<<< HEAD
+function Contact() {
+
+
+    return (
+        <>
+            <div className={style.contact}>
+                <h1 className={style.texto}>Contáctanos</h1>
+                <form action="http://localhost:4000/api/v0.0/contact/" method="POST" target="_blank">
+                    <input type="text" placeholder="Nombre" name="name" id="inputname" />
+                    <br />
+                    <input type="email" placeholder="Correo eléctrónico" name="mail" id="inputmail" />
+                    <br />
+                    <textarea name="coment" placeholder="Haznos llegar tu mensaje" id="areacoment" cols="30" rows="10"></textarea>
+                    <br />
+                    <button className="submit" type="submit">Enviar</button>
+                </form>
+            </div>
+=======
 function Contact () {
     const URL = "http://localhost:4000/api/v0.0/contact/";
     const [name, setName] = useState("")
@@ -50,6 +69,7 @@ function Contact () {
         <button onClick={postContact} className="submit" >Enviar</button>
         </form>
         </div>
+>>>>>>> d81f9c3904b82df10da7fbda44a75107bfe3058d
         </>
     )
 }

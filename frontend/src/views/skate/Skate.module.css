@@ -14,6 +14,10 @@
     grid-row-gap: 0px;
     height: 86.8vh; 
     background-image: url("https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/FondoSkate.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 /* button sin accesorios | con accesorios */

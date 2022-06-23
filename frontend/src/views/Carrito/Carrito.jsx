@@ -13,8 +13,12 @@ function Carrito() {
                 {!status && <p>Gracias por su reserva</p>}
                 {status &&
                     <div>
-                        <ArticulosCarrito />
-                        <FormularioCarrito setStatus={setStatus} />
+                        <div>
+                            <ArticulosCarrito />
+                        </div>
+                        <div>
+                            <FormularioCarrito setStatus={setStatus} />
+                        </div>
                     </div>}
             </div>
         </>
