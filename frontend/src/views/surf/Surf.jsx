@@ -34,8 +34,8 @@ function Surf() {
             <div className={style.mainDividido}>
                 <div className={style.conSin}>
                     <div className={style.centrarBotones}>
-                        <button className={style.buttonConSin + " " + style.marginSin} onClick={() => changeView(urls[0], "con")}>Alquiler tablas de Surf con neopreno</button>
-                        <button className={style.buttonConSin + " " + style.marginCon} onClick={() => changeView(urls[1], "sin")}>Alquiler tablas de Surf sin neopreno</button>
+                        <button className={style.buttonConSin + " " + style.marginCon} onClick={() => changeView(urls[0], "con")}>Alquiler tablas de Surf con neopreno</button>
+                        <button className={style.buttonConSin + " " + style.marginSin} onClick={() => changeView(urls[1], "sin")}>Alquiler tablas de Surf sin neopreno</button>
                     </div>
                     <div>
                         <h2>Alquiler tablas de Surf {tittle} neopreno</h2>
