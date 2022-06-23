@@ -347,7 +347,7 @@ export function deleteArticleController(request, response) {
       JSON.stringify(err.message),
       JSON.stringify(err),
       (error)=> response.send(error)
-    )
+    ) 
     response.status(500);
     return;
   }
