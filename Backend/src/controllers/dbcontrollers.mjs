@@ -21,6 +21,17 @@ export function findOne(select, table, comparator, value, callback) {
   );
 }
 
+export function findContact(select, table, comparator, value, callback) {
+  log.get(
+    `
+        SELECT ${select}
+        FROM ${table}
+        WHERE ${comparator} = "${value}"
+        `,
+    callback
+  );
+}
+
 /** Seleccion todo los datos que indiques en la tabla que indiques, obteniendo todos
  *  los valores que cumplan las condicion indicada.
  *
@@ -62,15 +73,32 @@ export function insertIt(object, table, callback) {
   luawave.run(sql, newValues, callback);
 }
 /**
- * 
- * Codigo de tiempo en el momento de insert @param {Number} date 
- * Endpoint donde se sucede el error @param {String} endpoint 
- * Desscripción del error @param {String} description 
+ *
+ * Codigo de tiempo en el momento de insert @param {Number} date
+ * Endpoint donde se sucede el error @param {String} endpoint
+ * Desscripción del error @param {String} description
  * Callback sobre la respuesta @param {Function} callback
  */
-export function insertLog(date, endpoint, description, descriptionCompleted, callback){
-  log.run(`INSERT INTO Register (Date, Endpoint, Description, DescriptionCompleted)
-  VALUES (${date}, ${endpoint}, ${description}, ${descriptionCompleted});`, callback)
+export function insertLog(
+  date,
+  endpoint,
+  description,
+  descriptionCompleted,
+  callback
+) {
+  log.run(
+    `INSERT INTO Register (Date, Endpoint, Description, DescriptionCompleted)
+  VALUES (${date}, "${endpoint}", "${description}", "${descriptionCompleted}");`,
+    callback
+  );
+}
+
+export function insertContact(name, email, coment, callback) {
+  log.run(
+    `INSERT INTO Contact (name, email, coment)
+  VALUES ("${name}", "${email}", "${coment}");`,
+    callback
+  );
 }
 
 /** Obtienes todo los datos que necesitas de una tabla
@@ -88,8 +116,17 @@ export function getIt(keys, table, callback) {
  * Valores que quieres obtener @param {String} keys
  * Callback sobre la respuesta @param {Function} callback
  */
- export function getAllLog(callback) {
+export function getAllLog(callback) {
   log.all(`SELECT * FROM Register`, callback);
+}
+
+/** Obtienes todo los datos de la base de datos log que necesitas de la tabla Contact
+ *
+ * Valores que quieres obtener @param {String} keys
+ * Callback sobre la respuesta @param {Function} callback
+ */
+export function getAllContact(callback) {
+  log.all(`SELECT * FROM Contact`, callback);
 }
 
 /** Eliminas una fila de una tabla a traves de una condicion
@@ -100,6 +137,11 @@ export function getIt(keys, table, callback) {
  */
 export function deleteIt(table, comparator, value) {
   luawave.run(`DELETE FROM ${table} 
+    WHERE ${comparator} = "${value}"`);
+}
+
+export function deleteContact(table, comparator, value) {
+  log.run(`DELETE FROM ${table} 
     WHERE ${comparator} = "${value}"`);
 }
 

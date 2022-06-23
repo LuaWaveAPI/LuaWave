@@ -10,24 +10,12 @@
 .estructura {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1.5fr 1fr 1fr;
+  grid-template-rows: 0.60fr 7.9fr 0.60fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  width: 100%;
   min-height: 100vh;
-
 }
-
-.noLogin {
-  margin-top: 30px;
-  text-align: center;
-}
-
-
-
-
-
-
-
 
 
 
@@ -50,21 +38,6 @@ nav p:hover  {
   color:dodgerblue;  
 }
 
-.sizeP {
-  font-size: 2em;
-  margin-top: 15px;
-  padding-right: 20px;
-} 
-
-.navFondo {
-  background-color: black;
-  z-index: 3;
-  position: fixed;
-  width: 100%;
-  height: auto;
-  font-family: "BillionDreams";
-  font-weight: lighter;
-}
 
 
 
@@ -95,34 +68,9 @@ nav p:hover  {
   margin-right: 60px;
 }
 
-
-
-
-.footerFondo {
-  background-color:#C7D4D9;
-  z-index: 3;
-  display: flex;
-  flex-wrap: wrap;
-  position: fixed;
-  justify-content: center;
-  width: 100%;
-  bottom: 0px;
-}
-
-.iconos {
-  width: 70px;
-  height: 70px; 
-}
-
 */
 
-/*
-@media (min-width: 400px) {
-  .navFondo{
-      background-color: aqua;
-  }
-}
-*/
+
 
 
 

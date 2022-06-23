@@ -3,22 +3,11 @@ import { urls } from "../../defines/defines"
 import ListaArticulos from "../../components/ListaArticulos/ListaArticulos"
 import ArticuloDetallado from "../../components/ArticuloDetallado/ArticuloDetallado"
 import style from './Skate.module.css';
+import { LogoGrande } from "../../components/LogoGrande/LogoGrande";
 
-// import FondoSkate from "../../img/FondoSkate.jpg";
+import FondoSkate from "../../img/FondoSkate.jpg";
+import rectanguloFondo from "../../img/rectanguloFondo.png";
 
-// import rectanguloFondo from "../../img/rectanguloFondo.png";
-// import skate1 from "../../img/skate1.png";
-// import skate1H from "../../img/skate1H.png";
-// import skate7H from "../../img/skate7H.png";
-// import skate2H from "../../img/skate2H.png";
-// import skate8H from "../../img/skate8H.png";
-/*
-import skate12 from "../../img/skate12.png";
-import skate5H from "../../img/skate5H.png";
-import skate3H from "../../img/skate3H.png";
-import skate12H from "../../img/skate12H.png";
-import skate4H from "../../img/skate4H.png";
-*/
 
 function Skate() {
     const [showButton, setShowButton] = useState(false)
@@ -41,15 +30,19 @@ function Skate() {
         <>
             <div className={style.mainDividido}>
                 <div className={style.conSin}>
-                    <div>
-                        <button className={style.buttonConSin + " " + style.marginCon} onClick={() => changeView(urls[2], "con")}>Skate con accesorios</button>
-                        <button className={style.buttonConSin + " " + style.marginSin} onClick={() => changeView(urls[3], "sin")}>Skate sin accesorios</button>
+                    <div className={style.centrarBotones}>
+                        <button className={style.buttonConSin + " " + style.marginCon} onClick={() => changeView(urls[2], "con")}>Alquiler tablas de Skate con accesorios</button>
+                        <button className={style.buttonConSin + " " + style.marginSin} onClick={() => changeView(urls[3], "sin")}>Alquiler tablas de Skate sin accesorios</button>
                     </div>
                     <div>
-                        <h2>Skate {tittle} accesorios</h2>
+                        <h2>Alquiler tablas de Skate {tittle} accesorios</h2>
                     </div>
-                    <ListaArticulos host={pag} tittle={tittle} setArticuloFull={setArticuloFull} setShowButton={setShowButton} />
-                    <ArticuloDetallado articuloFull={articuloFull} showButton={showButton} />
+
+                    <div className={style.contenedortotal}>
+                        <ListaArticulos host={pag} tittle={tittle} setArticuloFull={setArticuloFull} setShowButton={setShowButton} />
+                        {showButton ? <ArticuloDetallado articuloFull={articuloFull} showButton={showButton}/>
+                         : <LogoGrande />}
+                    </div>
                 </div>
             </div>
         </>

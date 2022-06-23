@@ -14,8 +14,8 @@ function Footer() {
     return (
         <>
 
-            <footer id="Footer" className={style.elFooter}>
-                <div className={style.footerFondo}>
+            <footer id="Footer">
+                <div className={style.elFooter}>
                     <a class="aEnlace" href="https://www.instagram.com/" target="_blank">
                         <img className={style.iconos} src={iconoFooter1} alt="iconoI"></img>
                     </a>

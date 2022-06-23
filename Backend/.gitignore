@@ -1,4 +1,4 @@
 #dependencies
-/node_modules
-./luawave.db
-./log.db
+/node_modules/
+luawave.db
+log.db

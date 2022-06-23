@@ -1,0 +1,89 @@
+
+/*
+  @font-face {
+    font-family: 'BillionDreams';
+    src: url('../fonts/BillionDreams_PERSONAL.ttf') format('truetype');
+}*/
+
+/* Main fondo */
+.mainDividido {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 86.8vh; 
+    background-image: url("https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/FondoSurf.jpg");
+}
+
+/* button sin accesorios | con accesorios */
+.conSin {
+    padding-top: 20px;
+    position: fixed;
+    min-width: 100%;
+    max-height: 50px;
+    justify-items: center;
+    justify-content: center;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    
+}
+
+.divCentrado {
+    text-align: center;
+}
+
+.buttonConSin {
+    text-align: center;
+    cursor: pointer;
+    font-family: "BillionDreams";
+    font-weight: lighter;
+    font-size: 2em;
+    background-color: transparent;
+    border-color: transparent;
+    text-decoration: none;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    color: white;
+    
+}
+
+button:hover {
+    color: dodgerblue;
+    /*text-shadow: Black 0.1em 0.1em 0.2em; */
+    cursor: pointer;
+}
+
+.centrarBotones {
+    text-align: center;
+}
+
+.marginCon {
+    margin-right: 20px;
+}
+
+.marginSin {
+    margin-left: 20px;
+}
+
+.contenedortotal{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: "BillionDreams";
+    font-weight: lighter;
+    color: black;
+}
+
+h3 {
+    margin-top: 0px;
+}
+
+
+
