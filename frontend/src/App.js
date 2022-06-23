@@ -16,7 +16,7 @@ import carritoimg from "./img/carrito.png";
 function App() {
   return (
     <>
-      <div class="estructura">
+      <div className="estructura">
         <header>
           <nav>
             <Navbar />

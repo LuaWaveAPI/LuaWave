@@ -13,6 +13,12 @@
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    height: 86.8vh;
+    height: 86.8vh; 
+    background-image: url("https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/FondoCarrito1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
+
 
