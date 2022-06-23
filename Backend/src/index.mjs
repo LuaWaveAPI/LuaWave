@@ -61,7 +61,7 @@ try {
     upload.single("Photo"),
     postArticleController
   );
-  app.put(PATH_PREFIX + "/article/", jsonParser, putArticleController);
+  app.put(PATH_PREFIX + "/article/",upload.single("Photo"), putArticleController);
   app.delete(PATH_PREFIX + "/article", jsonParser, deleteArticleController);
 
   //Categories
