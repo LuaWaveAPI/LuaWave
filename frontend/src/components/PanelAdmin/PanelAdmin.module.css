@@ -48,13 +48,33 @@ a:hover {
     color: black;
 }
 
-.marginPanel {
-    margin-top: 90px;
-}
 
 @media (min-width: 585px) {
     .navegador{
         height: 6.6%;
     }
   }
+
+  .panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.2fr 8fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 86.8vh; 
+    background-image: url("https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/FondoStaff.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.texto {
+    margin-top: 30px;
+}
+
+h1:hover {
+    color: dodgerblue;
+    cursor: pointer;
+}
 

@@ -15,8 +15,8 @@ function PanelAdmin() {
                     </Link>
                 </div>
             </div>
-            <div>
-            <h1 className={style.marginPanel}>Panel Admin</h1>
+            <div className={style.panel}>
+            <h1 className={style.texto}>Panel Admin</h1>
             </div>
         </>
     )
