@@ -12,15 +12,15 @@ function Contact() {
     }
 
     function postContact() {
-        if (name === "" || email === "" || coment === "") {
+        if(name === "" || email === "" || coment === ""){
             alert("Algún campo está vacío")
-        } else {
-            const bodyOrder = {
-                name: name,
-                email: email,
-                coment: coment
-            }
-
+    }else {
+        const bodyOrder = {
+            name: name,
+            email: email,
+            coment: coment
+        }
+        if (bodyOrder.email.includes("@") && bodyOrder.email.includes(".")){
             fetch(URL,
                 {
                     method: 'POST',
@@ -31,6 +31,9 @@ function Contact() {
                 }
             );
         }
+
+        
+    }
     }
 
     return (
