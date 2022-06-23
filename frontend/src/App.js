@@ -5,7 +5,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Test from "./views/test/Test";
 import Home from "./views/home/Home";
 import About from "./views/about/About";
-import Contact from "./views/contact/Contact";
+import Contact from "./views/Contact/Contact";
 import Skate from "./views/skate/Skate";
 import Surf from "./views/surf/Surf";
 import Carrito from "./views/Carrito/Carrito";
@@ -16,7 +16,7 @@ import carritoimg from "./img/carrito.png";
 function App() {
   return (
     <>
-      <div class="estructura">
+      <div className="estructura">
         <header>
           <nav>
             <Navbar />
