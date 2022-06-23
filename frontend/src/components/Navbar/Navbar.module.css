@@ -46,3 +46,9 @@ a:hover {
         height: 6.6%;
     }
   }
+
+  .carrito {
+    width: 65px;
+    height: 65px;
+    margin-top: 15px;
+  }

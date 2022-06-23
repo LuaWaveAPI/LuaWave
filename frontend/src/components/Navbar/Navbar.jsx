@@ -25,7 +25,7 @@ function Navbar() {
                         <p>Test</p>
                     </Link>
                     <Link to={'/carrito/'}>
-                        <p>Carrito</p>
+                        <img className={style.carrito} src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/carrito.png" alt="carrito" />
                     </Link>
                     <Link to={'/panel-admin/'}>
                         <p>Panel</p>
