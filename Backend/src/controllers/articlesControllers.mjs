@@ -8,6 +8,7 @@ import {
   findAll,
   insertLog,
 } from "./dbControllers.mjs";
+import fs from 'fs'
 
 /**Controlador que obtinen todos los datos que quieres de la tabla articulos
  *
@@ -286,13 +287,16 @@ export function putArticleController(request, response) {
       response.send("Algún campo esta vacio");
       return;
     }
-    findOne("Name", "Articles", "Articles_id", Articles_id, (error, data) => {
+    findOne("Name, Photo", "Articles", "Articles_id", Articles_id, (error, data) => {
       if (error) {
         console.error(error);
         throw error;
       }
       if (data) {
-        fs.rm(`../../photosAticles/${data.photo}`)
+        fs.rm(`./photosArticles/${data.Photo}`, { recursive:true }, (err) => {
+          if(err) throw err;
+          console.log("File deleted successfully");
+      })
         updateArticle("Articles_id", Articles_id, completedObject);
         response.send(`Datos del artículo ${data.Name} modificado`);
       } else {

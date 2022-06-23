@@ -157,9 +157,9 @@ export const updateArticle = updateFactory("Articles", luawave, [
   "Articles_id",
   "Name",
   "Description",
-  "Photo",
   "Price",
   "Category",
+  "Photo"
 ]);
 
 export const updateCategory = updateFactory("Categories", luawave, [
