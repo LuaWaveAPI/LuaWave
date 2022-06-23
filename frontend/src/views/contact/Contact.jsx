@@ -20,16 +20,19 @@ function Contact () {
             email: email,
             coment: coment
         }
-
-        fetch(URL,
-            {
-                method: 'POST',
-                body: JSON.stringify(bodyOrder),
-                headers: {
-                    "Content-Type": "application/json",
+        if (bodyOrder.email.includes("@") && bodyOrder.email.includes(".")){
+            fetch(URL,
+                {
+                    method: 'POST',
+                    body: JSON.stringify(bodyOrder),
+                    headers: {
+                        "Content-Type": "application/json",
+                    }
                 }
-            }
-        );
+            );
+        }
+
+        
     }
     }
 
