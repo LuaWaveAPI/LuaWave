@@ -265,8 +265,15 @@ export function postArticleController(request, response) {
 // TODO: poner autorizacion y respuesta 401
 export function putArticleController(request, response) {
   try {
+    console.log(request.file.filename)
+    const completedObject = {
+			...request.body,
+			Photo: request.file.filename
+		}
+		
     const { Articles_id, Name, Description, Photo, Price, Category } =
-      request.body;
+      completedObject;
+      
     if (
       !Articles_id ||
       !Name ||
@@ -285,7 +292,8 @@ export function putArticleController(request, response) {
         throw error;
       }
       if (data) {
-        updateArticle("Articles_id", Articles_id, request.body);
+        fs.rm(`../../photosAticles/${data.photo}`)
+        updateArticle("Articles_id", Articles_id, completedObject);
         response.send(`Datos del artículo ${data.Name} modificado`);
       } else {
         response.send("Artículo no encontrado");

@@ -19,6 +19,7 @@ import {
   deleteCategoryController,
 } from "./controllers/categoriesControllers.mjs";
 import { getAllLogController } from "./controllers/logControllers.mjs";
+import { loginCreateToken } from "./controllers/loginControllers.mjs";
 import {
   getAllContactController,
   postContactController,
@@ -87,6 +88,16 @@ try {
   //Log
   app.get(PATH_PREFIX + "/log/", getAllLogController);
 
+	//Login
+	app.post(PATH_PREFIX + "/login/", jsonParser, loginCreateToken)
+
+	app.use(function(err, req, res, next){
+		if(!err){
+			next()
+		}else{
+		res.status(500);
+	res.render('error', { error: err });
+}});
   //Contact
   app.get(PATH_PREFIX + "/contact/", getAllContactController);
   app.post(PATH_PREFIX + "/contact/", jsonParser, postContactController);
