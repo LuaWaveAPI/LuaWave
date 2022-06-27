@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-content: center;
     align-items: center;
     /*
@@ -26,11 +26,8 @@
     grid-row-gap: 0px;
     */
     font-size: xx-large;
-    text-decoration: none;
-    text-shadow: black 0.1em 0.1em 0.2em;
     color: white;
-    background-color: #C7D4D9;
-    opacity: 20%;
+    background-color: black;
 }
 
 a:-webkit-any-link {
@@ -44,37 +41,20 @@ a:hover {
     cursor: pointer;
 }
 
-.textoBlack {
-    color: black;
-}
-
-
 @media (min-width: 585px) {
     .navegador{
         height: 6.6%;
     }
   }
 
-  .panel {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1.2fr 8fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    height: 86.8vh; 
-    background-image: url("https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/FondoStaff.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+.carrito {
+    width: 65px;
+    height: 65px;
+    margin-top: 15px;
 }
 
-.texto {
-    margin-top: 30px;
+.logo {
+    width: 52px;
+    height: 52px;
+    margin-top: 12px;
 }
-
-h1:hover {
-    color: dodgerblue;
-    cursor: pointer;
-}
-

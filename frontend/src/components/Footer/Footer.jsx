@@ -44,6 +44,7 @@ function Footer() {
                         <img className={style.iconos} src={iconoFooter9} alt="iconoM"></img>
                     </a>
                 </div>
+                <a className={style.panel} href="">P-Ad</a>
             </footer>
 
 

@@ -12,14 +12,14 @@ function Carrito() {
             <div className={style.mainDividido}>
                 {!status && <p>Gracias por su reserva</p>}
                 {status &&
-                    <div>
-                        <div>
+                    <>
+                        <div className={style.divIzquierda}>
                             <ArticulosCarrito />
                         </div>
-                        <div>
+                        <div className={style.divDerecha}>
                             <FormularioCarrito setStatus={setStatus} />
                         </div>
-                    </div>}
+                    </>}
             </div>
         </>
     )

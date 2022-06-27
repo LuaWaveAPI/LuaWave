@@ -8,7 +8,6 @@ import About from "./views/about/About";
 import Skate from "./views/skate/Skate";
 import Surf from "./views/surf/Surf";
 import Carrito from "./views/Carrito/Carrito";
-import Panel from "./views/admin/paneladmin";
 import logoLuaWave from "./img/logoLuaWave.png";
 import carritoimg from "./img/carrito.png";
 import Contact from "./views/contact/Contact";
@@ -16,7 +15,7 @@ import Contact from "./views/contact/Contact";
 function App() {
   return (
     <>
-      <div className="estructura">
+      <div  className="estructura">
         <header>
           <nav>
             <Navbar />
@@ -30,9 +29,9 @@ function App() {
             <Route path="/skate/" element={<Skate />} />
             <Route path="/about/" element={<About />} />
             <Route path="/contact/" element={<Contact />} />
-            <Route path="/test/" element={<Test />} />
+            <Route path="/test/" element={<Test />} /> 
             <Route path="/carrito/" element={<Carrito />} />
-            <Route path="/panel-admin/" element={<Panel />} />
+           {/* <Route path="/backoffice/" element={<PanelAdmin />} /> */}
           </Routes>
         </main>
         <Footer />

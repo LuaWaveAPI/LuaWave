@@ -58,13 +58,31 @@ function FormularioCarrito({ setStatus }) {
 
     return (
         <>
-            <div className={style.divDerecha}>
-                <input type="text" value={name} placeholder="Escribe tu nombre" onChange={(event) => changeHandler(event, setName)} />
-                <input type="text" value={DNI} placeholder="Escribe tu DNI" onChange={(event) => changeHandler(event, setDNI)} />
-                <input type="text" value={email} placeholder="Escribe tu email" onChange={(event) => changeHandler(event, setEmail)} />
-                <input type="text" value={phone} placeholder="Escribe tu telefono" onChange={(event) => changeHandler(event, setPhone)} />
-                <input type="text" value={codepostal} placeholder="Escribe tu Codigo postal" onChange={(event) => changeHandler(event, setCodepostal)} />
-                <button onClick={postOrder}>Comprar</button>
+            <div className={style.divIzquierda}>
+                <div className={style.formulario}>
+                    <div className={style.cuadrarFormulario}>
+                        <p className={style.fuente}>Nombre</p>
+                        <input className={style.formulario} type="text" value={name} placeholder="Escribe tu nombre" onChange={(event) => changeHandler(event, setName)} />
+                    </div>
+                    <div className={style.cuadrarFormulario}>
+                        <p className={style.fuente}>DNI</p>
+                        <input className={style.formulario} type="text" value={DNI} placeholder="Escribe tu DNI" onChange={(event) => changeHandler(event, setDNI)} />
+                    </div>
+                    <div className={style.cuadrarFormulario}>
+                        <p className={style.fuente}>Email</p>
+                        <input className={style.formulario} type="text" value={email} placeholder="Escribe tu email" onChange={(event) => changeHandler(event, setEmail)} />
+                    </div>
+                    <div className={style.cuadrarFormulario}>
+                        <p className={style.fuente}>Teléfono</p>
+                        <input className={style.formulario} type="text" value={phone} placeholder="Escribe tu telefono" onChange={(event) => changeHandler(event, setPhone)} />
+                    </div>
+                    <div className={style.cuadrarFormulario}>
+                        <p className={style.fuente}>Código postal</p>
+                        <input className={style.formulario} type="text" value={codepostal} placeholder="Escribe tu Codigo postal" onChange={(event) => changeHandler(event, setCodepostal)} />
+                    </div>
+                    <button className={style.buttonBlue} onClick={postOrder}>Pagar</button>
+                </div>
+                
             </div>
         </>
     )

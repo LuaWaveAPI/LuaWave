@@ -1,7 +1,8 @@
-
 import { useState } from "react"
 import ArticCarrito from "../ArticCarrito/ArticCarrito"
-function ArticulosCarrito(){
+import style from './ArticulosCarrito.module.css';
+
+function ArticulosCarrito() {
     const [articulos, setArticulos] = useState(JSON.parse(localStorage.getItem("articulos")))
     /*localStorage.setItem("articulos", JSON.stringify([
         {
@@ -19,15 +20,16 @@ function ArticulosCarrito(){
     ]))*/
     //Copiar lo de arriba en la consola del navegador para añadir al localstorage
 
-    return(
+    return (
         <>
-        <h2>Carrito</h2>
-        {articulos.map( (articulo, idx) => 
-            <>
-            <ArticCarrito idx={idx} setArticulos={setArticulos} />
-            </>
-            )}
-            
+            <h2><span className={style.colorWhite}>________ </span>TU CARRITO <span className={style.colorWhite}>________ </span></h2>
+            <div className={style.divIzquierda}>
+                {articulos.map((articulo, idx) =>
+                    <>
+                        <ArticCarrito idx={idx} setArticulos={setArticulos} />
+                    </>
+                )}
+            </div>
         </>
     )
 }

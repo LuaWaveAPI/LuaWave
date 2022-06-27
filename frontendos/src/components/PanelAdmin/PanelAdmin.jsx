@@ -10,7 +10,7 @@ function PanelAdmin() {
                     <Link to={'/'}>
                         <p className={style.textoBlack}>LuaWave</p> 
                     </Link>
-                    <Link to={'/panel-admin/'}>
+                    <Link to={'/backoffice/'}>
                         <p className={style.textoBlack}>Panel Admin</p>
                     </Link>
                 </div>

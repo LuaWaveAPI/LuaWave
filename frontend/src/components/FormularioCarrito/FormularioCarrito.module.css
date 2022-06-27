@@ -1,12 +1,47 @@
-.divDerecha {
+.divIzquierda {
+    background-color: black;
+    width: 98%;
+
+}
+
+.formulario {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 0.5fr 0.5fr 3fr 1fr 3fr 3fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 20px;
-    align-items: start;
-    justify-content: space-evenly;
-    justify-items: stretch;
-    width: 48%;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 2fr 2fr;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 5px;
+    color: white;
+    background-color: black;
+    padding-top: 30px;
+    margin-right: 10px;
+    border: none;
+}
 
+.buttonBlue {
+    text-align: center;
+    cursor: pointer;
+    font-family: "BillionDreams";
+    font-weight: lighter;
+    font-size: 1.6em;
+    background-color: dodgerblue;
+    text-decoration: none;
+    min-width: 350px;
+    width: 450px;
+    height: 4.5vh;
+    border: none;
+}
+
+.fuente {
+    font-family: "BillionDreams";
+    font-size: 1.5em;
+}
+
+.cuadrarFormulario {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-left: 20px;
 }

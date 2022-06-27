@@ -7,6 +7,9 @@ function Navbar() {
             <div>
                 <div id="Navbar" className={style.navegador}>
                     <Link to={'/'}>
+                        <img className={style.logo} src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/logoLuaWave.png" alt="logo" />
+                    </Link>
+                    <Link to={'/'}>
                         <p>LuaWave</p>
                     </Link>
                     <Link to={'/surf/'}>
@@ -21,14 +24,17 @@ function Navbar() {
                     <Link to={'/contact/'}>
                         <p>Contact</p>
                     </Link>
+                    {/*
                     <Link to={'/test/'}>
                         <p>Test</p>
                     </Link>
-                    <Link to={'/carrito/'}>
-                        <img className={style.carrito} src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/carrito.png" alt="carrito" />
-                    </Link>
+                      
                     <Link to={'/panel-admin/'}>
                         <p>Panel</p>
+                    </Link>
+                     */}
+                    <Link to={'/carrito/'}>
+                        <img className={style.carrito} src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/carrito.png" alt="carrito" />
                     </Link>
                 </div>
             </div>

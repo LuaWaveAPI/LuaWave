@@ -47,8 +47,14 @@ a:hover {
     }
   }
 
-  .carrito {
+.carrito {
     width: 65px;
     height: 65px;
     margin-top: 15px;
-  }
+}
+
+.logo {
+    width: 52px;
+    height: 52px;
+    margin-top: 12px;
+}
