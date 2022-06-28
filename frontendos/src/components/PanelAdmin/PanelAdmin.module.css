@@ -4,45 +4,15 @@
     src: url('../../fonts/BillionDreams_PERSONAL.ttf') format('truetype');
 }
 
-.navegador {
-    position: fixed; 
-    min-width: 100%;
-    font-family: "BillionDreams";
-    z-index: 1;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-    /*
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 1fr;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    */
-    font-size: xx-large;
-    text-decoration: none;
-    text-shadow: black 0.1em 0.1em 0.2em;
-    color: white;
-    background-color: #C7D4D9;
-    opacity: 20%;
+body {
+    /*background-image: url("https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/FondoStaff.jpg"); */
+    background-image: url("https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/chicaSkater.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
-a:-webkit-any-link {
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-a:hover {
-    color: dodgerblue;
-    cursor: pointer;
-}
 
 .textoBlack {
     color: black;
@@ -55,29 +25,53 @@ a:hover {
     }
 }
 
-
-.panel {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1.2fr 8fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    width: 100%;
-    height: 86.8vh; 
-    background-image: url("https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/FondoStaff.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+.centrarFormulario {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    row-gap: 20px;
+    background-color: #C7D4D9;
+    width: 50vw;
+    height: 50vh;
+    opacity: 70%;
+}
 
 .texto {
+    text-align: center;
     margin-top: 30px;
+    margin-left: 230px;
+    /*text-shadow: black 0.1em 0.1em 0.2em; */
+    color: white;
 }
 
-h1:hover {
-    color: dodgerblue;
+input {
+    width: 350px;
+    height: 22px;
+}
+
+.size {
+    width: 355px;
+    height: 35px;
+}
+
+button {
+    font-size: medium;
+    color: white;
+    background-color: black;
+}
+
+button:hover {
+    color: white;
     cursor: pointer;
 }
 
