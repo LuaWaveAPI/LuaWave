@@ -1,0 +1,9 @@
+.inputCarro {
+    min-width: 285px;
+    max-width: 285px;
+    height: auto;
+}
+
+.bold {
+    font-weight: bold;
+}

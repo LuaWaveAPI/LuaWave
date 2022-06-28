@@ -24,9 +24,9 @@ function ArticulosCarrito() {
         <>
             <h2 className={style.carrito}><span className={style.colorWhite}>__________ </span>TU CARRITO <span className={style.colorWhite}>__________ </span></h2>
             <div className={style.divIzquierda}>
-                {articulos.map((articulo, idx) =>
+                {articulos.map((articulo,idx) =>
                     <>
-                        <ArticCarrito idx={idx} setArticulos={setArticulos} />
+                        <ArticCarrito key={articulo.Articles_ID} idx={idx} setArticulos={setArticulos} />
                     </>
                 )}
             </div>
