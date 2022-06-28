@@ -48,8 +48,12 @@ const port = 4000;
 try {
   const upload = multer({ dest: UPLOADS_FOLDER });
   const jsonParser = express.json();
-  //Articles
+  
   app.use("/public/", express.static(UPLOADS_FOLDER));
+  app.use("/", express.static("../../frontend/build"));
+  app.use("/backoffice/", express.static("../../frontendos/build"));
+  
+  //Articles
   app.get(PATH_PREFIX + "/articles/", getAllArticlesController);
   app.get(PATH_PREFIX + "/articles/surf/con", getSurfConArticlesController);
   app.get(PATH_PREFIX + "/articles/surf/sin", getSurfSinArticlesController);
