@@ -1,9 +1,8 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar.jsx";
-import {  Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import PanelAdmin from "./components/PanelAdmin/PanelAdmin.jsx";
 import logoLuaWave from "./img/logoLuaWave.png";
-
 
 function App() {
   return (
@@ -17,7 +16,7 @@ function App() {
 
         <main>
           <Routes>
-            <Route path="/backoffice/" element={<PanelAdmin />} />
+            <Route path="/" element={<PanelAdmin />} />
           </Routes>
         </main>
       </div>

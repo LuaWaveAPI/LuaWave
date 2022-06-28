@@ -3,7 +3,7 @@ import { useState } from "react";
 
 
 function PanelAdmin({ setErrorLog, setAlertText }) {
-    const URL = "http://localhost:4000/api/v0.0/contact/";
+    const URL = "http://localhost:4000/api/v0.0/backoffice/";
     const [user, setUser] = useState("")
     const [email, setEmail] = useState("")
     const [contrasena, setContrasena] = useState("")
