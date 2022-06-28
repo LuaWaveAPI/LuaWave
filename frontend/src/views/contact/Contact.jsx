@@ -1,7 +1,7 @@
 import style from './Contact.module.css';
 import { useState } from "react";
 
-function Contact() {
+function Contact({ setErrorLog, setAlertText }) {
     const URL = "http://localhost:4000/api/v0.0/contact/";
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -11,29 +11,39 @@ function Contact() {
         set(event.target.value)
     }
 
-    function postContact() {
-        if(name === "" || email === "" || coment === ""){
-            alert("Algún campo está vacío")
-    }else {
-        const bodyOrder = {
-            name: name,
-            email: email,
-            coment: coment
-        }
-        if (bodyOrder.email.includes("@") && bodyOrder.email.includes(".")){
-            fetch(URL,
-                {
-                    method: 'POST',
-                    body: JSON.stringify(bodyOrder),
-                    headers: {
-                        "Content-Type": "application/json",
-                    }
-                }
-            );
-        }
 
-        
-    }
+    function postContact() {
+        if (name === "" || email === "" || coment === "") {
+            alert("Algún campo está vacío")
+            /*
+            setErrorLog(
+                <div>
+                    <p>¡Algún campo está vacío!</p>
+                    <p>¡Debes rellenar los campos!</p>
+                </div>
+            );
+            setAlertText(true)
+                */
+        } else {
+            const bodyOrder = {
+                name: name,
+                email: email,
+                coment: coment
+            }
+            if (bodyOrder.email.includes("@") && bodyOrder.email.includes(".")) {
+                fetch(URL,
+                    {
+                        method: 'POST',
+                        body: JSON.stringify(bodyOrder),
+                        headers: {
+                            "Content-Type": "application/json",
+                        }
+                    }
+                );
+            }
+
+
+        }
     }
 
     return (
@@ -42,12 +52,9 @@ function Contact() {
                 <h1 className={style.texto}>Contáctanos</h1>
                 <form>
                     <input type="text" value={name} placeholder="Nombre" name="name" id="inputname" onChange={(event) => changeHandler(event, setName)} />
-                    <br />
                     <input type="email" value={email} placeholder="Correo electrónico" name="mail" id="inputmail" onChange={(event) => changeHandler(event, setEmail)} />
-                    <br />
                     <textarea name="coment" value={coment} placeholder="Haznos llegar tu mensaje" id="areacoment" cols="30" rows="10" onChange={(event) => changeHandler(event, setComent)}></textarea>
-                    <br />
-                    <button onClick={postContact} className="submit" >Enviar</button>
+                    <button type="submit" onClick={postContact} className={style.size} >Enviar</button>
                 </form>
             </div>
         </>

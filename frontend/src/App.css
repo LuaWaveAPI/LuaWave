@@ -19,56 +19,6 @@
 
 
 
-/*
-
-a:-webkit-any-link {
-  cursor: pointer;
-  text-decoration: none;
-  color: white; 
-  text-shadow: black 0.1em 0.1em 0.2em 
-}
-
-nav a:focus {
-  color: dodgerblue;
-  cursor: pointer;
-
-}
-
-nav p:hover  {
-  color:dodgerblue;  
-}
-
-
-
-
-.divLuaWaveNave {
-  color: White;
-  padding-left: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.logo {
-  width: 50px;
-  height: 50px;
-  padding-top: 12px;
-}
-
-.carrito {
-  width: 65px;
-  height: 65px;
-  padding-top: 6px;
-}
-
-.nombre {
-  width: 140px;
-  height: 40px;
-  padding-top: 15px;
-  margin-right: 60px;
-}
-
-*/
 
 
 

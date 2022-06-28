@@ -43,6 +43,14 @@ import {
 const PATH_PREFIX = "/api/v0.0";
 const UPLOADS_FOLDER = "./photosArticles/";
 const app = express();
+
+/*
+app.use(function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // Dominio desde el que se llama y se quiere permitir
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
+  }); // Deshabilitar CORS
+  */
 const port = 4000;
 
 try {

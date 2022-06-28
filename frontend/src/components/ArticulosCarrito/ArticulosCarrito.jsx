@@ -22,7 +22,7 @@ function ArticulosCarrito() {
 
     return (
         <>
-            <h2><span className={style.colorWhite}>________ </span>TU CARRITO <span className={style.colorWhite}>________ </span></h2>
+            <h2 className={style.carrito}><span className={style.colorWhite}>__________ </span>TU CARRITO <span className={style.colorWhite}>__________ </span></h2>
             <div className={style.divIzquierda}>
                 {articulos.map((articulo, idx) =>
                     <>

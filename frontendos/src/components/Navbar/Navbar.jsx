@@ -4,19 +4,13 @@ import style from './Navbar.module.css';
 function Navbar() {
     return (
         <>
-            <div>
-                <div id="Navbar" className={style.navegador}>
+            <div id="Navbar" className={style.navegador}>
+                <div className={style.textoyLogo}>
                     <Link to={'/'}>
-                        <img className={style.logo} src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/logoLuaWave.png" alt="logo" />
+                        <img className={style.logo} src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/logoLuaWaveWhite.png" alt="logo" />
                     </Link>
-                    <Link to={'/'}>
-                        <p>LuaWave</p>
-                    </Link>
-                    <Link to={'/contact/'}>
-                        <p>Contact</p>
-                    </Link>  
-                    <Link to={'/panel-admin/'}>
-                        <p>Panel</p>
+                    <Link to={'/backoffice/'}>
+                        <p className={style.textoBlack}>Panel Admin</p>
                     </Link>
                 </div>
             </div>

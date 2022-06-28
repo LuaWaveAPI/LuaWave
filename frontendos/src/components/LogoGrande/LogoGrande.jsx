@@ -5,7 +5,7 @@ export function LogoGrande(){
     return(
         <>
         <div className={style.centrarLogo}>
-            <img src={imagen} alt="hola" />
+            <img src={imagen} alt="Logo" />
         </div>
         </>
     )
