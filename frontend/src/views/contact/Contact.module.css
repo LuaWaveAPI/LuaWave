@@ -27,13 +27,30 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    row-gap: 15px;
 }
 
 input {
-    width: 300px;
+    width: 350px;
+    height: 22px;
 }
 
 textarea {
-    width: 300px;
+    width: 350px;
 }
 
+button {
+    font-size: medium;
+    color: white;
+    background-color: black;
+}
+
+button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.size {
+    width: 355px;
+    height: 35px;
+}

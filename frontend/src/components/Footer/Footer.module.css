@@ -6,8 +6,9 @@
 
 .elFooter {
     min-width: 100%;
+    width: 100%;
     position: absolute; 
-    /*z-index: 1; */
+    z-index: 1; 
     font-family: "BillionDreams";
     display: flex;
     flex-direction: row;

@@ -16,31 +16,31 @@ function Footer() {
 
             <footer id="Footer">
                 <div className={style.elFooter}>
-                    <a class="aEnlace" href="https://www.instagram.com/" target="_blank">
+                    <a href="https://www.instagram.com/" target="_blank">
                         <img className={style.iconos} src={iconoFooter1} alt="iconoI"></img>
                     </a>
-                    <a class="aEnlace" href="https://es-es.facebook.com/" target="_blank">
+                    <a href="https://es-es.facebook.com/" target="_blank">
                         <img className={style.iconos} src={iconoFooter2} alt="iconoF"></img>
                     </a>
-                    <a class="aEnlace" href="https://www.youtube.com/" target="_blank">
+                    <a href="https://www.youtube.com/" target="_blank">
                         <img className={style.iconos} src={iconoFooter3} alt="iconoY"></img>
                     </a>
-                    <a class="aEnlace" href="https://twitter.com/" target="_blank">
+                    <a href="https://twitter.com/" target="_blank">
                         <img className={style.iconos} src={iconoFooter4} alt="iconoT"></img>
                     </a>
-                    <a class="aEnlace" href="https://www.pinterest.es/" target="_blank">
+                    <a href="https://www.pinterest.es/" target="_blank">
                         <img className={style.iconos} src={iconoFooter5} alt="iconoP"></img>
                     </a>
-                    <a class="aEnlace" href="https://outlook.live.com/owa/" target="_blank">
+                    <a href="https://outlook.live.com/owa/" target="_blank">
                         <img className={style.iconos} src={iconoFooter6} alt="iconoE"></img>
                     </a>
-                    <a class="aEnlace" href="https://www.whatsapp.com/" target="_blank">
+                    <a href="https://www.whatsapp.com/" target="_blank">
                         <img className={style.iconos} src={iconoFooter7} alt="iconoW"></img>
                     </a>
-                    <a class="aEnlace" href="tel:881917587" target="_blank">
+                    <a href="tel:881917587" target="_blank">
                         <img className={style.iconos} src={iconoFooter8} alt="iconoT"></img>
                     </a>
-                    <a class="aEnlace" href="https://www.google.es/maps/preview" target="_blank">
+                    <a href="https://www.google.es/maps/@43.3409416,-8.3621853,16.53z" target="_blank">
                         <img className={style.iconos} src={iconoFooter9} alt="iconoM"></img>
                     </a>
                 </div>

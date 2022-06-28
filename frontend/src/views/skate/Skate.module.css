@@ -28,8 +28,7 @@
     max-height: 50px;
     justify-items: center;
     justify-content: center;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+  
 }
 
 .divCentrado {
@@ -45,19 +44,19 @@
     background-color: transparent;
     border-color: transparent;
     text-decoration: none;
-    text-shadow: black 0.1em 0.1em 0.2em;
-    color: white;
-    
+    text-shadow: dodgerblue 0.1em 0.1em 0.2em;
+    color: white; 
 }
 
 button:hover {
-    color: dodgerblue;
+    color: black;
     /*text-shadow: Black 0.1em 0.1em 0.2em; */
     cursor: pointer;
 }
 
 .centrarBotones {
     text-align: center;
+
 }
 
 .marginCon {
