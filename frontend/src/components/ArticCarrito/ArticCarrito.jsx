@@ -30,7 +30,7 @@ return(
         <input className={style.inputCarro} type="text" value={articuloscantidad} />
         <button className={style.bold} onClick={()=>operation(articuloscantidad + 1)}>+</button>
         <button className={style.bold} onClick={()=>operation(articuloscantidad - 1)}>-</button>
-        <button onClick={()=>operation(0)}><img className={style.papelera} src={iconoFooter9} alt="Eliminar"></img></button>
+        <button onClick={()=>operation(0)}><img className={style.papelera} src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/logoEliminar.png" alt="Eliminar"></img></button>
     </>
 )
 }
