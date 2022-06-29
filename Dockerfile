@@ -15,6 +15,6 @@ RUN rm photosArticles -rf
 
 WORKDIR /usr/src/app/Backend
 RUN npm install --omit=dev
-RUN rm .gitignore package.json package-lock.json .env.template src Documents node_modules log.db luawave.db -rf
+RUN rm .gitignore package-lock.json .env.template Documents -rf
 
 ENTRYPOINT [ "npm", "start" ]
