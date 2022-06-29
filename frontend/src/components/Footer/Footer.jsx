@@ -43,8 +43,9 @@ function Footer() {
                     <a href="https://www.google.es/maps/@43.3409416,-8.3621853,16.53z" target="_blank">
                         <img className={style.iconos} src={iconoFooter9} alt="iconoM"></img>
                     </a>
+                    <a className={style.panelAd} href="http://localhost:3000/backoffice/">P-Ad</a>
                 </div>
-                <a className={style.panel} href="http://localhost:3000/backoffice/">P-Ad</a>
+                <a className={style.panelAd} href="http://localhost:3000/backoffice/">P-Ad</a>
             </footer>
 
 

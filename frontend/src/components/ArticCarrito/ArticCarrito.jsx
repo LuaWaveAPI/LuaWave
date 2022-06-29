@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import ComponenteArticulo from "../ComponenteArticulo/ComponenteArticulo";
 import style from './ArticCarrito.module.css';
 
+import iconoFooter9 from "../../img/iconoFooter9.png";
+
 function ArticCarrito({idx, setArticulos}){
     const [articulo] = useState (JSON.parse(localStorage.getItem("articulos"))[idx])
     const [articuloscantidad, setArticulosCantidad] = useState (articulo.Quantity)
@@ -28,7 +30,7 @@ return(
         <input className={style.inputCarro} type="text" value={articuloscantidad} />
         <button className={style.bold} onClick={()=>operation(articuloscantidad + 1)}>+</button>
         <button className={style.bold} onClick={()=>operation(articuloscantidad - 1)}>-</button>
-        <button onClick={()=>operation(0)}>delete</button>
+        <button onClick={()=>operation(0)}><img className={style.papelera} src={iconoFooter9} alt="Eliminar"></img></button>
     </>
 )
 }
