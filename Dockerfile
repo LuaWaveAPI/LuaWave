@@ -13,7 +13,7 @@ RUN rm .gitignore package.json package-lock.json public README.md src node_modul
 WORKDIR /usr/src/app
 RUN rm photosArticles -rf
 
-WORKDIR /usr/src/app/backend
+WORKDIR /usr/src/app/Backend
 RUN npm install --omit=dev
 RUN rm .gitignore package.json package-lock.json .env.template src Documents node_modules log.db luawave.db -rf
 
