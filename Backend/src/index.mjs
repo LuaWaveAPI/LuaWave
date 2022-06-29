@@ -1,4 +1,4 @@
-import express from "Express";
+import express from "express";
 import multer from "multer";
 import {
   deleteArticleController,
@@ -56,11 +56,11 @@ const port = 4000;
 try {
   const upload = multer({ dest: UPLOADS_FOLDER });
   const jsonParser = express.json();
-  
+
   app.use("/public/", express.static(UPLOADS_FOLDER));
   app.use("/", express.static("../../frontend/build"));
   app.use("/backoffice/", express.static("../../frontendos/build"));
-  
+
   //Articles
   app.get(PATH_PREFIX + "/articles/", getAllArticlesController);
   app.get(PATH_PREFIX + "/articles/surf/con", getSurfConArticlesController);
@@ -73,7 +73,11 @@ try {
     upload.single("Photo"),
     postArticleController
   );
-  app.put(PATH_PREFIX + "/article/",upload.single("Photo"), putArticleController);
+  app.put(
+    PATH_PREFIX + "/article/",
+    upload.single("Photo"),
+    putArticleController
+  );
   app.delete(PATH_PREFIX + "/article", jsonParser, deleteArticleController);
 
   //Categories
@@ -100,16 +104,17 @@ try {
   //Log
   app.get(PATH_PREFIX + "/log/", getAllLogController);
 
-	//Login
-	app.post(PATH_PREFIX + "/login/", jsonParser, loginCreateToken)
+  //Login
+  app.post(PATH_PREFIX + "/login/", jsonParser, loginCreateToken);
 
-	app.use(function(err, req, res, next){
-		if(!err){
-			next()
-		}else{
-		res.status(500);
-	res.render('error', { error: err });
-}});
+  app.use(function (err, req, res, next) {
+    if (!err) {
+      next();
+    } else {
+      res.status(500);
+      res.render("error", { error: err });
+    }
+  });
   //Contact
   app.get(PATH_PREFIX + "/contact/", getAllContactController);
   app.post(PATH_PREFIX + "/contact/", jsonParser, postContactController);
