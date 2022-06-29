@@ -11,10 +11,10 @@ RUN npm run build
 RUN rm .gitignore package.json package-lock.json public README.md src node_modules -rf
 
 WORKDIR /usr/src/app
-RUN rm documentation -rf
+RUN rm photosArticles -rf
 
 WORKDIR /usr/src/app/backend
 RUN npm install --omit=dev
-RUN rm .gitignore package-lock.json Insomnia_2022-05-10.json .env -rf
+RUN rm .gitignore package.json package-lock.json .env.template src Documents node_modules log.db luawave.db -rf
 
 ENTRYPOINT [ "npm", "start" ]
