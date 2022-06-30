@@ -22,3 +22,9 @@
   grid-row-gap: 0px;
   height: 1px; 
 }
+
+@media (max-width: 455px) {
+  .mainCarrusel{
+    margin-top: 135px;
+  }
+}

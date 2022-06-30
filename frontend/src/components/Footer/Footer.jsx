@@ -45,7 +45,6 @@ function Footer() {
                     </a>
                     <a className={style.panelAd} href="http://localhost:3000/backoffice/">P-Ad</a>
                 </div>
-                <a className={style.panelAd} href="http://localhost:3000/backoffice/">P-Ad</a>
             </footer>
 
 

@@ -10,7 +10,7 @@
 .estructura {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.60fr 8fr 0.60fr;
+  grid-template-rows: 0.60fr 7.9fr 0.60fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   width: 100%;
