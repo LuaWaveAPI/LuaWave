@@ -1,5 +1,6 @@
 import express from "express";
 import multer from "multer";
+import config from "dotenv";
 import {
   deleteArticleController,
   getAllArticlesController,
@@ -41,6 +42,9 @@ import {
 } from "./controllers/staffControllers.mjs";
 
 const PATH_PREFIX = "/api/v0.0";
+if (process.env.NODE_ENV != "production") {
+  config();
+}
 const UPLOADS_FOLDER = "./photosArticles/";
 const app = express();
 
@@ -51,7 +55,7 @@ app.use(function(req, res, next) {
 	next();
   }); // Deshabilitar CORS
   */
-const port = 4000;
+const port = process.env.PORT;
 
 try {
   const upload = multer({ dest: UPLOADS_FOLDER });
