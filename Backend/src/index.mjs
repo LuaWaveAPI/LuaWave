@@ -64,8 +64,8 @@ try {
   const jsonParser = express.json();
 
   app.use("/public/", express.static(UPLOADS_FOLDER));
-  app.use("/", express.static("../../frontend/build"));
-  app.use("/backoffice/", express.static("../../frontendos/build"));
+  app.use("/", express.static("../frontend/build"));
+  // app.use("/backoffice/", express.static("../../frontendos/build"));
 
   //Articles
   app.get(PATH_PREFIX + "/articles/", getAllArticlesController);
