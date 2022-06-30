@@ -1,6 +1,6 @@
 import express from "express";
 import multer from "multer";
-import config from "dotenv";
+import { config } from "dotenv";
 import {
   deleteArticleController,
   getAllArticlesController,
@@ -42,6 +42,7 @@ import {
 } from "./controllers/staffControllers.mjs";
 
 const PATH_PREFIX = "/api/v0.0";
+//config();
 if (process.env.NODE_ENV != "production") {
   config();
 }
@@ -55,6 +56,7 @@ app.use(function(req, res, next) {
 	next();
   }); // Deshabilitar CORS
   */
+console.log(process.env);
 const port = process.env.PORT;
 
 try {
