@@ -71,7 +71,7 @@ button:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     padding-top: 20px;
     padding-right: 60px;
 }

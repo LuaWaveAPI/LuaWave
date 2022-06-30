@@ -25,11 +25,9 @@ h2 {
     grid-template-rows: 0.3fr 0.3fr 3fr 6.5fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    align-items: start;
+    align-items: center;
     justify-content: space-evenly;
     justify-items: center;
-    align-items: center;
-
 }
 
 .cuadrarNum {

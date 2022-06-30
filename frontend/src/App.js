@@ -11,11 +11,23 @@ import Carrito from "./views/Carrito/Carrito";
 import logoLuaWave from "./img/logoLuaWave.png";
 import carritoimg from "./img/carrito.png";
 import Contact from "./views/contact/Contact";
+import { useState } from "react";
+import Alerts from "./components/Alerts/Alerts";
 
 function App() {
+  const [errorLog, setErrorLog] = useState("");
+  const [alertText, setAlertText] = useState(false);
+
+
   return (
     <>
-      <div  className="estructura">
+      {/* Alert personalizados */}
+      {alertText && <Alerts
+        setErrorLog={setErrorLog}
+        setAlertText={setAlertText}
+        errorLog={errorLog} />}
+
+      <div className="estructura">
         <header>
           <nav>
             <Navbar />
@@ -29,9 +41,9 @@ function App() {
             <Route path="/skate/" element={<Skate />} />
             <Route path="/about/" element={<About />} />
             <Route path="/contact/" element={<Contact />} />
-            <Route path="/test/" element={<Test />} /> 
+            <Route path="/test/" element={<Test />} />
             <Route path="/carrito/" element={<Carrito />} />
-           {/* <Route path="/backoffice/" element={<PanelAdmin />} /> */}
+            {/* <Route path="/backoffice/" element={<PanelAdmin />} /> */}
           </Routes>
         </main>
         <Footer />
