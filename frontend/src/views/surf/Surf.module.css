@@ -83,9 +83,32 @@ h1 {
     color: black;
 }
 
+h2 {
+    margin-left: 30px;
+    text-align: center;
+}
+
 h3 {
     margin-top: 0px;
 }
 
+@media (max-width: 455px) {
+    .mainDividido {
+        margin-top: 135px;
+    }
+}
+
+@media (max-width: 455px) {
+    .centrarBotones {
+        text-align: left;
+    }
+}
+
+@media (max-width: 455px) {
+    h2 {
+        text-align: left;
+        width: 50%;
+    }
+}
 
 

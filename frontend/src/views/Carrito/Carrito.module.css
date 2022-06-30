@@ -27,3 +27,10 @@
   height: 86.8vh;
   overflow: scroll;
 }
+
+@media (max-width: 455px) {
+  .mainDividido{
+    margin-top: 135px;
+  }
+}
+

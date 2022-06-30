@@ -54,3 +54,9 @@ button:hover {
     width: 355px;
     height: 35px;
 }
+
+@media (max-width: 455px) {
+    .contact{
+      margin-top: 135px;
+    }
+  }

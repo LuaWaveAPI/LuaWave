@@ -20,3 +20,9 @@ h1:hover {
     color: dodgerblue;
     cursor: pointer;
 }
+
+@media (max-width: 455px) {
+    .about{
+      margin-top: 135px;
+    }
+  }

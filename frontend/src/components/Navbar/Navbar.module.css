@@ -41,7 +41,7 @@ a:hover {
     cursor: pointer;
 }
 
-@media (min-width: 585px) {
+@media (min-width: 455px) {
     .navegador{
         height: 6.6%;
     }
