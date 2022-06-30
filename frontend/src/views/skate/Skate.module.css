@@ -70,7 +70,9 @@ button:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    padding-top: 20px;
+    padding-right: 60px;
 }
 
 h1 {

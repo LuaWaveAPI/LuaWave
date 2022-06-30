@@ -29,8 +29,10 @@ function ListaArticulos({ host, setArticuloFull, setShowButton, tittle }) {
 
     return (
         <>
-            <div className={styles.divIzquierda}>
-                {articulos.map(articulo => <div onClick={() => showArticle(articulo)}><ComponenteArticulo articulo={articulo} /></div>)}
+            <div className={styles.anchoIzquierda}>
+                <div className={styles.divIzquierda}>
+                    {articulos.map(articulo => <div onClick={() => showArticle(articulo)}><ComponenteArticulo articulo={articulo} /></div>)}
+                </div>
             </div>
         </>
     )
