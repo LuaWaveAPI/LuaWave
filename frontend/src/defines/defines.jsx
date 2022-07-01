@@ -1,13 +1,14 @@
 import { config } from "dotenv";
 if (process.env.NODE_ENV != "production") {
     config();
+    PUBLIC_URL = "http://localhost:"
   }
 const urls = [
-    "http://localhost:"+process.env.PORT+"/api/v0.0/articles/surf/con",
-    "http://localhost:"+process.env.PORT+"/api/v0.0/articles/surf/sin",
-    "http://localhost:"+process.env.PORT+"/api/v0.0/articles/skate/con",
-    "http://localhost:"+process.env.PORT+"/api/v0.0/articles/skate/sin",
-    "http://localhost:"+process.env.PORT+"/api/v0.0/order"
+    PUBLIC_URL+process.env.PORT+"/api/v0.0/articles/surf/con",
+    PUBLIC_URL+process.env.PORT+"/api/v0.0/articles/surf/sin",
+    PUBLIC_URL+process.env.PORT+"/api/v0.0/articles/skate/con",
+    PUBLIC_URL+process.env.PORT+"/api/v0.0/articles/skate/sin",
+    PUBLIC_URL+process.env.PORT+"/api/v0.0/order"
 
 ]
 
