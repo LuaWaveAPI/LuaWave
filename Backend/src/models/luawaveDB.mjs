@@ -1,6 +1,6 @@
 import sqlite3 from "sqlite3";
 
-export const luawave = new sqlite3.Database("./Backend/luawave.db", (err) => {
+export const luawave = new sqlite3.Database("luawave.db", (err) => {
   if (err) {
     console.error(err.message);
   }
