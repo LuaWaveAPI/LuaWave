@@ -56,12 +56,14 @@ app.use(function(req, res, next) {
 	next();
   }); // Deshabilitar CORS
   */
- const port = 4000;
 
 /*
+ const port = 4000;
+*/
+
 console.log(process.env);
 const port = process.env.PORT;
-*/
+
 
 try {
   const upload = multer({ dest: UPLOADS_FOLDER });
