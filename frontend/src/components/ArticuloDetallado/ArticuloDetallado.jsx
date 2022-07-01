@@ -1,5 +1,6 @@
 import { Article } from "../../models/ArticleClass.mjs";
 import styles from "./ArticuloDetallado.module.css"
+import { HOST } from "../../defines/host.jsx";
 function ArticuloDetallado({ articuloFull, showButton }) {
     function addNewProduct(article) {
         const data = JSON.parse(localStorage.getItem("articulos"));
@@ -16,7 +17,7 @@ function ArticuloDetallado({ articuloFull, showButton }) {
                     <p>{articuloFull.Name}</p>
                 </div>
                 {showButton && <button className={styles.buttonBlack} onClick={() => addNewProduct(articuloFull)}>Añadir al carrito</button>}
-                <img className={styles.imagen} src={"http://localhost:4000/public/" + articuloFull.Photo} alt={articuloFull.Name} />
+                <img className={styles.imagen} src={HOST+"public/" + articuloFull.Photo} alt={articuloFull.Name} />
             </div>
 
         </>
