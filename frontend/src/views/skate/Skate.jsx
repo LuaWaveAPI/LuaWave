@@ -5,10 +5,6 @@ import ArticuloDetallado from "../../components/ArticuloDetallado/ArticuloDetall
 import style from './Skate.module.css';
 import { LogoGrande } from "../../components/LogoGrande/LogoGrande";
 
-import FondoSkate from "../../img/FondoSkate.jpg";
-import rectanguloFondo from "../../img/rectanguloFondo.png";
-
-
 function Skate() {
     const [showButton, setShowButton] = useState(false)
     const [articuloFull, setArticuloFull] = useState("")

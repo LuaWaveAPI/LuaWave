@@ -43,16 +43,10 @@ function App() {
             <Route path="/contact/" element={<Contact />} />
             <Route path="/test/" element={<Test />} />
             <Route path="/carrito/" element={<Carrito />} />
-            {/* <Route path="/backoffice/" element={<PanelAdmin />} /> */}
           </Routes>
         </main>
         <Footer />
       </div>
-
-      {/*  
-      <header className="headerContainer">
-      
-      */}
     </>
   );
 }

@@ -1,7 +1,7 @@
 import style from './Contact.module.css';
 import { useState } from "react";
 
-function Contact({ setErrorLog, setAlertText }) {
+function Contact() {
     const URL = "http://localhost:4000/api/v0.0/contact/";
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -15,15 +15,6 @@ function Contact({ setErrorLog, setAlertText }) {
     function postContact() {
         if (name === "" || email === "" || coment === "") {
             alert("Algún campo está vacío")
-            /*
-            setErrorLog(
-                <div>
-                    <p>¡Algún campo está vacío!</p>
-                    <p>¡Debes rellenar los campos!</p>
-                </div>
-            );
-            setAlertText(true)
-                */
         } else {
             const bodyOrder = {
                 name: name,

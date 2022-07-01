@@ -24,15 +24,6 @@ function Navbar() {
                     <Link to={'/contact/'}>
                         <p>Contact</p>
                     </Link>
-                    {/*
-                    <Link to={'/test/'}>
-                        <p>Test</p>
-                    </Link>
-                      
-                    <Link to={'/panel-admin/'}>
-                        <p>Panel</p>
-                    </Link>
-                     */}
                     <Link to={'/carrito/'}>
                         <img className={style.carrito} src="https://raw.githubusercontent.com/LuaWaveAPI/LuaWave/main/frontend/src/img/carrito.png" alt="carrito" />
                     </Link>

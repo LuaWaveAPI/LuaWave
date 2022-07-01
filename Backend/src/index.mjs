@@ -48,20 +48,6 @@ if (process.env.NODE_ENV != "production") {
 }
 const UPLOADS_FOLDER = "./photosArticles/";
 const app = express();
-
-/*
-app.use(function(req, res, next) {
-	res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // Dominio desde el que se llama y se quiere permitir
-	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-	next();
-  }); // Deshabilitar CORS
-  */
-
-/*
- const port = 4000;
-*/
-
-console.log(process.env);
 const port = process.env.PORT;
 
 
@@ -71,7 +57,6 @@ try {
 
   app.use("/public/", express.static(UPLOADS_FOLDER));
   app.use("/", express.static("../frontend/build"));
-  // app.use("/backoffice/", express.static("../../frontendos/build"));
 
   //Articles
   app.get(PATH_PREFIX + "/articles/", getAllArticlesController);

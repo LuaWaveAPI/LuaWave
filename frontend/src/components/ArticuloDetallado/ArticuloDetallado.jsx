@@ -7,8 +7,6 @@ function ArticuloDetallado({ articuloFull, showButton }) {
         data.push(newdata)
         localStorage.setItem("articulos", JSON.stringify(data));
     }
-    // const [id] = JSON.parse(localStorage.getItem("articulos"));      
-    //     localStorage.setItem("articulos", JSON.stringify(new Article(id)));
     return (
         <>
             <div className={styles.divDerecha}>

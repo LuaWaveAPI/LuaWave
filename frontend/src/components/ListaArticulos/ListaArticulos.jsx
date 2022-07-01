@@ -17,7 +17,6 @@ function ListaArticulos({ host, setArticuloFull, setShowButton, tittle }) {
     function showArticle(article) {
         setArticuloFull(article)
         setShowButton(true)
-        //Cambiar css
     }
 
     useEffect(
