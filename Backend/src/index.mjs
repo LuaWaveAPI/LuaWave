@@ -46,7 +46,7 @@ const PATH_PREFIX = "/api/v0.0";
 if (process.env.NODE_ENV != "production") {
   config();
 }
-const UPLOADS_FOLDER = "./Backend/photosArticles/";
+const UPLOADS_FOLDER = "../photosArticles/";
 const app = express();
 const port = process.env.PORT;
 
