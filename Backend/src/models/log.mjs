@@ -1,6 +1,6 @@
 import sqlite3 from "sqlite3";
 
-export const log = new sqlite3.Database("./Backend/log.db", (err) => {
+export const log = new sqlite3.Database("./log.db", (err) => {
   if (err) {
     console.error(err.message);
   }

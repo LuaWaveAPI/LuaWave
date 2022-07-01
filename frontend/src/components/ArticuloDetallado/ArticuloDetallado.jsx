@@ -17,7 +17,7 @@ function ArticuloDetallado({ articuloFull, showButton }) {
                     <p>{articuloFull.Name}</p>
                 </div>
                 {showButton && <button className={styles.buttonBlack} onClick={() => addNewProduct(articuloFull)}>Añadir al carrito</button>}
-                <img className={styles.imagen} src={HOST+"public/" + articuloFull.Photo} alt={articuloFull.Name} />
+                <img className={styles.imagen} src={HOST+"public/"+articuloFull.Photo} alt={articuloFull.Name} />
             </div>
 
         </>
