@@ -1,14 +1,25 @@
-import { config } from "dotenv";
-if (process.env.NODE_ENV != "production") {
-    config();
-    PUBLIC_URL = "http://localhost:"
+let HOST
+
+  switch (window.location.hostname) {
+    case "localhost":
+      HOST="http://localhost:8080/"
+      break;
+
+    case "127.0.0.1":
+      HOST="http://127.0.0.1:8080/"
+      break;
+      
+    default:
+      HOST="/"
+      break;
   }
+
 const urls = [
-    PUBLIC_URL+process.env.PORT+"/api/v0.0/articles/surf/con",
-    PUBLIC_URL+process.env.PORT+"/api/v0.0/articles/surf/sin",
-    PUBLIC_URL+process.env.PORT+"/api/v0.0/articles/skate/con",
-    PUBLIC_URL+process.env.PORT+"/api/v0.0/articles/skate/sin",
-    PUBLIC_URL+process.env.PORT+"/api/v0.0/order"
+    HOST+"/api/v0.0/articles/surf/con",
+    HOST+"/api/v0.0/articles/surf/sin",
+    HOST+"/api/v0.0/articles/skate/con",
+    HOST+"/api/v0.0/articles/skate/sin",
+    HOST+"/api/v0.0/order"
 
 ]
 
