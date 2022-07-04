@@ -1,6 +1,6 @@
 import style from './Contact.module.css';
 import { useState } from "react";
-import { HOST } from "./host"
+import {HOST} from "../../defines/host"
 
 function Contact() {
     const PATH = "api/v0.0/contact"
