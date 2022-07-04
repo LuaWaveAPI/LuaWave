@@ -46,7 +46,7 @@ function Contact() {
                     <input type="text" value={name} placeholder="Nombre" name="name" id="inputname" onChange={(event) => changeHandler(event, setName)} />
                     <input type="email" value={email} placeholder="Correo electrónico" name="mail" id="inputmail" onChange={(event) => changeHandler(event, setEmail)} />
                     <textarea name="coment" value={coment} placeholder="Haznos llegar tu mensaje" id="areacoment" cols="30" rows="10" onChange={(event) => changeHandler(event, setComent)}></textarea>
-                    <button type="submit" onClick={postContact} className={style.size} >Enviar</button>
+                    <button type="button" onClick={postContact} className={style.size} >Enviar</button>
                 </form>
             </div>
         </>
