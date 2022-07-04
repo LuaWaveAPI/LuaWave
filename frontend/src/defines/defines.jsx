@@ -5,7 +5,7 @@ const urls = [
     HOST+"api/v0.0/articles/skate/con",
     HOST+"api/v0.0/articles/skate/sin",
     HOST+"api/v0.0/order",
-    HOST+"api/v0.0/contact/"
+    HOST+"api/v0.0/contact"
 
 ]
 
