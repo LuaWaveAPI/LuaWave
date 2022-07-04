@@ -1,10 +1,8 @@
 import style from './Contact.module.css';
 import { useState } from "react";
-import { HOST } from "../../defines/host.jsx"
 import { urls } from '../../defines/defines';
 
 function Contact() {
-    const URL = urls[5]
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [coment, setComent] = useState("")
@@ -24,7 +22,7 @@ function Contact() {
                 coment: coment
             }
             if (bodyOrder.email.includes("@") && bodyOrder.email.includes(".")) {
-                fetch(URL,
+                fetch(urls[5],
                     {
                         method: 'POST',
                         body: JSON.stringify(bodyOrder),
