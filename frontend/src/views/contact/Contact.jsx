@@ -1,6 +1,8 @@
 import style from './Contact.module.css';
 import { useState } from "react";
 import { urls } from '../../defines/defines.jsx';
+import { useNavigate } from "react-router-dom";
+
 
 function Contact() {
     const [name, setName] = useState("")
@@ -13,7 +15,7 @@ function Contact() {
     }
 
 
-    function postContact() {
+    function postContact(event) {
         if (name === "" || email === "" || coment === "") {
             alert("Algún campo está vacío")
         } else {
@@ -32,6 +34,12 @@ function Contact() {
                         }
                     }
                 );
+                event.preventDefault()
+                const navigate = useNavigate();
+                navigate("/");
+
+
+
             }
 
 
