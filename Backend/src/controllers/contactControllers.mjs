@@ -47,8 +47,6 @@ export function postContactController(request, response) {
   }
 }
 
-//////////////////
-
 export function deleteContactController(request, response) {
   try {
     const { id } = request.body;
