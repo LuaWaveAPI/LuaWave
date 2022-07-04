@@ -1,10 +1,10 @@
 import style from './Contact.module.css';
 import { useState } from "react";
-import { HOST } from "../../defines/host"
+import { HOST } from "../../defines/host.jsx"
+import { urls } from '../../defines/defines';
 
 function Contact() {
-    const PATH = "api/v0.0/contact/"
-    const URL = HOST + PATH;
+    const URL = urls[5]
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [coment, setComent] = useState("")
