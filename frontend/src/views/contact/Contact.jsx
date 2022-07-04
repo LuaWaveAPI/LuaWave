@@ -1,6 +1,6 @@
 import style from './Contact.module.css';
 import { useState } from "react";
-import { urls } from '../../defines/defines';
+import { urls } from '../../defines/defines.jsx';
 
 function Contact() {
     const [name, setName] = useState("")
