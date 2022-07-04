@@ -6,6 +6,7 @@ function Contact() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [coment, setComent] = useState("")
+    console.log(urls[5])
 
     function changeHandler(event, set) {
         set(event.target.value)
