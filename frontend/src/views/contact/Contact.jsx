@@ -1,8 +1,10 @@
 import style from './Contact.module.css';
 import { useState } from "react";
+import { HOST } from "./host"
 
 function Contact() {
-    const URL = "http://localhost:4000/api/v0.0/contact/";
+    const PATH = "api/v0.0/contact"
+    const URL = HOST + PATH;
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [coment, setComent] = useState("")
