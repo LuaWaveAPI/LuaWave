@@ -8,6 +8,8 @@ function Contact() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [coment, setComent] = useState("")
+    const navigate = useNavigate();
+
     console.log(urls[5])
 
     function changeHandler(event, set) {
@@ -35,7 +37,6 @@ function Contact() {
                     }
                 );
                 event.preventDefault()
-                const navigate = useNavigate();
                 navigate("/");
 
 
