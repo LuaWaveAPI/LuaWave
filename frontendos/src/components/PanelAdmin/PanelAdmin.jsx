@@ -2,7 +2,7 @@ import style from '../PanelAdmin/PanelAdmin.module.css'
 import { useState } from "react";
 
 
-function PanelAdmin({ setErrorLog, setAlertText }) {
+function PanelAdmin({setErrorLog, setAlertText }) {
     const URL = "http://localhost:4000/api/v0.0/backoffice/";
     const [user, setUser] = useState("")
     const [email, setEmail] = useState("")
@@ -15,16 +15,10 @@ function PanelAdmin({ setErrorLog, setAlertText }) {
 
     function postContact() {
         if (user === "" || email === "" || contrasena === "") {
-            alert("Algún campo está vacío")
-            /*
-            setErrorLog(
-                <div>
-                    <p>¡Algún campo está vacío!</p>
-                    <p>¡Debes rellenar los campos!</p>
-                </div>
-            );
-            setAlertText(true)
-                */
+              
+            setErrorLog("No se pueden dejar campos vacíos");
+            setAlertText(true);
+                
         } else {
             const bodyOrder = {
                 user: user,
@@ -51,13 +45,12 @@ function PanelAdmin({ setErrorLog, setAlertText }) {
 
     return (
         <>
-            <h1 className={style.texto}>Panel Admin</h1>
             <div className={style.centrarFormulario}>
                 <form className={style.contact}>
                     <input type="text" value={user} placeholder="Usuario" name="user" id="inputuser" onChange={(event) => changeHandler(event, setUser)} />
                     <input type="email" value={email} placeholder="Correo electrónico" name="mail" id="inputmail" onChange={(event) => changeHandler(event, setEmail)} />
                     <input type="text" value={contrasena} placeholder="Contraseña" name="contrasena" id="inputcontrasena" onChange={(event) => changeHandler(event, setContrasena)} />
-                    <button type="submit" onClick={postContact} className={style.size} >Entrar</button>
+                    <button type="button" onClick={postContact} className={style.size} >Entrar</button>
                 </form>
             </div>
 

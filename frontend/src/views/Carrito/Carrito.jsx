@@ -4,7 +4,7 @@ import FormularioCarrito from "../../components/FormularioCarrito/FormularioCarr
 import style from './Carrito.module.css';
 
 
-function Carrito() {
+function Carrito({setErrorLog, setAlertText}) {
     const [status, setStatus] = useState(true)
 
     return (
@@ -17,7 +17,8 @@ function Carrito() {
                             <ArticulosCarrito />
                         </div>
                         <div>
-                            <FormularioCarrito setStatus={setStatus} />
+                            <FormularioCarrito setErrorLog={setErrorLog}
+              setAlertText={setAlertText} setStatus={setStatus} />
                         </div>
                     </>}
             </div>

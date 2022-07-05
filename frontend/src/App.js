@@ -36,13 +36,20 @@ function App() {
 
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/surf/" element={<Surf />} />
-            <Route path="/skate/" element={<Skate />} />
-            <Route path="/about/" element={<About />} />
-            <Route path="/contact/" element={<Contact />} />
-            <Route path="/test/" element={<Test />} />
-            <Route path="/carrito/" element={<Carrito />} />
+            <Route path="/" element={<Home setErrorLog={setErrorLog}
+              setAlertText={setAlertText} />} />
+            <Route path="/surf/" element={<Surf setErrorLog={setErrorLog}
+              setAlertText={setAlertText} />} />
+            <Route path="/skate/" element={<Skate setErrorLog={setErrorLog}
+              setAlertText={setAlertText} />} />
+            <Route path="/about/" element={<About setErrorLog={setErrorLog}
+              setAlertText={setAlertText} />} />
+            <Route path="/contact/" element={<Contact setErrorLog={setErrorLog}
+              setAlertText={setAlertText} />} />
+            <Route path="/test/" element={<Test setErrorLog={setErrorLog}
+              setAlertText={setAlertText} />} />
+            <Route path="/carrito/" element={<Carrito setErrorLog={setErrorLog}
+              setAlertText={setAlertText} />} />
           </Routes>
         </main>
         <Footer />

@@ -18,9 +18,11 @@ function Navbar() {
                     <Link to={'/skate/'}>
                         <p>Skate</p>
                     </Link>
+                    {/*
                     <Link to={'/about/'}>
                         <p>About</p>
                     </Link>
+                        */}
                     <Link to={'/contact/'}>
                         <p>Contact</p>
                     </Link>

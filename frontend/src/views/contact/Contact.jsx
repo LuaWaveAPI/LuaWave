@@ -1,7 +1,7 @@
 import style from './Contact.module.css';
 import { useState } from "react";
 
-function Contact() {
+function Contact({setErrorLog, setAlertText }) {
     const URL = "http://localhost:4000/api/v0.0/contact/";
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -14,7 +14,10 @@ function Contact() {
 
     function postContact() {
         if (name === "" || email === "" || coment === "") {
-            alert("Algún campo está vacío")
+
+            setErrorLog("No se pueden dejar campos vacíos");
+            setAlertText(true);
+
         } else {
             const bodyOrder = {
                 name: name,
@@ -45,7 +48,7 @@ function Contact() {
                     <input type="text" value={name} placeholder="Nombre" name="name" id="inputname" onChange={(event) => changeHandler(event, setName)} />
                     <input type="email" value={email} placeholder="Correo electrónico" name="mail" id="inputmail" onChange={(event) => changeHandler(event, setEmail)} />
                     <textarea name="coment" value={coment} placeholder="Haznos llegar tu mensaje" id="areacoment" cols="30" rows="10" onChange={(event) => changeHandler(event, setComent)}></textarea>
-                    <button type="submit" onClick={postContact} className={style.size} >Enviar</button>
+                    <button type="button" onClick={postContact} className={style.size} >Enviar</button>
                 </form>
             </div>
         </>

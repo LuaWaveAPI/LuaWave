@@ -40,10 +40,10 @@ body {
     align-content: center;
     justify-content: center;
     row-gap: 20px;
-    background-color: #C7D4D9;
+    margin-top: 5%;
+    background-color: rgba(199,212,217, 0.8);
     width: 50vw;
     height: 50vh;
-    opacity: 70%;
 }
 
 .texto {
@@ -61,13 +61,13 @@ input {
 
 .size {
     width: 355px;
-    height: 35px;
+    height: 35px; 
 }
 
 button {
     font-size: medium;
     color: white;
-    background-color: black;
+    background-color: rgba(0,0,0, 1);
 }
 
 button:hover {

@@ -9,8 +9,7 @@ import Alerts from "./components/Alerts/Alerts";
 function App() {
   const [errorLog, setErrorLog] = useState("");
   const [alertText, setAlertText] = useState(false);
-
-
+  
   return (
     <>
       {/* Alert personalizados */}
@@ -28,7 +27,8 @@ function App() {
 
         <main>
           <Routes>
-            <Route path="/" element={<PanelAdmin />} />
+            <Route path="/" element={<PanelAdmin setErrorLog={setErrorLog}
+        setAlertText={setAlertText} />} />
           </Routes>
         </main>
       </div>

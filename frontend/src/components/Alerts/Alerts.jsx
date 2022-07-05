@@ -1,3 +1,4 @@
+import style from './Alerts.module.css';
 import { useEffect } from "react"
 
 function Alerts ({setAlertText, setErrorLog, errorLog}){
@@ -8,8 +9,8 @@ function Alerts ({setAlertText, setErrorLog, errorLog}){
     useEffect(()=>{setTimeout(cleanText, 5000)})
     return(
         <>
-            <div className="alert">
-            <h1 className="alertText">{errorLog}</h1>
+            <div className={style.alert}>
+            <h1 className={style.alertText}>{errorLog}</h1>
             </div>
         </>
     )

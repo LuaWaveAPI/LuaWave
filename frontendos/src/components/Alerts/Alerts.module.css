@@ -1,0 +1,21 @@
+/* Alert personalizados */
+
+.alert{
+    position: fixed;
+    justify-self: end;
+    right: 0px;
+    top: 7%;
+  }
+  
+  .alertText{
+    border: solid rgb(182, 212, 254) 1px; 
+    background-color: rgba(207, 226, 255,0.9);
+    color: rgb(50, 39, 110);
+    padding: 20px;
+    pointer-events: none;
+    margin-right: 20px;
+    font-size: 1.2em;
+    font-weight: normal;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+  }

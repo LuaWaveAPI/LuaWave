@@ -4,7 +4,7 @@ import { ShortArticle } from "../../models/ShortArticle.mjs";
 import style from './FormularioCarrito.module.css';
 import iconoFooter9 from "../../img/iconoFooter9.png";
 
-function FormularioCarrito({ setStatus }) {
+function FormularioCarrito({ setStatus, setErrorLog, setAlertText }) {
     const [name, setName] = useState("");
     const [DNI, setDNI] = useState("");
     const [email, setEmail] = useState("");
@@ -18,7 +18,10 @@ function FormularioCarrito({ setStatus }) {
 
     function postOrder() {
         if (name === "" || DNI === "" || email === "" || phone === "" || codepostal === "") {
-            alert("Algun campo esta vacio")
+            
+            setErrorLog("No se pueden dejar campos vacíos");
+            setAlertText(true);
+           
         } else {
             const data = JSON.parse(localStorage.getItem("articulos"));
             const newdata = [];
@@ -32,7 +35,9 @@ function FormularioCarrito({ setStatus }) {
                 Articles: newdata
             };
             if (data.length === 0) {
-                alert("No has seleccionado ningun producto")
+                
+                setErrorLog("No has seleccionado ningun producto");
+                setAlertText(true);
 
             } else {
                 console.log("->", urls[4])
