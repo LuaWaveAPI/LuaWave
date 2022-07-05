@@ -1,18 +1,24 @@
 import style from './Contact.module.css';
 import { useState } from "react";
+import { urls } from '../../defines/defines.jsx';
+import { useNavigate } from "react-router-dom";
+
 
 function Contact({setErrorLog, setAlertText }) {
-    const URL = "http://localhost:4000/api/v0.0/contact/";
+
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [coment, setComent] = useState("")
+    const navigate = useNavigate();
+
+    console.log(urls[5])
 
     function changeHandler(event, set) {
         set(event.target.value)
     }
 
 
-    function postContact() {
+    function postContact(event) {
         if (name === "" || email === "" || coment === "") {
 
             setErrorLog("No se pueden dejar campos vacíos");
@@ -25,7 +31,7 @@ function Contact({setErrorLog, setAlertText }) {
                 coment: coment
             }
             if (bodyOrder.email.includes("@") && bodyOrder.email.includes(".")) {
-                fetch(URL,
+                fetch(urls[5],
                     {
                         method: 'POST',
                         body: JSON.stringify(bodyOrder),
@@ -34,6 +40,11 @@ function Contact({setErrorLog, setAlertText }) {
                         }
                     }
                 );
+                event.preventDefault()
+                navigate("/");
+
+
+
             }
 
 

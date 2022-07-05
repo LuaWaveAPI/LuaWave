@@ -12,6 +12,7 @@ h2 {
 
 .imagen {
     transform: rotate(-90deg);
+    margin-top: 10px;
     margin-right: 0px;
     margin-bottom: 0px;
     margin-top: 5px;
